@@ -2,6 +2,7 @@ package com.agodasi.autocobble;
 
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -23,6 +24,7 @@ public class AutoCobble {
         // クライアント側のみ初期化
         if (FMLEnvironment.dist == Dist.CLIENT) {
             context.getModEventBus().addListener(this::onClientSetup);
+            context.getModEventBus().addListener(this::onRegisterKeyMappings);
             MinecraftForge.EVENT_BUS.register(ClientEvents.class);
         }
     }
@@ -32,5 +34,12 @@ public class AutoCobble {
      */
     private void onClientSetup(final FMLClientSetupEvent event) {
         LOGGER.info("AutoCobble initialized");
+    }
+
+    /**
+     * キーバインド登録処理。
+     */
+    private void onRegisterKeyMappings(final RegisterKeyMappingsEvent event) {
+        event.register(KeyBindings.TOGGLE_KEY);
     }
 }

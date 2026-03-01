@@ -2,6 +2,7 @@ package com.agodasi.autocobble;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Objects;
 
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
 
@@ -55,7 +56,8 @@ public class ClientEvents {
         }
 
         Minecraft mc = Minecraft.getInstance();
-        if (mc.player == null) {
+        LocalPlayer player = mc.player;
+        if (player == null) {
             return;
         }
 
@@ -66,8 +68,8 @@ public class ClientEvents {
 
             // チャット欄にシステムメッセージとして状態を表示
             String status = enabled ? "§a有効" : "§c無効";
-            mc.player.displayClientMessage(
-                    Component.literal("[AutoCobble] " + status),
+            player.displayClientMessage(
+                    Objects.requireNonNull(Component.literal("[AutoCobble] " + status)),
                     false);
         }
 
@@ -76,7 +78,7 @@ public class ClientEvents {
             tickCounter++;
             if (tickCounter >= SCAN_INTERVAL) {
                 tickCounter = 0;
-                scanForPokemon(mc.player);
+                scanForPokemon(player);
             }
         }
     }
@@ -121,7 +123,9 @@ public class ClientEvents {
         int z = (int) closest.getZ();
 
         player.displayClientMessage(
-                Component.literal(String.format("§eTarget Found: §b%s §eat X:%d Y:%d Z:%d", name, x, y, z)),
+                Objects.requireNonNull(
+                        Component.literal(Objects.requireNonNull(
+                                String.format("§eTarget Found: §b%s §eat X:%d Y:%d Z:%d", name, x, y, z)))),
                 false);
     }
 }
