@@ -1,20 +1,18 @@
 modLoader="javafml"
-loaderVersion="[47,)"
-license="All Rights Reserved"
-
-issueTrackerURL=""
+loaderVersion="[36,)"
+license="MIT"
 
 [[mods]]
 modId="autocobble"
 version="1.0.0"
 displayName="AutoCobble"
+description='''Automated Cobblemon helper mod'''
 authors="agodasi"
-description='''AutoCobble - Automated Cobblemon helper mod.'''
 
 [[dependencies.autocobble]]
     modId="forge"
     mandatory=true
-    versionRange="[47,)"
+    versionRange="[47.3,)"
     ordering="NONE"
     side="BOTH"
 

@@ -1,9 +1,2 @@
 Manifest-Version: 1.0
-Specification-Title: autocobble
-Specification-Vendor: agodasi
-Specification-Version: 1
-Implementation-Title: autocobble
-Implementation-Version: 1.0.0
-Implementation-Vendor: agodasi
-Implementation-Timestamp: 2026-03-01T15:39:56+0900
 
