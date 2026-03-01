@@ -1,0 +1,31 @@
+﻿
+Transforming error_pron
+e_annotations-2.11.0.ja
+r (com.google.errorpron
+e:error_prone_annotatio
+ns:2.11.0) with Instrum
+entationAnalysisTransfo
+rm
+Transforming error_pron
+e_annotations-2.11.0.ja
+r (com.google.errorpron
+e:error_prone_annotatio
+ns:2.11.0) with Instrum
+entationAnalysisTransfo
+rm
+Transforming error_pron
+e_annotations-2.11.0.ja
+r (com.google.errorpron
+e:error_prone_annotatio
+ns:2.11.0) with MergeIn
+strumentationAnalysisTr
+ansform
+Transforming error_pron
+e_annotations-2.11.0.ja
+r (com.google.errorpron
+e:error_prone_annotatio
+ns:2.11.0) with Externa
+lDependencyInstrumentin
+gArtifactTransform
+
+

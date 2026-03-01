@@ -1,0 +1,26 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="All Rights Reserved"
+
+issueTrackerURL=""
+
+[[mods]]
+modId="autocobble"
+version="1.0.0"
+displayName="AutoCobble"
+authors="agodasi"
+description='''AutoCobble - Automated Cobblemon helper mod.'''
+
+[[dependencies.autocobble]]
+    modId="forge"
+    mandatory=true
+    versionRange="[47,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.autocobble]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.20.1,1.21)"
+    ordering="NONE"
+    side="BOTH"

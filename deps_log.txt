@@ -1,0 +1,7 @@
+﻿
++--- com.cobblemon:forg
+e:1.5.2+1.20.1
++--- com.github.cabalet
+ta:baritone:1.10.1
+
+
