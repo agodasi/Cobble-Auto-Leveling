@@ -3,16 +3,19 @@ package com.agodasi.autocobble;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nonnull;
 
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
 import com.mojang.logging.LogUtils;
 
+import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.event.TickEvent;
@@ -42,7 +45,7 @@ public class ClientEvents {
     private static final double SCAN_RADIUS = 30.0;
 
     /** ポケモンに十分近いとみなす距離（ブロック数） */
-    private static final double ARRIVE_DISTANCE = 2.5;
+    private static final double ARRIVE_DISTANCE = 1.0;
 
     /** 現在追跡中のポケモン */
     private static PokemonEntity targetPokemon = null;
@@ -50,6 +53,15 @@ public class ClientEvents {
     /** チャット表示用ティックカウンター（スパム防止） */
     private static int chatTickCounter = 0;
     private static final int CHAT_INTERVAL = 40;
+
+    /** アクションのクールダウンカウンター */
+    private static int actionCooldown = 0;
+
+    /** 押下状態にしているCobblemonのキー */
+    private static KeyMapping pressedKey = null;
+
+    /** キーを離すまでの残りTick数 */
+    private static int releaseKeyTick = 0;
 
     /**
      * 自動化ロジックが有効かどうかを返す。
@@ -75,6 +87,19 @@ public class ClientEvents {
 
         if (player == null) {
             return;
+        }
+
+        // クールダウンとキーの解放処理
+        if (actionCooldown > 0) {
+            actionCooldown--;
+        }
+
+        if (releaseKeyTick > 0) {
+            releaseKeyTick--;
+            if (releaseKeyTick == 0 && pressedKey != null) {
+                pressedKey.setDown(false);
+                pressedKey = null;
+            }
         }
 
         // ──────────────────────────────────
@@ -192,13 +217,89 @@ public class ClientEvents {
      * ターゲットポケモンに向かってプレイヤーを移動させる。
      * プレイヤーの視線をポケモンに向け、前進キーを押し続ける。
      */
-    private static void moveTowardTarget(Minecraft mc, LocalPlayer player, Entity target) {
+    private static void moveTowardTarget(Minecraft mc, LocalPlayer player, @Nonnull Entity target) {
+        double dist = player.distanceTo(target);
+
+        // 1.0ブロック以下の場合は到達と判定し、エイム＆インタラクトを実行
+        if (dist <= 1.0) {
+            mc.options.keyUp.setDown(false);
+            mc.options.keySprint.setDown(false);
+            mc.options.keyJump.setDown(false);
+
+            if (actionCooldown == 0) {
+                // 【エイムの厳密な計算と適用】
+                // プレイヤーの目の高さの座標とポケモンの中心座標
+                Vec3 eyePos = player.getEyePosition();
+                double targetX = target.getX();
+                double targetY = target.getY() + target.getBbHeight() / 2.0;
+                double targetZ = target.getZ();
+
+                double dxAim = targetX - eyePos.x;
+                double dyAim = targetY - eyePos.y;
+                double dzAim = targetZ - eyePos.z;
+                double horizontalAimDist = Math.sqrt(dxAim * dxAim + dzAim * dzAim);
+
+                // Mth.atan2 を用いて Yaw と Pitch を数学的に計算
+                float targetYaw = (float) (Math.atan2(dzAim, dxAim) * (180.0 / Math.PI)) - 90.0F;
+                float targetPitch = (float) -(Math.atan2(dyAim, horizontalAimDist) * (180.0 / Math.PI));
+
+                // 視点の即座適用
+                player.setYRot(targetYaw);
+                player.setXRot(targetPitch);
+
+                // 【キー入力のシミュレート】
+                KeyMapping interactKey = null;
+                for (KeyMapping key : mc.options.keyMappings) {
+                    String name = key.getName().toLowerCase();
+                    String category = key.getCategory().toLowerCase();
+
+                    // Cobblemonのキー（特に send_out や interact）を探す
+                    if (category.contains("cobblemon") || name.contains("cobblemon")) {
+                        if (name.contains("send_out") || name.contains("interact") || name.contains("pokemon")) {
+                            if (name.contains("send_out")) {
+                                interactKey = key;
+                                break;
+                            }
+                            if (interactKey == null) {
+                                interactKey = key;
+                            }
+                        }
+                    }
+                }
+
+                // 見つからなかった場合のフォールバック検索
+                if (interactKey == null) {
+                    for (KeyMapping key : mc.options.keyMappings) {
+                        if (key.getName().equals("key.cobblemon.send_out")
+                                || key.getName().equals("cobblemon.key.send_out")) {
+                            interactKey = key;
+                            break;
+                        }
+                    }
+                }
+
+                if (interactKey != null) {
+                    // キー押下状態をシミュレートし、数Tick後に離す
+                    interactKey.setDown(true);
+                    pressedKey = interactKey;
+                    releaseKeyTick = 2; // 2Tick後に離す
+                    LOGGER.info("[AutoCobble] Triggered interact on target: {}", target.getName().getString());
+                } else {
+                    LOGGER.warn("[AutoCobble] Cobblemon send_out KeyMapping not found, cannot interact!");
+                }
+
+                // 60Tick（約3秒）のクールダウン
+                actionCooldown = 60;
+            }
+            return;
+        }
+
         double dx = target.getX() - player.getX();
         double dy = (target.getY() + target.getEyeHeight() / 2.0) - (player.getY() + player.getEyeHeight());
         double dz = target.getZ() - player.getZ();
         double horizontalDist = Math.sqrt(dx * dx + dz * dz);
 
-        // 十分近い場合は移動停止
+        // 念のため、既存の距離判定による移動停止（ARRIVE_DISTANCE = 1.0 に変更済み）
         if (horizontalDist < ARRIVE_DISTANCE) {
             mc.options.keyUp.setDown(false);
             mc.options.keySprint.setDown(false);

@@ -1,23 +1,23 @@
-[023月2026 00:01:51.652] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgeclientuserdev, --version, MOD_DEV, --assetIndex, 5, --assetsDir, C:\Users\kuhar\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 47.3.33, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412]
-[023月2026 00:01:51.666] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.12 by Oracle Corporation; OS Windows 10 arch amd64 version 10.0
-[023月2026 00:01:51.804] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: Loading ImmediateWindowProvider fmlearlywindow
-[023月2026 00:01:51.921] [main/INFO] [EARLYDISPLAY/]: Trying GL version 4.6
-[023月2026 00:01:52.180] [main/INFO] [EARLYDISPLAY/]: Requested GL version 4.6 got version 4.6
-[023月2026 00:01:52.277] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/kuhar/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23128!/ Service=ModLauncher Env=CLIENT
-[023月2026 00:01:52.456] [pool-2-thread-1/INFO] [EARLYDISPLAY/]: GL info: NVIDIA GeForce RTX 3070 Ti/PCIe/SSE2 GL version 4.6.0 NVIDIA 591.86, NVIDIA Corporation
-[023月2026 00:01:52.684] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\kuhar\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.3.33\29591758414c084b41bbd6808bf30309b149da4d\javafmllanguage-1.20.1-47.3.33.jar is missing mods.toml file
-[023月2026 00:01:52.687] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\kuhar\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.3.33\31f826407e5bab62abe1130d8d369d7d45e7ce3\lowcodelanguage-1.20.1-47.3.33.jar is missing mods.toml file
-[023月2026 00:01:52.691] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\kuhar\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.3.33\fb2db487fa47ae1cdcad118267d714f75569ffc7\mclanguage-1.20.1-47.3.33.jar is missing mods.toml file
-[023月2026 00:01:52.694] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\kuhar\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.3.33\2b6f448126f68c8bbc04b942b3fe7aafb12e22c0\fmlcore-1.20.1-47.3.33.jar is missing mods.toml file
-[023月2026 00:01:52.997] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: Found 3 dependencies adding them to mods collection
-[023月2026 00:01:54.586] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
-[023月2026 00:01:54.587] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgeclientuserdev' with arguments [--version, MOD_DEV, --gameDir, ., --assetsDir, C:\Users\kuhar\.gradle\caches\forge_gradle\assets, --assetIndex, 5]
-[023月2026 00:01:54.858] [main/INFO] [mixin/]: Remapping refMap cobblemon-forge-refmap.json using E:\program files\auto-minecraft\pokemon\build/createSrgToMcp/output.srg
-[023月2026 00:01:54.859] [main/INFO] [mixin/]: Remapping refMap cobblemon-common-refmap.json using E:\program files\auto-minecraft\pokemon\build/createSrgToMcp/output.srg
-[023月2026 00:01:55.216] [main/WARN] [mixin/]: Error loading class: juuxel/adorn/block/variant/BlockVariantSets (java.lang.ClassNotFoundException: juuxel.adorn.block.variant.BlockVariantSets)
-[023月2026 00:01:55.216] [main/WARN] [mixin/]: @Mixin target juuxel.adorn.block.variant.BlockVariantSets was not found mixins.cobblemon-common.json:invoker.AdornRegisterInvoker
-[023月2026 00:01:59.152] [Datafixer Bootstrap/INFO] [com.mojang.datafixers.DataFixerBuilder/]: 188 Datafixer optimizations took 129 milliseconds
-[023月2026 00:01:59.971] [pool-4-thread-1/ERROR] [net.minecraftforge.coremod.transformer.CoreModBaseTransformer/COREMOD]: Error occurred applying transform of coremod coremods/field_to_method.js function biome
+[023月2026 00:23:50.029] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgeclientuserdev, --version, MOD_DEV, --assetIndex, 5, --assetsDir, C:\Users\kuhar\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 47.3.33, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412]
+[023月2026 00:23:50.033] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.12 by Oracle Corporation; OS Windows 10 arch amd64 version 10.0
+[023月2026 00:23:50.127] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: Loading ImmediateWindowProvider fmlearlywindow
+[023月2026 00:23:50.236] [main/INFO] [EARLYDISPLAY/]: Trying GL version 4.6
+[023月2026 00:23:50.599] [main/INFO] [EARLYDISPLAY/]: Requested GL version 4.6 got version 4.6
+[023月2026 00:23:50.684] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/kuhar/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23128!/ Service=ModLauncher Env=CLIENT
+[023月2026 00:23:50.796] [pool-2-thread-1/INFO] [EARLYDISPLAY/]: GL info: NVIDIA GeForce RTX 3070 Ti/PCIe/SSE2 GL version 4.6.0 NVIDIA 591.86, NVIDIA Corporation
+[023月2026 00:23:51.017] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\kuhar\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.3.33\29591758414c084b41bbd6808bf30309b149da4d\javafmllanguage-1.20.1-47.3.33.jar is missing mods.toml file
+[023月2026 00:23:51.023] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\kuhar\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.3.33\31f826407e5bab62abe1130d8d369d7d45e7ce3\lowcodelanguage-1.20.1-47.3.33.jar is missing mods.toml file
+[023月2026 00:23:51.027] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\kuhar\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.3.33\fb2db487fa47ae1cdcad118267d714f75569ffc7\mclanguage-1.20.1-47.3.33.jar is missing mods.toml file
+[023月2026 00:23:51.032] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\kuhar\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.3.33\2b6f448126f68c8bbc04b942b3fe7aafb12e22c0\fmlcore-1.20.1-47.3.33.jar is missing mods.toml file
+[023月2026 00:23:51.369] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: Found 3 dependencies adding them to mods collection
+[023月2026 00:23:53.340] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
+[023月2026 00:23:53.341] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgeclientuserdev' with arguments [--version, MOD_DEV, --gameDir, ., --assetsDir, C:\Users\kuhar\.gradle\caches\forge_gradle\assets, --assetIndex, 5]
+[023月2026 00:23:53.647] [main/INFO] [mixin/]: Remapping refMap cobblemon-forge-refmap.json using E:\program files\auto-minecraft\pokemon\build/createSrgToMcp/output.srg
+[023月2026 00:23:53.649] [main/INFO] [mixin/]: Remapping refMap cobblemon-common-refmap.json using E:\program files\auto-minecraft\pokemon\build/createSrgToMcp/output.srg
+[023月2026 00:23:54.000] [main/WARN] [mixin/]: Error loading class: juuxel/adorn/block/variant/BlockVariantSets (java.lang.ClassNotFoundException: juuxel.adorn.block.variant.BlockVariantSets)
+[023月2026 00:23:54.000] [main/WARN] [mixin/]: @Mixin target juuxel.adorn.block.variant.BlockVariantSets was not found mixins.cobblemon-common.json:invoker.AdornRegisterInvoker
+[023月2026 00:23:58.535] [Datafixer Bootstrap/INFO] [com.mojang.datafixers.DataFixerBuilder/]: 188 Datafixer optimizations took 195 milliseconds
+[023月2026 00:23:59.398] [pool-4-thread-1/ERROR] [net.minecraftforge.coremod.transformer.CoreModBaseTransformer/COREMOD]: Error occurred applying transform of coremod coremods/field_to_method.js function biome
 java.lang.IllegalStateException: Field climateSettings is not private and an instance field
 	at net.minecraftforge.coremod.api.ASMAPI.redirectFieldToMethod(ASMAPI.java:1069) ~[coremods-5.2.4.jar:?]
 	at org.openjdk.nashorn.internal.scripts.Script$Recompilation$23$292A$\^eval\_.initializeCoreMod#transformer(<eval>:11) ~[?:?]
@@ -53,105 +53,105 @@ java.lang.IllegalStateException: Field climateSettings is not private and an ins
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?]
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?]
 	at java.lang.Thread.run(Thread.java:842) ~[?:?]
-[023月2026 00:02:00.473] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/kuhar/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.3.33_mapped_official_1.20.1/forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/assets/.mcassetsroot' uses unexpected schema
-[023月2026 00:02:00.474] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/kuhar/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.3.33_mapped_official_1.20.1/forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/data/.mcassetsroot' uses unexpected schema
-[023月2026 00:02:00.497] [Render thread/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
-[023月2026 00:02:00.503] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Setting user: Dev
-[023月2026 00:02:00.575] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Backend library: LWJGL version 3.3.1 build 7
-[023月2026 00:02:00.859] [modloading-worker-0/INFO] [com.agodasi.autocobble.AutoCobble/]: AutoCobble constructor called, dist=CLIENT
-[023月2026 00:02:00.880] [modloading-worker-0/INFO] [com.agodasi.autocobble.AutoCobble/]: AutoCobble client events registered
-[023月2026 00:02:00.883] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.3.33, for MC 1.20.1 with MCP 20230612.114412
-[023月2026 00:02:00.883] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.3.33 Initialized
-[023月2026 00:02:01.072] [modloading-worker-0/INFO] [thedarkcolour.kotlinforforge.test.KotlinForForge/]: Kotlin For Forge Enabled!
-[023月2026 00:02:01.097] [modloading-worker-0/INFO] [com.cobblemon.mod.common.Cobblemon/]: Booting LaxPermissionValidator, permissions will be checked using Minecrafts permission level system, see https://minecraft.fandom.com/wiki/Permission_level
-[023月2026 00:02:01.099] [modloading-worker-0/INFO] [com.cobblemon.mod.common.Cobblemon/]: Launching Cobblemon 1.5.2 
-[023月2026 00:02:01.100] [modloading-worker-0/INFO] [com.cobblemon.mod.common.Cobblemon/]: Booting ForgePermissionApiPermissionValidator, player permissions will be checked using MinecraftForge' PermissionAPI, non player command sources will use Minecraft' permission level system, see https://docs.minecraftforge.net/en/latest/ and https://minecraft.fandom.com/wiki/Permission_level
-[023月2026 00:02:01.265] [modloading-worker-0/INFO] [com.cobblemon.mod.common.Cobblemon/]: Starting the Best Spawner...
-[023月2026 00:02:01.268] [modloading-worker-0/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loaded 5 spawning condition types.
-[023月2026 00:02:01.274] [modloading-worker-0/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loaded 5 spawning context types.
-[023月2026 00:02:01.276] [modloading-worker-0/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loaded 1 spawn detail types.
-[023月2026 00:02:02.485] [Render thread/INFO] [net.minecraftforge.gametest.ForgeGameTestHooks/]: Enabled Gametest Namespaces: []
-[023月2026 00:02:02.494] [Render thread/INFO] [com.agodasi.autocobble.AutoCobble/]: AutoCobble keybinding registered: P key
-[023月2026 00:02:02.644] [Render thread/INFO] [net.minecraft.server.packs.resources.ReloadableResourceManager/]: Reloading ResourceManager: vanilla, mod_resources
-[023月2026 00:02:02.676] [Worker-Main-7/INFO] [com.cobblemon.mod.common.Cobblemon/]: Initializing...
-[023月2026 00:02:02.803] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Starting version check at https://files.minecraftforge.net/net/minecraftforge/forge/promotions_slim.json
-[023月2026 00:02:02.818] [Worker-Main-8/INFO] [net.minecraft.client.gui.font.providers.UnihexProvider/]: Found unifont_all_no_pua-15.0.06.hex, loading
-[023月2026 00:02:02.851] [Worker-Main-1/WARN] [net.minecraft.client.sounds.SoundManager/]: File cobblemon:sounds/pokemon/rattata/rattata_alolan_cry.ogg does not exist, cannot add it to event cobblemon:pokemon.rattata_alolan.cry
-[023月2026 00:02:02.862] [Worker-Main-1/WARN] [net.minecraft.client.sounds.SoundManager/]: File cobblemon:sounds/pokemon/petilil/petilil_hisui_bias_cry.ogg does not exist, cannot add it to event cobblemon:pokemon.petilil_hisui_bias.cry
-[023月2026 00:02:03.513] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Found status: OUTDATED Current: 47.3.33 Target: 47.4.10
-[023月2026 00:02:03.684] [Cobblemon Showdown/INFO] [com.cobblemon.mod.common.Cobblemon/]: Starting showdown service...
-[023月2026 00:02:06.018] [Cobblemon Showdown/INFO] [com.cobblemon.mod.common.Cobblemon/]: Showdown has been started!
-[023月2026 00:02:06.024] [Worker-Main-7/INFO] [com.cobblemon.mod.common.Cobblemon/]: Note: Cobblemon data registries are only loaded once per server instance as Pokémon species are not safe to reload.
-[023月2026 00:02:06.025] [Worker-Main-7/INFO] [com.cobblemon.mod.common.Cobblemon/]: Registered the cobblemon:species_features registry
-[023月2026 00:02:06.027] [Worker-Main-7/INFO] [com.cobblemon.mod.common.Cobblemon/]: Registered the cobblemon:global_species_features registry
-[023月2026 00:02:06.030] [Worker-Main-7/INFO] [com.cobblemon.mod.common.Cobblemon/]: Registered the cobblemon:species_feature_assignments registry
-[023月2026 00:02:06.063] [Worker-Main-7/INFO] [com.cobblemon.mod.common.Cobblemon/]: Registered the cobblemon:action_effects registry
-[023月2026 00:02:06.065] [Worker-Main-7/INFO] [com.cobblemon.mod.common.Cobblemon/]: Registered the cobblemon:moves registry
-[023月2026 00:02:06.068] [Worker-Main-7/INFO] [com.cobblemon.mod.common.Cobblemon/]: Registered the cobblemon:abilities registry
-[023月2026 00:02:06.068] [Worker-Main-7/INFO] [com.cobblemon.mod.common.Cobblemon/]: Registered the cobblemon:species registry
-[023月2026 00:02:06.068] [Worker-Main-7/INFO] [com.cobblemon.mod.common.Cobblemon/]: Registered the cobblemon:species_additions registry
-[023月2026 00:02:06.068] [Worker-Main-7/INFO] [com.cobblemon.mod.common.Cobblemon/]: Registered the cobblemon:pokeballs registry
-[023月2026 00:02:06.071] [Worker-Main-7/INFO] [com.cobblemon.mod.common.Cobblemon/]: Registered the cobblemon:properties_tab_completion registry
-[023月2026 00:02:06.071] [Worker-Main-7/INFO] [com.cobblemon.mod.common.Cobblemon/]: Registered the cobblemon:spawn_detail_presets registry
-[023月2026 00:02:06.087] [Worker-Main-7/INFO] [com.cobblemon.mod.common.Cobblemon/]: Registered the cobblemon:spawn_rules registry
-[023月2026 00:02:06.125] [Worker-Main-7/INFO] [com.cobblemon.mod.common.Cobblemon/]: Registered the cobblemon:mechanics registry
-[023月2026 00:02:06.125] [Worker-Main-7/INFO] [com.cobblemon.mod.common.Cobblemon/]: Registered the cobblemon:bag_items registry
-[023月2026 00:02:06.134] [Worker-Main-7/INFO] [com.cobblemon.mod.common.Cobblemon/]: Registered the cobblemon:dialogues registry
-[023月2026 00:02:06.137] [Worker-Main-7/INFO] [com.cobblemon.mod.common.Cobblemon/]: Registered the cobblemon:natural_materials registry
-[023月2026 00:02:06.141] [Worker-Main-7/INFO] [com.cobblemon.mod.common.Cobblemon/]: Registered the cobblemon:fossils registry
-[023月2026 00:02:06.155] [Worker-Main-7/INFO] [com.cobblemon.mod.common.Cobblemon/]: Registered the cobblemon:spawn_pool_world registry
-[023月2026 00:02:06.171] [Worker-Main-7/INFO] [com.cobblemon.mod.common.Cobblemon/]: Registered the cobblemon:berries registry
-[023月2026 00:02:06.189] [Worker-Main-2/INFO] [com.agodasi.autocobble.AutoCobble/]: AutoCobble initialized
-[023月2026 00:02:06.221] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Initializing Cobblemon client
-[023月2026 00:02:06.250] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Registering Pokémon renderer
-[023月2026 00:02:06.325] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Registering PokéBall renderer
-[023月2026 00:02:06.326] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Registering Boat renderer
-[023月2026 00:02:06.326] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Registering Boat with Chest renderer
-[023月2026 00:02:06.326] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Registering Generic Bedrock Entity renderer
-[023月2026 00:02:06.327] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Registering custom BuiltinItemRenderers
-[023月2026 00:02:07.157] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:item.goat_horn.play
-[023月2026 00:02:07.157] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:entity.goat.screaming.horn_break
-[023月2026 00:02:07.158] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: cobblemon:pokemon.evolving
-[023月2026 00:02:07.195] [Render thread/INFO] [com.mojang.blaze3d.audio.Library/]: OpenAL initialized on device OpenAL Soft on SteelSeries Sonar - Gaming (SteelSeries Sonar Virtual Audio Device)
-[023月2026 00:02:07.197] [Render thread/INFO] [net.minecraft.client.sounds.SoundEngine/SOUNDS]: Sound engine started
-[023月2026 00:02:07.296] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x1024x4 minecraft:textures/atlas/blocks.png-atlas
-[023月2026 00:02:07.305] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
-[023月2026 00:02:07.306] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
-[023月2026 00:02:07.306] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
-[023月2026 00:02:07.306] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
-[023月2026 00:02:07.308] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
-[023月2026 00:02:07.309] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 128x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
-[023月2026 00:02:07.309] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
-[023月2026 00:02:07.309] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
-[023月2026 00:02:07.453] [Render thread/WARN] [net.minecraft.client.renderer.ShaderInstance/]: Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
-[023月2026 00:02:07.485] [Render thread/WARN] [net.minecraft.client.renderer.ShaderInstance/]: Shader cobblemon:particle_add could not find sampler named Sampler2 in the specified shader program.
-[023月2026 00:02:07.486] [Render thread/WARN] [net.minecraft.client.renderer.ShaderInstance/]: Shader cobblemon:particle_cutout could not find sampler named Sampler2 in the specified shader program.
-[023月2026 00:02:07.505] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 2048x2048x0 minecraft:textures/atlas/particles.png-atlas
-[023月2026 00:02:07.509] [Render thread/WARN] [net.minecraft.client.particle.ParticleEngine/]: Missing particle sprites: cobblemon:mushroommize
-[023月2026 00:02:07.509] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
-[023月2026 00:02:07.510] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 128x128x0 minecraft:textures/atlas/mob_effects.png-atlas
-[023月2026 00:02:07.511] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 128x128x0 cobblemon:textures/atlas/berries.png-atlas
-[023月2026 00:02:07.511] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loading assets...
-[023月2026 00:02:07.512] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loading particle effects...
-[023月2026 00:02:07.609] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loaded 531 particle effects
-[023月2026 00:02:07.653] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loading animations...
-[023月2026 00:02:08.423] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loaded 4337 animations from 701 animation groups
-[023月2026 00:02:08.423] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loading Pokémon models...
-[023月2026 00:02:08.521] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loaded 763 Pokémon models.
-[023月2026 00:02:08.971] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loading Poké Ball models...
-[023月2026 00:02:08.972] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loaded 2 Poké Ball models.
-[023月2026 00:02:08.988] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loaded 71 berry models
-[023月2026 00:02:08.988] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loading Fossil Pokémon models...
-[023月2026 00:02:08.989] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loaded 19 Fossil Pokémon models.
-[023月2026 00:02:08.993] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loading Block Entity models...
-[023月2026 00:02:08.993] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loaded 1 Block Entity models.
-[023月2026 00:02:08.995] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loading Generic models...
-[023月2026 00:02:08.995] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loaded 1 Generic models.
-[023月2026 00:02:08.997] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loaded 0 misc models
-[023月2026 00:02:08.997] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loaded assets
-[023月2026 00:02:09.761] [Realms Notification Availability checker #1/INFO] [com.mojang.realmsclient.client.RealmsClient/]: Could not authorize you against Realms server: java.lang.RuntimeException: Failed to parse into SignedJWT: 0
-[023月2026 00:02:37.216] [Render thread/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: Injecting existing registry data into this CLIENT instance
-[023月2026 00:02:38.281] [Worker-Main-9/ERROR] [net.minecraftforge.common.ForgeHooks/]: Couldn't parse element loot_tables:adorn:blocks/cobblemon/apricorn_shelf
+[023月2026 00:23:59.901] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/kuhar/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.3.33_mapped_official_1.20.1/forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/assets/.mcassetsroot' uses unexpected schema
+[023月2026 00:23:59.901] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/kuhar/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.3.33_mapped_official_1.20.1/forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/data/.mcassetsroot' uses unexpected schema
+[023月2026 00:23:59.923] [Render thread/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[023月2026 00:23:59.928] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Setting user: Dev
+[023月2026 00:24:00.029] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Backend library: LWJGL version 3.3.1 build 7
+[023月2026 00:24:00.238] [modloading-worker-0/INFO] [com.agodasi.autocobble.AutoCobble/]: AutoCobble constructor called, dist=CLIENT
+[023月2026 00:24:00.258] [modloading-worker-0/INFO] [com.agodasi.autocobble.AutoCobble/]: AutoCobble client events registered
+[023月2026 00:24:00.267] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.3.33, for MC 1.20.1 with MCP 20230612.114412
+[023月2026 00:24:00.267] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.3.33 Initialized
+[023月2026 00:24:00.531] [modloading-worker-0/INFO] [thedarkcolour.kotlinforforge.test.KotlinForForge/]: Kotlin For Forge Enabled!
+[023月2026 00:24:00.555] [modloading-worker-0/INFO] [com.cobblemon.mod.common.Cobblemon/]: Booting LaxPermissionValidator, permissions will be checked using Minecrafts permission level system, see https://minecraft.fandom.com/wiki/Permission_level
+[023月2026 00:24:00.558] [modloading-worker-0/INFO] [com.cobblemon.mod.common.Cobblemon/]: Launching Cobblemon 1.5.2 
+[023月2026 00:24:00.559] [modloading-worker-0/INFO] [com.cobblemon.mod.common.Cobblemon/]: Booting ForgePermissionApiPermissionValidator, player permissions will be checked using MinecraftForge' PermissionAPI, non player command sources will use Minecraft' permission level system, see https://docs.minecraftforge.net/en/latest/ and https://minecraft.fandom.com/wiki/Permission_level
+[023月2026 00:24:00.766] [modloading-worker-0/INFO] [com.cobblemon.mod.common.Cobblemon/]: Starting the Best Spawner...
+[023月2026 00:24:00.774] [modloading-worker-0/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loaded 5 spawning condition types.
+[023月2026 00:24:00.782] [modloading-worker-0/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loaded 5 spawning context types.
+[023月2026 00:24:00.784] [modloading-worker-0/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loaded 1 spawn detail types.
+[023月2026 00:24:01.968] [Render thread/INFO] [net.minecraftforge.gametest.ForgeGameTestHooks/]: Enabled Gametest Namespaces: []
+[023月2026 00:24:01.978] [Render thread/INFO] [com.agodasi.autocobble.AutoCobble/]: AutoCobble keybinding registered: P key
+[023月2026 00:24:02.107] [Render thread/INFO] [net.minecraft.server.packs.resources.ReloadableResourceManager/]: Reloading ResourceManager: vanilla, mod_resources
+[023月2026 00:24:02.142] [Worker-Main-9/INFO] [com.cobblemon.mod.common.Cobblemon/]: Initializing...
+[023月2026 00:24:02.237] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Starting version check at https://files.minecraftforge.net/net/minecraftforge/forge/promotions_slim.json
+[023月2026 00:24:02.248] [Worker-Main-6/INFO] [net.minecraft.client.gui.font.providers.UnihexProvider/]: Found unifont_all_no_pua-15.0.06.hex, loading
+[023月2026 00:24:02.451] [Worker-Main-8/WARN] [net.minecraft.client.sounds.SoundManager/]: File cobblemon:sounds/pokemon/rattata/rattata_alolan_cry.ogg does not exist, cannot add it to event cobblemon:pokemon.rattata_alolan.cry
+[023月2026 00:24:02.453] [Worker-Main-8/WARN] [net.minecraft.client.sounds.SoundManager/]: File cobblemon:sounds/pokemon/petilil/petilil_hisui_bias_cry.ogg does not exist, cannot add it to event cobblemon:pokemon.petilil_hisui_bias.cry
+[023月2026 00:24:02.936] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Found status: OUTDATED Current: 47.3.33 Target: 47.4.10
+[023月2026 00:24:03.189] [Cobblemon Showdown/INFO] [com.cobblemon.mod.common.Cobblemon/]: Starting showdown service...
+[023月2026 00:24:05.625] [Cobblemon Showdown/INFO] [com.cobblemon.mod.common.Cobblemon/]: Showdown has been started!
+[023月2026 00:24:05.630] [Worker-Main-9/INFO] [com.cobblemon.mod.common.Cobblemon/]: Note: Cobblemon data registries are only loaded once per server instance as Pokémon species are not safe to reload.
+[023月2026 00:24:05.631] [Worker-Main-9/INFO] [com.cobblemon.mod.common.Cobblemon/]: Registered the cobblemon:species_features registry
+[023月2026 00:24:05.634] [Worker-Main-9/INFO] [com.cobblemon.mod.common.Cobblemon/]: Registered the cobblemon:global_species_features registry
+[023月2026 00:24:05.638] [Worker-Main-9/INFO] [com.cobblemon.mod.common.Cobblemon/]: Registered the cobblemon:species_feature_assignments registry
+[023月2026 00:24:05.684] [Worker-Main-9/INFO] [com.cobblemon.mod.common.Cobblemon/]: Registered the cobblemon:action_effects registry
+[023月2026 00:24:05.690] [Worker-Main-9/INFO] [com.cobblemon.mod.common.Cobblemon/]: Registered the cobblemon:moves registry
+[023月2026 00:24:05.695] [Worker-Main-9/INFO] [com.cobblemon.mod.common.Cobblemon/]: Registered the cobblemon:abilities registry
+[023月2026 00:24:05.695] [Worker-Main-9/INFO] [com.cobblemon.mod.common.Cobblemon/]: Registered the cobblemon:species registry
+[023月2026 00:24:05.695] [Worker-Main-9/INFO] [com.cobblemon.mod.common.Cobblemon/]: Registered the cobblemon:species_additions registry
+[023月2026 00:24:05.695] [Worker-Main-9/INFO] [com.cobblemon.mod.common.Cobblemon/]: Registered the cobblemon:pokeballs registry
+[023月2026 00:24:05.698] [Worker-Main-9/INFO] [com.cobblemon.mod.common.Cobblemon/]: Registered the cobblemon:properties_tab_completion registry
+[023月2026 00:24:05.698] [Worker-Main-9/INFO] [com.cobblemon.mod.common.Cobblemon/]: Registered the cobblemon:spawn_detail_presets registry
+[023月2026 00:24:05.714] [Worker-Main-9/INFO] [com.cobblemon.mod.common.Cobblemon/]: Registered the cobblemon:spawn_rules registry
+[023月2026 00:24:05.744] [Worker-Main-9/INFO] [com.cobblemon.mod.common.Cobblemon/]: Registered the cobblemon:mechanics registry
+[023月2026 00:24:05.744] [Worker-Main-9/INFO] [com.cobblemon.mod.common.Cobblemon/]: Registered the cobblemon:bag_items registry
+[023月2026 00:24:05.754] [Worker-Main-9/INFO] [com.cobblemon.mod.common.Cobblemon/]: Registered the cobblemon:dialogues registry
+[023月2026 00:24:05.758] [Worker-Main-9/INFO] [com.cobblemon.mod.common.Cobblemon/]: Registered the cobblemon:natural_materials registry
+[023月2026 00:24:05.761] [Worker-Main-9/INFO] [com.cobblemon.mod.common.Cobblemon/]: Registered the cobblemon:fossils registry
+[023月2026 00:24:05.768] [Worker-Main-9/INFO] [com.cobblemon.mod.common.Cobblemon/]: Registered the cobblemon:spawn_pool_world registry
+[023月2026 00:24:05.774] [Worker-Main-9/INFO] [com.cobblemon.mod.common.Cobblemon/]: Registered the cobblemon:berries registry
+[023月2026 00:24:05.800] [Worker-Main-5/INFO] [com.agodasi.autocobble.AutoCobble/]: AutoCobble initialized
+[023月2026 00:24:05.830] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Initializing Cobblemon client
+[023月2026 00:24:05.858] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Registering Pokémon renderer
+[023月2026 00:24:05.921] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Registering PokéBall renderer
+[023月2026 00:24:05.921] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Registering Boat renderer
+[023月2026 00:24:05.922] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Registering Boat with Chest renderer
+[023月2026 00:24:05.922] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Registering Generic Bedrock Entity renderer
+[023月2026 00:24:05.922] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Registering custom BuiltinItemRenderers
+[023月2026 00:24:06.742] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:item.goat_horn.play
+[023月2026 00:24:06.742] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:entity.goat.screaming.horn_break
+[023月2026 00:24:06.742] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: cobblemon:pokemon.evolving
+[023月2026 00:24:06.785] [Render thread/INFO] [com.mojang.blaze3d.audio.Library/]: OpenAL initialized on device OpenAL Soft on SteelSeries Sonar - Gaming (SteelSeries Sonar Virtual Audio Device)
+[023月2026 00:24:06.786] [Render thread/INFO] [net.minecraft.client.sounds.SoundEngine/SOUNDS]: Sound engine started
+[023月2026 00:24:06.926] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x1024x4 minecraft:textures/atlas/blocks.png-atlas
+[023月2026 00:24:06.934] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
+[023月2026 00:24:06.935] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
+[023月2026 00:24:06.936] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
+[023月2026 00:24:06.936] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
+[023月2026 00:24:06.938] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
+[023月2026 00:24:06.939] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 128x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
+[023月2026 00:24:06.939] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
+[023月2026 00:24:06.939] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
+[023月2026 00:24:07.118] [Render thread/WARN] [net.minecraft.client.renderer.ShaderInstance/]: Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
+[023月2026 00:24:07.152] [Render thread/WARN] [net.minecraft.client.renderer.ShaderInstance/]: Shader cobblemon:particle_add could not find sampler named Sampler2 in the specified shader program.
+[023月2026 00:24:07.152] [Render thread/WARN] [net.minecraft.client.renderer.ShaderInstance/]: Shader cobblemon:particle_cutout could not find sampler named Sampler2 in the specified shader program.
+[023月2026 00:24:07.166] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 2048x2048x0 minecraft:textures/atlas/particles.png-atlas
+[023月2026 00:24:07.170] [Render thread/WARN] [net.minecraft.client.particle.ParticleEngine/]: Missing particle sprites: cobblemon:mushroommize
+[023月2026 00:24:07.170] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
+[023月2026 00:24:07.171] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 128x128x0 minecraft:textures/atlas/mob_effects.png-atlas
+[023月2026 00:24:07.173] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 128x128x0 cobblemon:textures/atlas/berries.png-atlas
+[023月2026 00:24:07.173] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loading assets...
+[023月2026 00:24:07.174] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loading particle effects...
+[023月2026 00:24:07.287] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loaded 531 particle effects
+[023月2026 00:24:07.329] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loading animations...
+[023月2026 00:24:08.243] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loaded 4337 animations from 701 animation groups
+[023月2026 00:24:08.243] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loading Pokémon models...
+[023月2026 00:24:08.465] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loaded 763 Pokémon models.
+[023月2026 00:24:08.931] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loading Poké Ball models...
+[023月2026 00:24:08.932] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loaded 2 Poké Ball models.
+[023月2026 00:24:08.947] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loaded 71 berry models
+[023月2026 00:24:08.947] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loading Fossil Pokémon models...
+[023月2026 00:24:08.949] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loaded 19 Fossil Pokémon models.
+[023月2026 00:24:08.954] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loading Block Entity models...
+[023月2026 00:24:08.954] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loaded 1 Block Entity models.
+[023月2026 00:24:08.957] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loading Generic models...
+[023月2026 00:24:08.957] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loaded 1 Generic models.
+[023月2026 00:24:08.959] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loaded 0 misc models
+[023月2026 00:24:08.959] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loaded assets
+[023月2026 00:24:09.746] [Realms Notification Availability checker #1/INFO] [com.mojang.realmsclient.client.RealmsClient/]: Could not authorize you against Realms server: java.lang.RuntimeException: Failed to parse into SignedJWT: 0
+[023月2026 00:25:55.690] [Render thread/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: Injecting existing registry data into this CLIENT instance
+[023月2026 00:25:56.628] [Worker-Main-11/ERROR] [net.minecraftforge.common.ForgeHooks/]: Couldn't parse element loot_tables:adorn:blocks/cobblemon/apricorn_shelf
 com.google.gson.JsonSyntaxException: Expected name to be an item, was unknown string 'adorn:cobblemon/apricorn_shelf'
 	at net.minecraft.util.GsonHelper.lambda$convertToItem$0(GsonHelper.java:116) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
 	at java.util.Optional.orElseThrow(Optional.java:403) ~[?:?]
@@ -194,7 +194,7 @@ com.google.gson.JsonSyntaxException: Expected name to be an item, was unknown st
 	at net.minecraftforge.common.ForgeHooks.lambda$getLootTableDeserializer$3(ForgeHooks.java:850) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
 	at net.minecraft.world.level.storage.loot.LootDataType.deserialize(LootDataType.java:45) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
 	at net.minecraft.world.level.storage.loot.LootDataManager.lambda$scheduleElementParse$4(LootDataManager.java:56) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.mda46516$lambda$cobblemon$supportICondition$0$0(LootDataManager.java:544) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
+	at net.minecraft.world.level.storage.loot.LootDataManager.mddab250$lambda$cobblemon$supportICondition$0$0(LootDataManager.java:544) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
 	at java.util.HashMap.forEach(HashMap.java:1421) ~[?:?]
 	at net.minecraft.world.level.storage.loot.LootDataManager.redirect$zza000$cobblemon$supportICondition(LootDataManager.java:534) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
 	at net.minecraft.world.level.storage.loot.LootDataManager.lambda$scheduleElementParse$5(LootDataManager.java:55) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
@@ -205,7 +205,7 @@ com.google.gson.JsonSyntaxException: Expected name to be an item, was unknown st
 	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) ~[?:?]
 	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) ~[?:?]
 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) ~[?:?]
-[023月2026 00:02:38.290] [Worker-Main-9/ERROR] [net.minecraftforge.common.ForgeHooks/]: Couldn't parse element loot_tables:adorn:blocks/cobblemon/apricorn_kitchen_cupboard
+[023月2026 00:25:56.636] [Worker-Main-11/ERROR] [net.minecraftforge.common.ForgeHooks/]: Couldn't parse element loot_tables:adorn:blocks/cobblemon/apricorn_kitchen_cupboard
 com.google.gson.JsonSyntaxException: Expected name to be an item, was unknown string 'adorn:cobblemon/apricorn_kitchen_cupboard'
 	at net.minecraft.util.GsonHelper.lambda$convertToItem$0(GsonHelper.java:116) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
 	at java.util.Optional.orElseThrow(Optional.java:403) ~[?:?]
@@ -248,7 +248,7 @@ com.google.gson.JsonSyntaxException: Expected name to be an item, was unknown st
 	at net.minecraftforge.common.ForgeHooks.lambda$getLootTableDeserializer$3(ForgeHooks.java:850) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
 	at net.minecraft.world.level.storage.loot.LootDataType.deserialize(LootDataType.java:45) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
 	at net.minecraft.world.level.storage.loot.LootDataManager.lambda$scheduleElementParse$4(LootDataManager.java:56) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.mda46516$lambda$cobblemon$supportICondition$0$0(LootDataManager.java:544) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
+	at net.minecraft.world.level.storage.loot.LootDataManager.mddab250$lambda$cobblemon$supportICondition$0$0(LootDataManager.java:544) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
 	at java.util.HashMap.forEach(HashMap.java:1421) ~[?:?]
 	at net.minecraft.world.level.storage.loot.LootDataManager.redirect$zza000$cobblemon$supportICondition(LootDataManager.java:534) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
 	at net.minecraft.world.level.storage.loot.LootDataManager.lambda$scheduleElementParse$5(LootDataManager.java:55) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
@@ -259,7 +259,7 @@ com.google.gson.JsonSyntaxException: Expected name to be an item, was unknown st
 	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) ~[?:?]
 	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) ~[?:?]
 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) ~[?:?]
-[023月2026 00:02:38.296] [Worker-Main-9/ERROR] [net.minecraftforge.common.ForgeHooks/]: Couldn't parse element loot_tables:adorn:blocks/cobblemon/apricorn_drawer
+[023月2026 00:25:56.640] [Worker-Main-11/ERROR] [net.minecraftforge.common.ForgeHooks/]: Couldn't parse element loot_tables:adorn:blocks/cobblemon/apricorn_drawer
 com.google.gson.JsonSyntaxException: Expected name to be an item, was unknown string 'adorn:cobblemon/apricorn_drawer'
 	at net.minecraft.util.GsonHelper.lambda$convertToItem$0(GsonHelper.java:116) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
 	at java.util.Optional.orElseThrow(Optional.java:403) ~[?:?]
@@ -302,7 +302,7 @@ com.google.gson.JsonSyntaxException: Expected name to be an item, was unknown st
 	at net.minecraftforge.common.ForgeHooks.lambda$getLootTableDeserializer$3(ForgeHooks.java:850) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
 	at net.minecraft.world.level.storage.loot.LootDataType.deserialize(LootDataType.java:45) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
 	at net.minecraft.world.level.storage.loot.LootDataManager.lambda$scheduleElementParse$4(LootDataManager.java:56) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.mda46516$lambda$cobblemon$supportICondition$0$0(LootDataManager.java:544) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
+	at net.minecraft.world.level.storage.loot.LootDataManager.mddab250$lambda$cobblemon$supportICondition$0$0(LootDataManager.java:544) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
 	at java.util.HashMap.forEach(HashMap.java:1421) ~[?:?]
 	at net.minecraft.world.level.storage.loot.LootDataManager.redirect$zza000$cobblemon$supportICondition(LootDataManager.java:534) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
 	at net.minecraft.world.level.storage.loot.LootDataManager.lambda$scheduleElementParse$5(LootDataManager.java:55) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
@@ -313,7 +313,7 @@ com.google.gson.JsonSyntaxException: Expected name to be an item, was unknown st
 	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) ~[?:?]
 	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) ~[?:?]
 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) ~[?:?]
-[023月2026 00:02:38.299] [Worker-Main-9/ERROR] [net.minecraftforge.common.ForgeHooks/]: Couldn't parse element loot_tables:adorn:blocks/cobblemon/apricorn_kitchen_counter
+[023月2026 00:25:56.642] [Worker-Main-11/ERROR] [net.minecraftforge.common.ForgeHooks/]: Couldn't parse element loot_tables:adorn:blocks/cobblemon/apricorn_kitchen_counter
 com.google.gson.JsonSyntaxException: Expected name to be an item, was unknown string 'adorn:cobblemon/apricorn_kitchen_counter'
 	at net.minecraft.util.GsonHelper.lambda$convertToItem$0(GsonHelper.java:116) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
 	at java.util.Optional.orElseThrow(Optional.java:403) ~[?:?]
@@ -356,7 +356,7 @@ com.google.gson.JsonSyntaxException: Expected name to be an item, was unknown st
 	at net.minecraftforge.common.ForgeHooks.lambda$getLootTableDeserializer$3(ForgeHooks.java:850) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
 	at net.minecraft.world.level.storage.loot.LootDataType.deserialize(LootDataType.java:45) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
 	at net.minecraft.world.level.storage.loot.LootDataManager.lambda$scheduleElementParse$4(LootDataManager.java:56) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.mda46516$lambda$cobblemon$supportICondition$0$0(LootDataManager.java:544) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
+	at net.minecraft.world.level.storage.loot.LootDataManager.mddab250$lambda$cobblemon$supportICondition$0$0(LootDataManager.java:544) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
 	at java.util.HashMap.forEach(HashMap.java:1421) ~[?:?]
 	at net.minecraft.world.level.storage.loot.LootDataManager.redirect$zza000$cobblemon$supportICondition(LootDataManager.java:534) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
 	at net.minecraft.world.level.storage.loot.LootDataManager.lambda$scheduleElementParse$5(LootDataManager.java:55) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
@@ -367,7 +367,7 @@ com.google.gson.JsonSyntaxException: Expected name to be an item, was unknown st
 	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) ~[?:?]
 	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) ~[?:?]
 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) ~[?:?]
-[023月2026 00:02:38.301] [Worker-Main-9/ERROR] [net.minecraftforge.common.ForgeHooks/]: Couldn't parse element loot_tables:adorn:blocks/cobblemon/apricorn_chair
+[023月2026 00:25:56.644] [Worker-Main-11/ERROR] [net.minecraftforge.common.ForgeHooks/]: Couldn't parse element loot_tables:adorn:blocks/cobblemon/apricorn_chair
 java.lang.IllegalArgumentException: Can't find block adorn:cobblemon/apricorn_chair
 	at net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition$Serializer.lambda$deserialize$0(LootItemBlockStatePropertyCondition.java:72) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
 	at java.util.Optional.orElseThrow(Optional.java:403) ~[?:?]
@@ -416,7 +416,7 @@ java.lang.IllegalArgumentException: Can't find block adorn:cobblemon/apricorn_ch
 	at net.minecraftforge.common.ForgeHooks.lambda$getLootTableDeserializer$3(ForgeHooks.java:850) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
 	at net.minecraft.world.level.storage.loot.LootDataType.deserialize(LootDataType.java:45) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
 	at net.minecraft.world.level.storage.loot.LootDataManager.lambda$scheduleElementParse$4(LootDataManager.java:56) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.mda46516$lambda$cobblemon$supportICondition$0$0(LootDataManager.java:544) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
+	at net.minecraft.world.level.storage.loot.LootDataManager.mddab250$lambda$cobblemon$supportICondition$0$0(LootDataManager.java:544) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
 	at java.util.HashMap.forEach(HashMap.java:1421) ~[?:?]
 	at net.minecraft.world.level.storage.loot.LootDataManager.redirect$zza000$cobblemon$supportICondition(LootDataManager.java:534) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
 	at net.minecraft.world.level.storage.loot.LootDataManager.lambda$scheduleElementParse$5(LootDataManager.java:55) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
@@ -427,7 +427,7 @@ java.lang.IllegalArgumentException: Can't find block adorn:cobblemon/apricorn_ch
 	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) ~[?:?]
 	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) ~[?:?]
 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) ~[?:?]
-[023月2026 00:02:38.309] [Worker-Main-9/ERROR] [net.minecraftforge.common.ForgeHooks/]: Couldn't parse element loot_tables:adorn:blocks/cobblemon/apricorn_kitchen_sink
+[023月2026 00:25:56.660] [Worker-Main-11/ERROR] [net.minecraftforge.common.ForgeHooks/]: Couldn't parse element loot_tables:adorn:blocks/cobblemon/apricorn_kitchen_sink
 com.google.gson.JsonSyntaxException: Expected name to be an item, was unknown string 'adorn:cobblemon/apricorn_kitchen_sink'
 	at net.minecraft.util.GsonHelper.lambda$convertToItem$0(GsonHelper.java:116) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
 	at java.util.Optional.orElseThrow(Optional.java:403) ~[?:?]
@@ -470,7 +470,7 @@ com.google.gson.JsonSyntaxException: Expected name to be an item, was unknown st
 	at net.minecraftforge.common.ForgeHooks.lambda$getLootTableDeserializer$3(ForgeHooks.java:850) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
 	at net.minecraft.world.level.storage.loot.LootDataType.deserialize(LootDataType.java:45) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
 	at net.minecraft.world.level.storage.loot.LootDataManager.lambda$scheduleElementParse$4(LootDataManager.java:56) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.mda46516$lambda$cobblemon$supportICondition$0$0(LootDataManager.java:544) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
+	at net.minecraft.world.level.storage.loot.LootDataManager.mddab250$lambda$cobblemon$supportICondition$0$0(LootDataManager.java:544) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
 	at java.util.HashMap.forEach(HashMap.java:1421) ~[?:?]
 	at net.minecraft.world.level.storage.loot.LootDataManager.redirect$zza000$cobblemon$supportICondition(LootDataManager.java:534) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
 	at net.minecraft.world.level.storage.loot.LootDataManager.lambda$scheduleElementParse$5(LootDataManager.java:55) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
@@ -481,7 +481,7 @@ com.google.gson.JsonSyntaxException: Expected name to be an item, was unknown st
 	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) ~[?:?]
 	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) ~[?:?]
 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) ~[?:?]
-[023月2026 00:02:38.321] [Worker-Main-9/ERROR] [net.minecraftforge.common.ForgeHooks/]: Couldn't parse element loot_tables:adorn:blocks/cobblemon/apricorn_coffee_table
+[023月2026 00:25:56.671] [Worker-Main-11/ERROR] [net.minecraftforge.common.ForgeHooks/]: Couldn't parse element loot_tables:adorn:blocks/cobblemon/apricorn_coffee_table
 com.google.gson.JsonSyntaxException: Expected name to be an item, was unknown string 'adorn:cobblemon/apricorn_coffee_table'
 	at net.minecraft.util.GsonHelper.lambda$convertToItem$0(GsonHelper.java:116) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
 	at java.util.Optional.orElseThrow(Optional.java:403) ~[?:?]
@@ -524,7 +524,7 @@ com.google.gson.JsonSyntaxException: Expected name to be an item, was unknown st
 	at net.minecraftforge.common.ForgeHooks.lambda$getLootTableDeserializer$3(ForgeHooks.java:850) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
 	at net.minecraft.world.level.storage.loot.LootDataType.deserialize(LootDataType.java:45) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
 	at net.minecraft.world.level.storage.loot.LootDataManager.lambda$scheduleElementParse$4(LootDataManager.java:56) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.mda46516$lambda$cobblemon$supportICondition$0$0(LootDataManager.java:544) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
+	at net.minecraft.world.level.storage.loot.LootDataManager.mddab250$lambda$cobblemon$supportICondition$0$0(LootDataManager.java:544) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
 	at java.util.HashMap.forEach(HashMap.java:1421) ~[?:?]
 	at net.minecraft.world.level.storage.loot.LootDataManager.redirect$zza000$cobblemon$supportICondition(LootDataManager.java:534) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
 	at net.minecraft.world.level.storage.loot.LootDataManager.lambda$scheduleElementParse$5(LootDataManager.java:55) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
@@ -535,7 +535,7 @@ com.google.gson.JsonSyntaxException: Expected name to be an item, was unknown st
 	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) ~[?:?]
 	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) ~[?:?]
 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) ~[?:?]
-[023月2026 00:02:38.326] [Worker-Main-9/ERROR] [net.minecraftforge.common.ForgeHooks/]: Couldn't parse element loot_tables:adorn:blocks/cobblemon/apricorn_step
+[023月2026 00:25:56.675] [Worker-Main-11/ERROR] [net.minecraftforge.common.ForgeHooks/]: Couldn't parse element loot_tables:adorn:blocks/cobblemon/apricorn_step
 com.google.gson.JsonSyntaxException: Expected name to be an item, was unknown string 'adorn:cobblemon/apricorn_step'
 	at net.minecraft.util.GsonHelper.lambda$convertToItem$0(GsonHelper.java:116) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
 	at java.util.Optional.orElseThrow(Optional.java:403) ~[?:?]
@@ -578,7 +578,7 @@ com.google.gson.JsonSyntaxException: Expected name to be an item, was unknown st
 	at net.minecraftforge.common.ForgeHooks.lambda$getLootTableDeserializer$3(ForgeHooks.java:850) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
 	at net.minecraft.world.level.storage.loot.LootDataType.deserialize(LootDataType.java:45) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
 	at net.minecraft.world.level.storage.loot.LootDataManager.lambda$scheduleElementParse$4(LootDataManager.java:56) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.mda46516$lambda$cobblemon$supportICondition$0$0(LootDataManager.java:544) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
+	at net.minecraft.world.level.storage.loot.LootDataManager.mddab250$lambda$cobblemon$supportICondition$0$0(LootDataManager.java:544) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
 	at java.util.HashMap.forEach(HashMap.java:1421) ~[?:?]
 	at net.minecraft.world.level.storage.loot.LootDataManager.redirect$zza000$cobblemon$supportICondition(LootDataManager.java:534) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
 	at net.minecraft.world.level.storage.loot.LootDataManager.lambda$scheduleElementParse$5(LootDataManager.java:55) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
@@ -589,7 +589,7 @@ com.google.gson.JsonSyntaxException: Expected name to be an item, was unknown st
 	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) ~[?:?]
 	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) ~[?:?]
 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) ~[?:?]
-[023月2026 00:02:38.330] [Worker-Main-9/ERROR] [net.minecraftforge.common.ForgeHooks/]: Couldn't parse element loot_tables:adorn:blocks/cobblemon/apricorn_platform
+[023月2026 00:25:56.680] [Worker-Main-11/ERROR] [net.minecraftforge.common.ForgeHooks/]: Couldn't parse element loot_tables:adorn:blocks/cobblemon/apricorn_platform
 com.google.gson.JsonSyntaxException: Expected name to be an item, was unknown string 'adorn:cobblemon/apricorn_platform'
 	at net.minecraft.util.GsonHelper.lambda$convertToItem$0(GsonHelper.java:116) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
 	at java.util.Optional.orElseThrow(Optional.java:403) ~[?:?]
@@ -632,7 +632,7 @@ com.google.gson.JsonSyntaxException: Expected name to be an item, was unknown st
 	at net.minecraftforge.common.ForgeHooks.lambda$getLootTableDeserializer$3(ForgeHooks.java:850) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
 	at net.minecraft.world.level.storage.loot.LootDataType.deserialize(LootDataType.java:45) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
 	at net.minecraft.world.level.storage.loot.LootDataManager.lambda$scheduleElementParse$4(LootDataManager.java:56) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.mda46516$lambda$cobblemon$supportICondition$0$0(LootDataManager.java:544) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
+	at net.minecraft.world.level.storage.loot.LootDataManager.mddab250$lambda$cobblemon$supportICondition$0$0(LootDataManager.java:544) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
 	at java.util.HashMap.forEach(HashMap.java:1421) ~[?:?]
 	at net.minecraft.world.level.storage.loot.LootDataManager.redirect$zza000$cobblemon$supportICondition(LootDataManager.java:534) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
 	at net.minecraft.world.level.storage.loot.LootDataManager.lambda$scheduleElementParse$5(LootDataManager.java:55) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
@@ -643,7 +643,7 @@ com.google.gson.JsonSyntaxException: Expected name to be an item, was unknown st
 	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) ~[?:?]
 	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) ~[?:?]
 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) ~[?:?]
-[023月2026 00:02:38.331] [Worker-Main-9/ERROR] [net.minecraftforge.common.ForgeHooks/]: Couldn't parse element loot_tables:adorn:blocks/cobblemon/apricorn_bench
+[023月2026 00:25:56.681] [Worker-Main-11/ERROR] [net.minecraftforge.common.ForgeHooks/]: Couldn't parse element loot_tables:adorn:blocks/cobblemon/apricorn_bench
 com.google.gson.JsonSyntaxException: Expected name to be an item, was unknown string 'adorn:cobblemon/apricorn_bench'
 	at net.minecraft.util.GsonHelper.lambda$convertToItem$0(GsonHelper.java:116) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
 	at java.util.Optional.orElseThrow(Optional.java:403) ~[?:?]
@@ -686,7 +686,7 @@ com.google.gson.JsonSyntaxException: Expected name to be an item, was unknown st
 	at net.minecraftforge.common.ForgeHooks.lambda$getLootTableDeserializer$3(ForgeHooks.java:850) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
 	at net.minecraft.world.level.storage.loot.LootDataType.deserialize(LootDataType.java:45) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
 	at net.minecraft.world.level.storage.loot.LootDataManager.lambda$scheduleElementParse$4(LootDataManager.java:56) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.mda46516$lambda$cobblemon$supportICondition$0$0(LootDataManager.java:544) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
+	at net.minecraft.world.level.storage.loot.LootDataManager.mddab250$lambda$cobblemon$supportICondition$0$0(LootDataManager.java:544) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
 	at java.util.HashMap.forEach(HashMap.java:1421) ~[?:?]
 	at net.minecraft.world.level.storage.loot.LootDataManager.redirect$zza000$cobblemon$supportICondition(LootDataManager.java:534) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
 	at net.minecraft.world.level.storage.loot.LootDataManager.lambda$scheduleElementParse$5(LootDataManager.java:55) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
@@ -697,7 +697,7 @@ com.google.gson.JsonSyntaxException: Expected name to be an item, was unknown st
 	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) ~[?:?]
 	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) ~[?:?]
 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) ~[?:?]
-[023月2026 00:02:38.333] [Worker-Main-9/ERROR] [net.minecraftforge.common.ForgeHooks/]: Couldn't parse element loot_tables:adorn:blocks/cobblemon/apricorn_table
+[023月2026 00:25:56.684] [Worker-Main-11/ERROR] [net.minecraftforge.common.ForgeHooks/]: Couldn't parse element loot_tables:adorn:blocks/cobblemon/apricorn_table
 com.google.gson.JsonSyntaxException: Expected name to be an item, was unknown string 'adorn:cobblemon/apricorn_table'
 	at net.minecraft.util.GsonHelper.lambda$convertToItem$0(GsonHelper.java:116) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
 	at java.util.Optional.orElseThrow(Optional.java:403) ~[?:?]
@@ -740,7 +740,7 @@ com.google.gson.JsonSyntaxException: Expected name to be an item, was unknown st
 	at net.minecraftforge.common.ForgeHooks.lambda$getLootTableDeserializer$3(ForgeHooks.java:850) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
 	at net.minecraft.world.level.storage.loot.LootDataType.deserialize(LootDataType.java:45) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
 	at net.minecraft.world.level.storage.loot.LootDataManager.lambda$scheduleElementParse$4(LootDataManager.java:56) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.mda46516$lambda$cobblemon$supportICondition$0$0(LootDataManager.java:544) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
+	at net.minecraft.world.level.storage.loot.LootDataManager.mddab250$lambda$cobblemon$supportICondition$0$0(LootDataManager.java:544) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
 	at java.util.HashMap.forEach(HashMap.java:1421) ~[?:?]
 	at net.minecraft.world.level.storage.loot.LootDataManager.redirect$zza000$cobblemon$supportICondition(LootDataManager.java:534) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
 	at net.minecraft.world.level.storage.loot.LootDataManager.lambda$scheduleElementParse$5(LootDataManager.java:55) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
@@ -751,7 +751,7 @@ com.google.gson.JsonSyntaxException: Expected name to be an item, was unknown st
 	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) ~[?:?]
 	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) ~[?:?]
 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) ~[?:?]
-[023月2026 00:02:38.337] [Worker-Main-9/ERROR] [net.minecraftforge.common.ForgeHooks/]: Couldn't parse element loot_tables:adorn:blocks/cobblemon/apricorn_post
+[023月2026 00:25:56.687] [Worker-Main-11/ERROR] [net.minecraftforge.common.ForgeHooks/]: Couldn't parse element loot_tables:adorn:blocks/cobblemon/apricorn_post
 com.google.gson.JsonSyntaxException: Expected name to be an item, was unknown string 'adorn:cobblemon/apricorn_post'
 	at net.minecraft.util.GsonHelper.lambda$convertToItem$0(GsonHelper.java:116) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
 	at java.util.Optional.orElseThrow(Optional.java:403) ~[?:?]
@@ -794,7 +794,7 @@ com.google.gson.JsonSyntaxException: Expected name to be an item, was unknown st
 	at net.minecraftforge.common.ForgeHooks.lambda$getLootTableDeserializer$3(ForgeHooks.java:850) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
 	at net.minecraft.world.level.storage.loot.LootDataType.deserialize(LootDataType.java:45) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
 	at net.minecraft.world.level.storage.loot.LootDataManager.lambda$scheduleElementParse$4(LootDataManager.java:56) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.mda46516$lambda$cobblemon$supportICondition$0$0(LootDataManager.java:544) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
+	at net.minecraft.world.level.storage.loot.LootDataManager.mddab250$lambda$cobblemon$supportICondition$0$0(LootDataManager.java:544) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
 	at java.util.HashMap.forEach(HashMap.java:1421) ~[?:?]
 	at net.minecraft.world.level.storage.loot.LootDataManager.redirect$zza000$cobblemon$supportICondition(LootDataManager.java:534) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
 	at net.minecraft.world.level.storage.loot.LootDataManager.lambda$scheduleElementParse$5(LootDataManager.java:55) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
@@ -805,785 +805,82 @@ com.google.gson.JsonSyntaxException: Expected name to be an item, was unknown st
 	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) ~[?:?]
 	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) ~[?:?]
 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) ~[?:?]
-[023月2026 00:02:38.408] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Loaded 7 recipes
-[023月2026 00:02:38.503] [Render thread/INFO] [net.minecraft.advancements.AdvancementList/]: Loaded 1592 advancements
-[023月2026 00:02:40.214] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loaded 936 moves
-[023月2026 00:02:40.252] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loaded 314 abilities
-[023月2026 00:02:40.407] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Finished additions
-[023月2026 00:02:41.115] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Imported 244 held item IDs from showdown
-[023月2026 00:02:41.115] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loaded 1025 Pokémon species
-[023月2026 00:02:41.129] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loaded 43 spawn detail presets.
-[023月2026 00:02:41.150] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Starting dummy Showdown battle to force it to pre-load data.
-[023月2026 00:02:41.217] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loaded 15 fossils
-[023月2026 00:02:41.504] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loaded 69 berries
-[023月2026 00:02:41.821] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Starting integrated minecraft server version 1.20.1
-[023月2026 00:02:41.822] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Generating keypair
-[023月2026 00:02:42.485] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Preparing start region for dimension minecraft:overworld
-[023月2026 00:02:44.090] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[023月2026 00:02:44.163] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[023月2026 00:02:44.249] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[023月2026 00:02:44.249] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[023月2026 00:02:44.518] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 5%
-[023月2026 00:02:44.965] [Server thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Starting Forge permission node registry
-[023月2026 00:02:44.966] [Server thread/INFO] [net.minecraftforge.server.permission.PermissionAPI/]: Successfully initialized permission handler forge:default_handler
-[023月2026 00:02:44.970] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Time elapsed: 2467 ms
-[023月2026 00:02:45.063] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing view distance to 12, from 10
-[023月2026 00:02:45.064] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing simulation distance to 12, from 0
-[023月2026 00:02:45.149] [Render thread/WARN] [io.netty.util.internal.SystemPropertyUtil/]: Unable to parse the boolean system property 'java.net.preferIPv6Addresses':system - using the default value: false
-[023月2026 00:02:45.951] [Netty Local Client IO #0/INFO] [net.minecraftforge.network.NetworkHooks/]: Connected to a modded server.
-[023月2026 00:02:46.024] [Server thread/INFO] [net.minecraft.server.players.PlayerList/]: Dev[local:E:f2d7443d] logged in with entity id 180 at (-3.814404585804583, 101.0, 61.26192564486923)
-[023月2026 00:02:46.124] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev joined the game
-[023月2026 00:02:46.659] [Render thread/INFO] [net.minecraft.advancements.AdvancementList/]: Loaded 2 advancements
-[023月2026 00:02:47.167] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
-[023月2026 00:02:47.185] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[023月2026 00:02:47.863] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[023月2026 00:02:47.864] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[023月2026 00:02:49.739] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] [AutoCobble] 有効
-[023月2026 00:02:49.751] [Render thread/INFO] [com.agodasi.autocobble.ClientEvents/]: [AutoCobble] toggled: ON
-[023月2026 00:03:24.817] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
-[023月2026 00:03:24.824] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[023月2026 00:03:24.828] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[023月2026 00:03:24.829] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[023月2026 00:03:25.722] [Server thread/INFO] [net.minecraft.server.network.ServerGamePacketListenerImpl/]: Dev lost connection: Disconnected
-[023月2026 00:03:25.723] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev left the game
-[023月2026 00:03:25.738] [Server thread/INFO] [net.minecraft.server.network.ServerGamePacketListenerImpl/]: Stopping singleplayer server as player logged out
-[023月2026 00:03:25.767] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Stopping server
-[023月2026 00:03:25.767] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving players
-[023月2026 00:03:25.767] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving worlds
-[023月2026 00:03:26.064] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[023月2026 00:03:26.545] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[023月2026 00:03:26.545] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[023月2026 00:03:26.559] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (New World (1)): All chunks are saved
-[023月2026 00:03:26.559] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[023月2026 00:03:26.559] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[023月2026 00:03:26.559] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage: All dimensions are saved
-[023月2026 00:03:28.944] [Worker-Main-15/ERROR] [net.minecraftforge.common.ForgeHooks/]: Couldn't parse element loot_tables:adorn:blocks/cobblemon/apricorn_shelf
-com.google.gson.JsonSyntaxException: Expected name to be an item, was unknown string 'adorn:cobblemon/apricorn_shelf'
-	at net.minecraft.util.GsonHelper.lambda$convertToItem$0(GsonHelper.java:116) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at java.util.Optional.orElseThrow(Optional.java:403) ~[?:?]
-	at net.minecraft.util.GsonHelper.convertToItem(GsonHelper.java:115) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.util.GsonHelper.getAsItem(GsonHelper.java:125) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootItem$Serializer.deserialize(LootItem.java:51) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootItem$Serializer.deserialize(LootItem.java:39) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer$Serializer.deserializeCustom(LootPoolSingletonContainer.java:138) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer$Serializer.deserializeCustom(LootPoolSingletonContainer.java:118) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer$Serializer.deserialize(LootPoolEntryContainer.java:83) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer$Serializer.deserialize(LootPoolEntryContainer.java:72) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.GsonAdapterFactory$JsonAdapter.deserialize(GsonAdapterFactory.java:96) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.read(TypeAdapterRuntimeTypeWrapper.java:40) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.ArrayTypeAdapter.read(ArrayTypeAdapter.java:72) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1214) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1319) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1290) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl.deserialize(TreeTypeAdapter.java:179) ~[gson-2.10.jar%23130!/:?]
-	at net.minecraft.util.GsonHelper.convertToObject(GsonHelper.java:383) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.util.GsonHelper.getAsObject(GsonHelper.java:391) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootPool$Serializer.deserialize(LootPool.java:192) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootPool$Serializer.deserialize(LootPool.java:189) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.read(TypeAdapterRuntimeTypeWrapper.java:40) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.ArrayTypeAdapter.read(ArrayTypeAdapter.java:72) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1214) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1319) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1290) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl.deserialize(TreeTypeAdapter.java:179) ~[gson-2.10.jar%23130!/:?]
-	at net.minecraft.util.GsonHelper.convertToObject(GsonHelper.java:383) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.util.GsonHelper.getAsObject(GsonHelper.java:400) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootTable$Serializer.deserialize(LootTable.java:294) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootTable$Serializer.deserialize(LootTable.java:291) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1214) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1319) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1261) ~[gson-2.10.jar%23130!/:?]
-	at net.minecraftforge.common.ForgeHooks.loadLootTable(ForgeHooks.java:873) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
-	at net.minecraftforge.common.ForgeHooks.lambda$getLootTableDeserializer$3(ForgeHooks.java:850) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataType.deserialize(LootDataType.java:45) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.lambda$scheduleElementParse$4(LootDataManager.java:56) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.mda46516$lambda$cobblemon$supportICondition$0$0(LootDataManager.java:544) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at java.util.HashMap.forEach(HashMap.java:1421) ~[?:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.redirect$zza000$cobblemon$supportICondition(LootDataManager.java:534) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.lambda$scheduleElementParse$5(LootDataManager.java:55) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804) ~[?:?]
-	at java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796) ~[?:?]
-	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373) ~[?:?]
-	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182) ~[?:?]
-	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) ~[?:?]
-	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) ~[?:?]
-	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) ~[?:?]
-[023月2026 00:03:28.946] [Worker-Main-15/ERROR] [net.minecraftforge.common.ForgeHooks/]: Couldn't parse element loot_tables:adorn:blocks/cobblemon/apricorn_kitchen_cupboard
-com.google.gson.JsonSyntaxException: Expected name to be an item, was unknown string 'adorn:cobblemon/apricorn_kitchen_cupboard'
-	at net.minecraft.util.GsonHelper.lambda$convertToItem$0(GsonHelper.java:116) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at java.util.Optional.orElseThrow(Optional.java:403) ~[?:?]
-	at net.minecraft.util.GsonHelper.convertToItem(GsonHelper.java:115) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.util.GsonHelper.getAsItem(GsonHelper.java:125) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootItem$Serializer.deserialize(LootItem.java:51) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootItem$Serializer.deserialize(LootItem.java:39) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer$Serializer.deserializeCustom(LootPoolSingletonContainer.java:138) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer$Serializer.deserializeCustom(LootPoolSingletonContainer.java:118) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer$Serializer.deserialize(LootPoolEntryContainer.java:83) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer$Serializer.deserialize(LootPoolEntryContainer.java:72) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.GsonAdapterFactory$JsonAdapter.deserialize(GsonAdapterFactory.java:96) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.read(TypeAdapterRuntimeTypeWrapper.java:40) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.ArrayTypeAdapter.read(ArrayTypeAdapter.java:72) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1214) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1319) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1290) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl.deserialize(TreeTypeAdapter.java:179) ~[gson-2.10.jar%23130!/:?]
-	at net.minecraft.util.GsonHelper.convertToObject(GsonHelper.java:383) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.util.GsonHelper.getAsObject(GsonHelper.java:391) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootPool$Serializer.deserialize(LootPool.java:192) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootPool$Serializer.deserialize(LootPool.java:189) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.read(TypeAdapterRuntimeTypeWrapper.java:40) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.ArrayTypeAdapter.read(ArrayTypeAdapter.java:72) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1214) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1319) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1290) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl.deserialize(TreeTypeAdapter.java:179) ~[gson-2.10.jar%23130!/:?]
-	at net.minecraft.util.GsonHelper.convertToObject(GsonHelper.java:383) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.util.GsonHelper.getAsObject(GsonHelper.java:400) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootTable$Serializer.deserialize(LootTable.java:294) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootTable$Serializer.deserialize(LootTable.java:291) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1214) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1319) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1261) ~[gson-2.10.jar%23130!/:?]
-	at net.minecraftforge.common.ForgeHooks.loadLootTable(ForgeHooks.java:873) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
-	at net.minecraftforge.common.ForgeHooks.lambda$getLootTableDeserializer$3(ForgeHooks.java:850) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataType.deserialize(LootDataType.java:45) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.lambda$scheduleElementParse$4(LootDataManager.java:56) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.mda46516$lambda$cobblemon$supportICondition$0$0(LootDataManager.java:544) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at java.util.HashMap.forEach(HashMap.java:1421) ~[?:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.redirect$zza000$cobblemon$supportICondition(LootDataManager.java:534) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.lambda$scheduleElementParse$5(LootDataManager.java:55) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804) ~[?:?]
-	at java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796) ~[?:?]
-	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373) ~[?:?]
-	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182) ~[?:?]
-	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) ~[?:?]
-	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) ~[?:?]
-	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) ~[?:?]
-[023月2026 00:03:28.948] [Worker-Main-15/ERROR] [net.minecraftforge.common.ForgeHooks/]: Couldn't parse element loot_tables:adorn:blocks/cobblemon/apricorn_drawer
-com.google.gson.JsonSyntaxException: Expected name to be an item, was unknown string 'adorn:cobblemon/apricorn_drawer'
-	at net.minecraft.util.GsonHelper.lambda$convertToItem$0(GsonHelper.java:116) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at java.util.Optional.orElseThrow(Optional.java:403) ~[?:?]
-	at net.minecraft.util.GsonHelper.convertToItem(GsonHelper.java:115) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.util.GsonHelper.getAsItem(GsonHelper.java:125) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootItem$Serializer.deserialize(LootItem.java:51) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootItem$Serializer.deserialize(LootItem.java:39) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer$Serializer.deserializeCustom(LootPoolSingletonContainer.java:138) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer$Serializer.deserializeCustom(LootPoolSingletonContainer.java:118) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer$Serializer.deserialize(LootPoolEntryContainer.java:83) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer$Serializer.deserialize(LootPoolEntryContainer.java:72) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.GsonAdapterFactory$JsonAdapter.deserialize(GsonAdapterFactory.java:96) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.read(TypeAdapterRuntimeTypeWrapper.java:40) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.ArrayTypeAdapter.read(ArrayTypeAdapter.java:72) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1214) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1319) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1290) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl.deserialize(TreeTypeAdapter.java:179) ~[gson-2.10.jar%23130!/:?]
-	at net.minecraft.util.GsonHelper.convertToObject(GsonHelper.java:383) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.util.GsonHelper.getAsObject(GsonHelper.java:391) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootPool$Serializer.deserialize(LootPool.java:192) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootPool$Serializer.deserialize(LootPool.java:189) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.read(TypeAdapterRuntimeTypeWrapper.java:40) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.ArrayTypeAdapter.read(ArrayTypeAdapter.java:72) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1214) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1319) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1290) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl.deserialize(TreeTypeAdapter.java:179) ~[gson-2.10.jar%23130!/:?]
-	at net.minecraft.util.GsonHelper.convertToObject(GsonHelper.java:383) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.util.GsonHelper.getAsObject(GsonHelper.java:400) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootTable$Serializer.deserialize(LootTable.java:294) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootTable$Serializer.deserialize(LootTable.java:291) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1214) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1319) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1261) ~[gson-2.10.jar%23130!/:?]
-	at net.minecraftforge.common.ForgeHooks.loadLootTable(ForgeHooks.java:873) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
-	at net.minecraftforge.common.ForgeHooks.lambda$getLootTableDeserializer$3(ForgeHooks.java:850) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataType.deserialize(LootDataType.java:45) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.lambda$scheduleElementParse$4(LootDataManager.java:56) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.mda46516$lambda$cobblemon$supportICondition$0$0(LootDataManager.java:544) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at java.util.HashMap.forEach(HashMap.java:1421) ~[?:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.redirect$zza000$cobblemon$supportICondition(LootDataManager.java:534) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.lambda$scheduleElementParse$5(LootDataManager.java:55) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804) ~[?:?]
-	at java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796) ~[?:?]
-	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373) ~[?:?]
-	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182) ~[?:?]
-	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) ~[?:?]
-	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) ~[?:?]
-	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) ~[?:?]
-[023月2026 00:03:28.950] [Worker-Main-15/ERROR] [net.minecraftforge.common.ForgeHooks/]: Couldn't parse element loot_tables:adorn:blocks/cobblemon/apricorn_kitchen_counter
-com.google.gson.JsonSyntaxException: Expected name to be an item, was unknown string 'adorn:cobblemon/apricorn_kitchen_counter'
-	at net.minecraft.util.GsonHelper.lambda$convertToItem$0(GsonHelper.java:116) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at java.util.Optional.orElseThrow(Optional.java:403) ~[?:?]
-	at net.minecraft.util.GsonHelper.convertToItem(GsonHelper.java:115) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.util.GsonHelper.getAsItem(GsonHelper.java:125) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootItem$Serializer.deserialize(LootItem.java:51) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootItem$Serializer.deserialize(LootItem.java:39) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer$Serializer.deserializeCustom(LootPoolSingletonContainer.java:138) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer$Serializer.deserializeCustom(LootPoolSingletonContainer.java:118) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer$Serializer.deserialize(LootPoolEntryContainer.java:83) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer$Serializer.deserialize(LootPoolEntryContainer.java:72) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.GsonAdapterFactory$JsonAdapter.deserialize(GsonAdapterFactory.java:96) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.read(TypeAdapterRuntimeTypeWrapper.java:40) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.ArrayTypeAdapter.read(ArrayTypeAdapter.java:72) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1214) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1319) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1290) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl.deserialize(TreeTypeAdapter.java:179) ~[gson-2.10.jar%23130!/:?]
-	at net.minecraft.util.GsonHelper.convertToObject(GsonHelper.java:383) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.util.GsonHelper.getAsObject(GsonHelper.java:391) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootPool$Serializer.deserialize(LootPool.java:192) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootPool$Serializer.deserialize(LootPool.java:189) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.read(TypeAdapterRuntimeTypeWrapper.java:40) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.ArrayTypeAdapter.read(ArrayTypeAdapter.java:72) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1214) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1319) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1290) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl.deserialize(TreeTypeAdapter.java:179) ~[gson-2.10.jar%23130!/:?]
-	at net.minecraft.util.GsonHelper.convertToObject(GsonHelper.java:383) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.util.GsonHelper.getAsObject(GsonHelper.java:400) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootTable$Serializer.deserialize(LootTable.java:294) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootTable$Serializer.deserialize(LootTable.java:291) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1214) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1319) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1261) ~[gson-2.10.jar%23130!/:?]
-	at net.minecraftforge.common.ForgeHooks.loadLootTable(ForgeHooks.java:873) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
-	at net.minecraftforge.common.ForgeHooks.lambda$getLootTableDeserializer$3(ForgeHooks.java:850) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataType.deserialize(LootDataType.java:45) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.lambda$scheduleElementParse$4(LootDataManager.java:56) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.mda46516$lambda$cobblemon$supportICondition$0$0(LootDataManager.java:544) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at java.util.HashMap.forEach(HashMap.java:1421) ~[?:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.redirect$zza000$cobblemon$supportICondition(LootDataManager.java:534) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.lambda$scheduleElementParse$5(LootDataManager.java:55) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804) ~[?:?]
-	at java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796) ~[?:?]
-	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373) ~[?:?]
-	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182) ~[?:?]
-	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) ~[?:?]
-	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) ~[?:?]
-	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) ~[?:?]
-[023月2026 00:03:28.950] [Worker-Main-15/ERROR] [net.minecraftforge.common.ForgeHooks/]: Couldn't parse element loot_tables:adorn:blocks/cobblemon/apricorn_chair
-java.lang.IllegalArgumentException: Can't find block adorn:cobblemon/apricorn_chair
-	at net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition$Serializer.lambda$deserialize$0(LootItemBlockStatePropertyCondition.java:72) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at java.util.Optional.orElseThrow(Optional.java:403) ~[?:?]
-	at net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition$Serializer.deserialize(LootItemBlockStatePropertyCondition.java:71) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition$Serializer.deserialize(LootItemBlockStatePropertyCondition.java:63) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.GsonAdapterFactory$JsonAdapter.deserialize(GsonAdapterFactory.java:96) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.read(TypeAdapterRuntimeTypeWrapper.java:40) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.ArrayTypeAdapter.read(ArrayTypeAdapter.java:72) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1214) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1319) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1290) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl.deserialize(TreeTypeAdapter.java:179) ~[gson-2.10.jar%23130!/:?]
-	at net.minecraft.util.GsonHelper.convertToObject(GsonHelper.java:383) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.util.GsonHelper.getAsObject(GsonHelper.java:400) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer$Serializer.deserialize(LootPoolEntryContainer.java:82) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer$Serializer.deserialize(LootPoolEntryContainer.java:72) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.GsonAdapterFactory$JsonAdapter.deserialize(GsonAdapterFactory.java:96) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.read(TypeAdapterRuntimeTypeWrapper.java:40) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.ArrayTypeAdapter.read(ArrayTypeAdapter.java:72) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1214) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1319) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1290) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl.deserialize(TreeTypeAdapter.java:179) ~[gson-2.10.jar%23130!/:?]
-	at net.minecraft.util.GsonHelper.convertToObject(GsonHelper.java:383) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.util.GsonHelper.getAsObject(GsonHelper.java:391) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootPool$Serializer.deserialize(LootPool.java:192) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootPool$Serializer.deserialize(LootPool.java:189) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.read(TypeAdapterRuntimeTypeWrapper.java:40) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.ArrayTypeAdapter.read(ArrayTypeAdapter.java:72) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1214) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1319) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1290) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl.deserialize(TreeTypeAdapter.java:179) ~[gson-2.10.jar%23130!/:?]
-	at net.minecraft.util.GsonHelper.convertToObject(GsonHelper.java:383) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.util.GsonHelper.getAsObject(GsonHelper.java:400) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootTable$Serializer.deserialize(LootTable.java:294) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootTable$Serializer.deserialize(LootTable.java:291) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1214) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1319) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1261) ~[gson-2.10.jar%23130!/:?]
-	at net.minecraftforge.common.ForgeHooks.loadLootTable(ForgeHooks.java:873) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
-	at net.minecraftforge.common.ForgeHooks.lambda$getLootTableDeserializer$3(ForgeHooks.java:850) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataType.deserialize(LootDataType.java:45) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.lambda$scheduleElementParse$4(LootDataManager.java:56) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.mda46516$lambda$cobblemon$supportICondition$0$0(LootDataManager.java:544) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at java.util.HashMap.forEach(HashMap.java:1421) ~[?:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.redirect$zza000$cobblemon$supportICondition(LootDataManager.java:534) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.lambda$scheduleElementParse$5(LootDataManager.java:55) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804) ~[?:?]
-	at java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796) ~[?:?]
-	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373) ~[?:?]
-	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182) ~[?:?]
-	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) ~[?:?]
-	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) ~[?:?]
-	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) ~[?:?]
-[023月2026 00:03:28.954] [Worker-Main-15/ERROR] [net.minecraftforge.common.ForgeHooks/]: Couldn't parse element loot_tables:adorn:blocks/cobblemon/apricorn_kitchen_sink
-com.google.gson.JsonSyntaxException: Expected name to be an item, was unknown string 'adorn:cobblemon/apricorn_kitchen_sink'
-	at net.minecraft.util.GsonHelper.lambda$convertToItem$0(GsonHelper.java:116) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at java.util.Optional.orElseThrow(Optional.java:403) ~[?:?]
-	at net.minecraft.util.GsonHelper.convertToItem(GsonHelper.java:115) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.util.GsonHelper.getAsItem(GsonHelper.java:125) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootItem$Serializer.deserialize(LootItem.java:51) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootItem$Serializer.deserialize(LootItem.java:39) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer$Serializer.deserializeCustom(LootPoolSingletonContainer.java:138) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer$Serializer.deserializeCustom(LootPoolSingletonContainer.java:118) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer$Serializer.deserialize(LootPoolEntryContainer.java:83) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer$Serializer.deserialize(LootPoolEntryContainer.java:72) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.GsonAdapterFactory$JsonAdapter.deserialize(GsonAdapterFactory.java:96) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.read(TypeAdapterRuntimeTypeWrapper.java:40) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.ArrayTypeAdapter.read(ArrayTypeAdapter.java:72) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1214) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1319) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1290) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl.deserialize(TreeTypeAdapter.java:179) ~[gson-2.10.jar%23130!/:?]
-	at net.minecraft.util.GsonHelper.convertToObject(GsonHelper.java:383) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.util.GsonHelper.getAsObject(GsonHelper.java:391) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootPool$Serializer.deserialize(LootPool.java:192) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootPool$Serializer.deserialize(LootPool.java:189) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.read(TypeAdapterRuntimeTypeWrapper.java:40) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.ArrayTypeAdapter.read(ArrayTypeAdapter.java:72) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1214) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1319) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1290) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl.deserialize(TreeTypeAdapter.java:179) ~[gson-2.10.jar%23130!/:?]
-	at net.minecraft.util.GsonHelper.convertToObject(GsonHelper.java:383) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.util.GsonHelper.getAsObject(GsonHelper.java:400) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootTable$Serializer.deserialize(LootTable.java:294) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootTable$Serializer.deserialize(LootTable.java:291) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1214) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1319) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1261) ~[gson-2.10.jar%23130!/:?]
-	at net.minecraftforge.common.ForgeHooks.loadLootTable(ForgeHooks.java:873) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
-	at net.minecraftforge.common.ForgeHooks.lambda$getLootTableDeserializer$3(ForgeHooks.java:850) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataType.deserialize(LootDataType.java:45) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.lambda$scheduleElementParse$4(LootDataManager.java:56) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.mda46516$lambda$cobblemon$supportICondition$0$0(LootDataManager.java:544) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at java.util.HashMap.forEach(HashMap.java:1421) ~[?:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.redirect$zza000$cobblemon$supportICondition(LootDataManager.java:534) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.lambda$scheduleElementParse$5(LootDataManager.java:55) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804) ~[?:?]
-	at java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796) ~[?:?]
-	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373) ~[?:?]
-	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182) ~[?:?]
-	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) ~[?:?]
-	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) ~[?:?]
-	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) ~[?:?]
-[023月2026 00:03:28.960] [Worker-Main-15/ERROR] [net.minecraftforge.common.ForgeHooks/]: Couldn't parse element loot_tables:adorn:blocks/cobblemon/apricorn_coffee_table
-com.google.gson.JsonSyntaxException: Expected name to be an item, was unknown string 'adorn:cobblemon/apricorn_coffee_table'
-	at net.minecraft.util.GsonHelper.lambda$convertToItem$0(GsonHelper.java:116) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at java.util.Optional.orElseThrow(Optional.java:403) ~[?:?]
-	at net.minecraft.util.GsonHelper.convertToItem(GsonHelper.java:115) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.util.GsonHelper.getAsItem(GsonHelper.java:125) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootItem$Serializer.deserialize(LootItem.java:51) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootItem$Serializer.deserialize(LootItem.java:39) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer$Serializer.deserializeCustom(LootPoolSingletonContainer.java:138) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer$Serializer.deserializeCustom(LootPoolSingletonContainer.java:118) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer$Serializer.deserialize(LootPoolEntryContainer.java:83) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer$Serializer.deserialize(LootPoolEntryContainer.java:72) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.GsonAdapterFactory$JsonAdapter.deserialize(GsonAdapterFactory.java:96) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.read(TypeAdapterRuntimeTypeWrapper.java:40) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.ArrayTypeAdapter.read(ArrayTypeAdapter.java:72) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1214) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1319) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1290) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl.deserialize(TreeTypeAdapter.java:179) ~[gson-2.10.jar%23130!/:?]
-	at net.minecraft.util.GsonHelper.convertToObject(GsonHelper.java:383) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.util.GsonHelper.getAsObject(GsonHelper.java:391) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootPool$Serializer.deserialize(LootPool.java:192) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootPool$Serializer.deserialize(LootPool.java:189) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.read(TypeAdapterRuntimeTypeWrapper.java:40) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.ArrayTypeAdapter.read(ArrayTypeAdapter.java:72) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1214) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1319) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1290) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl.deserialize(TreeTypeAdapter.java:179) ~[gson-2.10.jar%23130!/:?]
-	at net.minecraft.util.GsonHelper.convertToObject(GsonHelper.java:383) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.util.GsonHelper.getAsObject(GsonHelper.java:400) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootTable$Serializer.deserialize(LootTable.java:294) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootTable$Serializer.deserialize(LootTable.java:291) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1214) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1319) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1261) ~[gson-2.10.jar%23130!/:?]
-	at net.minecraftforge.common.ForgeHooks.loadLootTable(ForgeHooks.java:873) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
-	at net.minecraftforge.common.ForgeHooks.lambda$getLootTableDeserializer$3(ForgeHooks.java:850) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataType.deserialize(LootDataType.java:45) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.lambda$scheduleElementParse$4(LootDataManager.java:56) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.mda46516$lambda$cobblemon$supportICondition$0$0(LootDataManager.java:544) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at java.util.HashMap.forEach(HashMap.java:1421) ~[?:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.redirect$zza000$cobblemon$supportICondition(LootDataManager.java:534) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.lambda$scheduleElementParse$5(LootDataManager.java:55) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804) ~[?:?]
-	at java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796) ~[?:?]
-	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373) ~[?:?]
-	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182) ~[?:?]
-	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) ~[?:?]
-	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) ~[?:?]
-	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) ~[?:?]
-[023月2026 00:03:28.962] [Worker-Main-15/ERROR] [net.minecraftforge.common.ForgeHooks/]: Couldn't parse element loot_tables:adorn:blocks/cobblemon/apricorn_step
-com.google.gson.JsonSyntaxException: Expected name to be an item, was unknown string 'adorn:cobblemon/apricorn_step'
-	at net.minecraft.util.GsonHelper.lambda$convertToItem$0(GsonHelper.java:116) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at java.util.Optional.orElseThrow(Optional.java:403) ~[?:?]
-	at net.minecraft.util.GsonHelper.convertToItem(GsonHelper.java:115) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.util.GsonHelper.getAsItem(GsonHelper.java:125) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootItem$Serializer.deserialize(LootItem.java:51) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootItem$Serializer.deserialize(LootItem.java:39) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer$Serializer.deserializeCustom(LootPoolSingletonContainer.java:138) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer$Serializer.deserializeCustom(LootPoolSingletonContainer.java:118) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer$Serializer.deserialize(LootPoolEntryContainer.java:83) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer$Serializer.deserialize(LootPoolEntryContainer.java:72) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.GsonAdapterFactory$JsonAdapter.deserialize(GsonAdapterFactory.java:96) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.read(TypeAdapterRuntimeTypeWrapper.java:40) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.ArrayTypeAdapter.read(ArrayTypeAdapter.java:72) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1214) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1319) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1290) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl.deserialize(TreeTypeAdapter.java:179) ~[gson-2.10.jar%23130!/:?]
-	at net.minecraft.util.GsonHelper.convertToObject(GsonHelper.java:383) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.util.GsonHelper.getAsObject(GsonHelper.java:391) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootPool$Serializer.deserialize(LootPool.java:192) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootPool$Serializer.deserialize(LootPool.java:189) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.read(TypeAdapterRuntimeTypeWrapper.java:40) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.ArrayTypeAdapter.read(ArrayTypeAdapter.java:72) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1214) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1319) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1290) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl.deserialize(TreeTypeAdapter.java:179) ~[gson-2.10.jar%23130!/:?]
-	at net.minecraft.util.GsonHelper.convertToObject(GsonHelper.java:383) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.util.GsonHelper.getAsObject(GsonHelper.java:400) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootTable$Serializer.deserialize(LootTable.java:294) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootTable$Serializer.deserialize(LootTable.java:291) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1214) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1319) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1261) ~[gson-2.10.jar%23130!/:?]
-	at net.minecraftforge.common.ForgeHooks.loadLootTable(ForgeHooks.java:873) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
-	at net.minecraftforge.common.ForgeHooks.lambda$getLootTableDeserializer$3(ForgeHooks.java:850) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataType.deserialize(LootDataType.java:45) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.lambda$scheduleElementParse$4(LootDataManager.java:56) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.mda46516$lambda$cobblemon$supportICondition$0$0(LootDataManager.java:544) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at java.util.HashMap.forEach(HashMap.java:1421) ~[?:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.redirect$zza000$cobblemon$supportICondition(LootDataManager.java:534) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.lambda$scheduleElementParse$5(LootDataManager.java:55) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804) ~[?:?]
-	at java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796) ~[?:?]
-	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373) ~[?:?]
-	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182) ~[?:?]
-	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) ~[?:?]
-	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) ~[?:?]
-	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) ~[?:?]
-[023月2026 00:03:28.964] [Worker-Main-15/ERROR] [net.minecraftforge.common.ForgeHooks/]: Couldn't parse element loot_tables:adorn:blocks/cobblemon/apricorn_platform
-com.google.gson.JsonSyntaxException: Expected name to be an item, was unknown string 'adorn:cobblemon/apricorn_platform'
-	at net.minecraft.util.GsonHelper.lambda$convertToItem$0(GsonHelper.java:116) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at java.util.Optional.orElseThrow(Optional.java:403) ~[?:?]
-	at net.minecraft.util.GsonHelper.convertToItem(GsonHelper.java:115) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.util.GsonHelper.getAsItem(GsonHelper.java:125) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootItem$Serializer.deserialize(LootItem.java:51) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootItem$Serializer.deserialize(LootItem.java:39) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer$Serializer.deserializeCustom(LootPoolSingletonContainer.java:138) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer$Serializer.deserializeCustom(LootPoolSingletonContainer.java:118) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer$Serializer.deserialize(LootPoolEntryContainer.java:83) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer$Serializer.deserialize(LootPoolEntryContainer.java:72) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.GsonAdapterFactory$JsonAdapter.deserialize(GsonAdapterFactory.java:96) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.read(TypeAdapterRuntimeTypeWrapper.java:40) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.ArrayTypeAdapter.read(ArrayTypeAdapter.java:72) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1214) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1319) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1290) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl.deserialize(TreeTypeAdapter.java:179) ~[gson-2.10.jar%23130!/:?]
-	at net.minecraft.util.GsonHelper.convertToObject(GsonHelper.java:383) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.util.GsonHelper.getAsObject(GsonHelper.java:391) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootPool$Serializer.deserialize(LootPool.java:192) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootPool$Serializer.deserialize(LootPool.java:189) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.read(TypeAdapterRuntimeTypeWrapper.java:40) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.ArrayTypeAdapter.read(ArrayTypeAdapter.java:72) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1214) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1319) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1290) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl.deserialize(TreeTypeAdapter.java:179) ~[gson-2.10.jar%23130!/:?]
-	at net.minecraft.util.GsonHelper.convertToObject(GsonHelper.java:383) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.util.GsonHelper.getAsObject(GsonHelper.java:400) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootTable$Serializer.deserialize(LootTable.java:294) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootTable$Serializer.deserialize(LootTable.java:291) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1214) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1319) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1261) ~[gson-2.10.jar%23130!/:?]
-	at net.minecraftforge.common.ForgeHooks.loadLootTable(ForgeHooks.java:873) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
-	at net.minecraftforge.common.ForgeHooks.lambda$getLootTableDeserializer$3(ForgeHooks.java:850) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataType.deserialize(LootDataType.java:45) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.lambda$scheduleElementParse$4(LootDataManager.java:56) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.mda46516$lambda$cobblemon$supportICondition$0$0(LootDataManager.java:544) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at java.util.HashMap.forEach(HashMap.java:1421) ~[?:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.redirect$zza000$cobblemon$supportICondition(LootDataManager.java:534) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.lambda$scheduleElementParse$5(LootDataManager.java:55) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804) ~[?:?]
-	at java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796) ~[?:?]
-	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373) ~[?:?]
-	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182) ~[?:?]
-	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) ~[?:?]
-	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) ~[?:?]
-	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) ~[?:?]
-[023月2026 00:03:28.966] [Worker-Main-15/ERROR] [net.minecraftforge.common.ForgeHooks/]: Couldn't parse element loot_tables:adorn:blocks/cobblemon/apricorn_bench
-com.google.gson.JsonSyntaxException: Expected name to be an item, was unknown string 'adorn:cobblemon/apricorn_bench'
-	at net.minecraft.util.GsonHelper.lambda$convertToItem$0(GsonHelper.java:116) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at java.util.Optional.orElseThrow(Optional.java:403) ~[?:?]
-	at net.minecraft.util.GsonHelper.convertToItem(GsonHelper.java:115) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.util.GsonHelper.getAsItem(GsonHelper.java:125) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootItem$Serializer.deserialize(LootItem.java:51) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootItem$Serializer.deserialize(LootItem.java:39) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer$Serializer.deserializeCustom(LootPoolSingletonContainer.java:138) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer$Serializer.deserializeCustom(LootPoolSingletonContainer.java:118) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer$Serializer.deserialize(LootPoolEntryContainer.java:83) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer$Serializer.deserialize(LootPoolEntryContainer.java:72) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.GsonAdapterFactory$JsonAdapter.deserialize(GsonAdapterFactory.java:96) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.read(TypeAdapterRuntimeTypeWrapper.java:40) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.ArrayTypeAdapter.read(ArrayTypeAdapter.java:72) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1214) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1319) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1290) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl.deserialize(TreeTypeAdapter.java:179) ~[gson-2.10.jar%23130!/:?]
-	at net.minecraft.util.GsonHelper.convertToObject(GsonHelper.java:383) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.util.GsonHelper.getAsObject(GsonHelper.java:391) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootPool$Serializer.deserialize(LootPool.java:192) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootPool$Serializer.deserialize(LootPool.java:189) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.read(TypeAdapterRuntimeTypeWrapper.java:40) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.ArrayTypeAdapter.read(ArrayTypeAdapter.java:72) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1214) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1319) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1290) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl.deserialize(TreeTypeAdapter.java:179) ~[gson-2.10.jar%23130!/:?]
-	at net.minecraft.util.GsonHelper.convertToObject(GsonHelper.java:383) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.util.GsonHelper.getAsObject(GsonHelper.java:400) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootTable$Serializer.deserialize(LootTable.java:294) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootTable$Serializer.deserialize(LootTable.java:291) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1214) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1319) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1261) ~[gson-2.10.jar%23130!/:?]
-	at net.minecraftforge.common.ForgeHooks.loadLootTable(ForgeHooks.java:873) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
-	at net.minecraftforge.common.ForgeHooks.lambda$getLootTableDeserializer$3(ForgeHooks.java:850) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataType.deserialize(LootDataType.java:45) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.lambda$scheduleElementParse$4(LootDataManager.java:56) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.mda46516$lambda$cobblemon$supportICondition$0$0(LootDataManager.java:544) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at java.util.HashMap.forEach(HashMap.java:1421) ~[?:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.redirect$zza000$cobblemon$supportICondition(LootDataManager.java:534) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.lambda$scheduleElementParse$5(LootDataManager.java:55) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804) ~[?:?]
-	at java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796) ~[?:?]
-	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373) ~[?:?]
-	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182) ~[?:?]
-	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) ~[?:?]
-	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) ~[?:?]
-	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) ~[?:?]
-[023月2026 00:03:28.968] [Worker-Main-15/ERROR] [net.minecraftforge.common.ForgeHooks/]: Couldn't parse element loot_tables:adorn:blocks/cobblemon/apricorn_table
-com.google.gson.JsonSyntaxException: Expected name to be an item, was unknown string 'adorn:cobblemon/apricorn_table'
-	at net.minecraft.util.GsonHelper.lambda$convertToItem$0(GsonHelper.java:116) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at java.util.Optional.orElseThrow(Optional.java:403) ~[?:?]
-	at net.minecraft.util.GsonHelper.convertToItem(GsonHelper.java:115) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.util.GsonHelper.getAsItem(GsonHelper.java:125) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootItem$Serializer.deserialize(LootItem.java:51) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootItem$Serializer.deserialize(LootItem.java:39) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer$Serializer.deserializeCustom(LootPoolSingletonContainer.java:138) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer$Serializer.deserializeCustom(LootPoolSingletonContainer.java:118) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer$Serializer.deserialize(LootPoolEntryContainer.java:83) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer$Serializer.deserialize(LootPoolEntryContainer.java:72) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.GsonAdapterFactory$JsonAdapter.deserialize(GsonAdapterFactory.java:96) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.read(TypeAdapterRuntimeTypeWrapper.java:40) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.ArrayTypeAdapter.read(ArrayTypeAdapter.java:72) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1214) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1319) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1290) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl.deserialize(TreeTypeAdapter.java:179) ~[gson-2.10.jar%23130!/:?]
-	at net.minecraft.util.GsonHelper.convertToObject(GsonHelper.java:383) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.util.GsonHelper.getAsObject(GsonHelper.java:391) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootPool$Serializer.deserialize(LootPool.java:192) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootPool$Serializer.deserialize(LootPool.java:189) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.read(TypeAdapterRuntimeTypeWrapper.java:40) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.ArrayTypeAdapter.read(ArrayTypeAdapter.java:72) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1214) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1319) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1290) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl.deserialize(TreeTypeAdapter.java:179) ~[gson-2.10.jar%23130!/:?]
-	at net.minecraft.util.GsonHelper.convertToObject(GsonHelper.java:383) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.util.GsonHelper.getAsObject(GsonHelper.java:400) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootTable$Serializer.deserialize(LootTable.java:294) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootTable$Serializer.deserialize(LootTable.java:291) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1214) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1319) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1261) ~[gson-2.10.jar%23130!/:?]
-	at net.minecraftforge.common.ForgeHooks.loadLootTable(ForgeHooks.java:873) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
-	at net.minecraftforge.common.ForgeHooks.lambda$getLootTableDeserializer$3(ForgeHooks.java:850) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataType.deserialize(LootDataType.java:45) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.lambda$scheduleElementParse$4(LootDataManager.java:56) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.mda46516$lambda$cobblemon$supportICondition$0$0(LootDataManager.java:544) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at java.util.HashMap.forEach(HashMap.java:1421) ~[?:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.redirect$zza000$cobblemon$supportICondition(LootDataManager.java:534) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.lambda$scheduleElementParse$5(LootDataManager.java:55) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804) ~[?:?]
-	at java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796) ~[?:?]
-	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373) ~[?:?]
-	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182) ~[?:?]
-	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) ~[?:?]
-	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) ~[?:?]
-	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) ~[?:?]
-[023月2026 00:03:28.969] [Worker-Main-15/ERROR] [net.minecraftforge.common.ForgeHooks/]: Couldn't parse element loot_tables:adorn:blocks/cobblemon/apricorn_post
-com.google.gson.JsonSyntaxException: Expected name to be an item, was unknown string 'adorn:cobblemon/apricorn_post'
-	at net.minecraft.util.GsonHelper.lambda$convertToItem$0(GsonHelper.java:116) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at java.util.Optional.orElseThrow(Optional.java:403) ~[?:?]
-	at net.minecraft.util.GsonHelper.convertToItem(GsonHelper.java:115) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.util.GsonHelper.getAsItem(GsonHelper.java:125) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootItem$Serializer.deserialize(LootItem.java:51) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootItem$Serializer.deserialize(LootItem.java:39) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer$Serializer.deserializeCustom(LootPoolSingletonContainer.java:138) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer$Serializer.deserializeCustom(LootPoolSingletonContainer.java:118) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer$Serializer.deserialize(LootPoolEntryContainer.java:83) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer$Serializer.deserialize(LootPoolEntryContainer.java:72) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.GsonAdapterFactory$JsonAdapter.deserialize(GsonAdapterFactory.java:96) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.read(TypeAdapterRuntimeTypeWrapper.java:40) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.ArrayTypeAdapter.read(ArrayTypeAdapter.java:72) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1214) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1319) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1290) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl.deserialize(TreeTypeAdapter.java:179) ~[gson-2.10.jar%23130!/:?]
-	at net.minecraft.util.GsonHelper.convertToObject(GsonHelper.java:383) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.util.GsonHelper.getAsObject(GsonHelper.java:391) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootPool$Serializer.deserialize(LootPool.java:192) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootPool$Serializer.deserialize(LootPool.java:189) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.read(TypeAdapterRuntimeTypeWrapper.java:40) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.ArrayTypeAdapter.read(ArrayTypeAdapter.java:72) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1214) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1319) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1290) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl.deserialize(TreeTypeAdapter.java:179) ~[gson-2.10.jar%23130!/:?]
-	at net.minecraft.util.GsonHelper.convertToObject(GsonHelper.java:383) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.util.GsonHelper.getAsObject(GsonHelper.java:400) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootTable$Serializer.deserialize(LootTable.java:294) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootTable$Serializer.deserialize(LootTable.java:291) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1214) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1319) ~[gson-2.10.jar%23130!/:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1261) ~[gson-2.10.jar%23130!/:?]
-	at net.minecraftforge.common.ForgeHooks.loadLootTable(ForgeHooks.java:873) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
-	at net.minecraftforge.common.ForgeHooks.lambda$getLootTableDeserializer$3(ForgeHooks.java:850) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataType.deserialize(LootDataType.java:45) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.lambda$scheduleElementParse$4(LootDataManager.java:56) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.mda46516$lambda$cobblemon$supportICondition$0$0(LootDataManager.java:544) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at java.util.HashMap.forEach(HashMap.java:1421) ~[?:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.redirect$zza000$cobblemon$supportICondition(LootDataManager.java:534) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.world.level.storage.loot.LootDataManager.lambda$scheduleElementParse$5(LootDataManager.java:55) ~[forge-1.20.1-47.3.33_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804) ~[?:?]
-	at java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796) ~[?:?]
-	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373) ~[?:?]
-	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182) ~[?:?]
-	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) ~[?:?]
-	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) ~[?:?]
-	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) ~[?:?]
-[023月2026 00:03:28.996] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Loaded 7 recipes
-[023月2026 00:03:29.020] [Render thread/INFO] [net.minecraft.advancements.AdvancementList/]: Loaded 1592 advancements
-[023月2026 00:03:29.205] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loaded 936 moves
-[023月2026 00:03:29.228] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loaded 314 abilities
-[023月2026 00:03:29.332] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Finished additions
-[023月2026 00:03:29.636] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Imported 244 held item IDs from showdown
-[023月2026 00:03:29.636] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loaded 1025 Pokémon species
-[023月2026 00:03:29.638] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loaded 43 spawn detail presets.
-[023月2026 00:03:29.641] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Starting dummy Showdown battle to force it to pre-load data.
-[023月2026 00:03:29.644] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loaded 15 fossils
-[023月2026 00:03:29.845] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loaded 69 berries
-[023月2026 00:03:31.504] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Starting integrated minecraft server version 1.20.1
-[023月2026 00:03:31.505] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Generating keypair
-[023月2026 00:03:31.535] [Server thread/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Configuration file .\saves\New World (2)\serverconfig\forge-server.toml is not correct. Correcting
-[023月2026 00:03:31.536] [Server thread/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Incorrect key server was corrected from null to its default, SimpleCommentedConfig:{}. 
-[023月2026 00:03:31.536] [Server thread/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Incorrect key server.removeErroringBlockEntities was corrected from null to its default, false. 
-[023月2026 00:03:31.536] [Server thread/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Incorrect key server.removeErroringEntities was corrected from null to its default, false. 
-[023月2026 00:03:31.536] [Server thread/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Incorrect key server.fullBoundingBoxLadders was corrected from null to its default, false. 
-[023月2026 00:03:31.536] [Server thread/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Incorrect key server.zombieBaseSummonChance was corrected from null to its default, 0.1. 
-[023月2026 00:03:31.536] [Server thread/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Incorrect key server.zombieBabyChance was corrected from null to its default, 0.05. 
-[023月2026 00:03:31.536] [Server thread/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Incorrect key server.permissionHandler was corrected from null to its default, forge:default_handler. 
-[023月2026 00:03:31.536] [Server thread/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Incorrect key server.advertiseDedicatedServerToLan was corrected from null to its default, true. 
-[023月2026 00:03:31.536] [Server thread/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Incorrect key server.useItemWithDurationZero was corrected from null to its default, false. 
-[023月2026 00:03:33.053] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Preparing start region for dimension minecraft:overworld
-[023月2026 00:03:33.168] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[023月2026 00:03:34.281] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[023月2026 00:03:34.281] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[023月2026 00:03:34.568] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 1%
-[023月2026 00:03:35.062] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 6%
-[023月2026 00:03:35.569] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 11%
-[023月2026 00:03:36.068] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 17%
-[023月2026 00:03:36.570] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 24%
-[023月2026 00:03:37.067] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 31%
-[023月2026 00:03:37.566] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 35%
-[023月2026 00:03:38.078] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 42%
-[023月2026 00:03:38.574] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 50%
-[023月2026 00:03:39.073] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 58%
-[023月2026 00:03:39.573] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 67%
-[023月2026 00:03:40.068] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 73%
-[023月2026 00:03:40.567] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 82%
-[023月2026 00:03:41.076] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 88%
-[023月2026 00:03:41.562] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 97%
-[023月2026 00:03:41.622] [Server thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Starting Forge permission node registry
-[023月2026 00:03:41.622] [Server thread/INFO] [net.minecraftforge.server.permission.PermissionAPI/]: Successfully initialized permission handler forge:default_handler
-[023月2026 00:03:41.631] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing view distance to 12, from 10
-[023月2026 00:03:41.632] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing simulation distance to 12, from 0
-[023月2026 00:03:41.632] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Time elapsed: 8572 ms
-[023月2026 00:03:41.881] [Netty Local Client IO #1/INFO] [net.minecraftforge.network.NetworkHooks/]: Connected to a modded server.
-[023月2026 00:03:41.884] [Server thread/INFO] [net.minecraft.server.players.PlayerList/]: Dev[local:E:38cdbdbe] logged in with entity id 889 at (5.5, 68.0, -6.5)
-[023月2026 00:03:41.894] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev joined the game
-[023月2026 00:03:42.119] [Render thread/INFO] [net.minecraft.advancements.AdvancementList/]: Loaded 2 advancements
-[023月2026 00:03:42.656] [Worker-Main-4/WARN] [net.minecraft.world.level.levelgen.structure.pools.JigsawPlacement/]: Empty or non-existent pool: minecraft:ruins/forest_ruins_gate
-[023月2026 00:03:42.656] [Worker-Main-4/WARN] [net.minecraft.world.level.levelgen.structure.pools.JigsawPlacement/]: Empty or non-existent pool: minecraft:ruins/forest_ruins_gate
-[023月2026 00:03:42.660] [Worker-Main-4/WARN] [net.minecraft.world.level.levelgen.structure.pools.JigsawPlacement/]: Empty or non-existent pool: minecraft:ruins/forest_ruins_gate
-[023月2026 00:03:44.671] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] [AutoCobble] 無効
-[023月2026 00:03:44.671] [Render thread/INFO] [com.agodasi.autocobble.ClientEvents/]: [AutoCobble] toggled: OFF
-[023月2026 00:03:45.520] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] [AutoCobble] 有効
-[023月2026 00:03:45.520] [Render thread/INFO] [com.agodasi.autocobble.ClientEvents/]: [AutoCobble] toggled: ON
-[023月2026 00:04:34.873] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
-[023月2026 00:04:34.875] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[023月2026 00:04:34.880] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[023月2026 00:04:34.881] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[023月2026 00:04:36.134] [Server thread/INFO] [net.minecraft.server.network.ServerGamePacketListenerImpl/]: Dev lost connection: Disconnected
-[023月2026 00:04:36.135] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev left the game
-[023月2026 00:04:36.138] [Server thread/INFO] [net.minecraft.server.network.ServerGamePacketListenerImpl/]: Stopping singleplayer server as player logged out
-[023月2026 00:04:36.173] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Stopping server
-[023月2026 00:04:36.173] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving players
-[023月2026 00:04:36.173] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving worlds
-[023月2026 00:04:36.451] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[023月2026 00:04:37.021] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[023月2026 00:04:37.021] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[023月2026 00:04:37.035] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (New World (2)): All chunks are saved
-[023月2026 00:04:37.035] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[023月2026 00:04:37.035] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[023月2026 00:04:37.035] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage: All dimensions are saved
-[023月2026 00:04:38.600] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Stopping!
+[023月2026 00:25:56.748] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Loaded 7 recipes
+[023月2026 00:25:56.839] [Render thread/INFO] [net.minecraft.advancements.AdvancementList/]: Loaded 1592 advancements
+[023月2026 00:25:58.594] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loaded 936 moves
+[023月2026 00:25:58.624] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loaded 314 abilities
+[023月2026 00:25:58.762] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Finished additions
+[023月2026 00:25:59.444] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Imported 244 held item IDs from showdown
+[023月2026 00:25:59.444] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loaded 1025 Pokémon species
+[023月2026 00:25:59.461] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loaded 43 spawn detail presets.
+[023月2026 00:25:59.482] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Starting dummy Showdown battle to force it to pre-load data.
+[023月2026 00:25:59.547] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loaded 15 fossils
+[023月2026 00:25:59.805] [Render thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Loaded 69 berries
+[023月2026 00:26:00.087] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Starting integrated minecraft server version 1.20.1
+[023月2026 00:26:00.087] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Generating keypair
+[023月2026 00:26:00.724] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Preparing start region for dimension minecraft:overworld
+[023月2026 00:26:02.288] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[023月2026 00:26:02.305] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[023月2026 00:26:02.305] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[023月2026 00:26:02.305] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[023月2026 00:26:02.733] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 44%
+[023月2026 00:26:03.008] [Server thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: Starting Forge permission node registry
+[023月2026 00:26:03.009] [Server thread/INFO] [net.minecraftforge.server.permission.PermissionAPI/]: Successfully initialized permission handler forge:default_handler
+[023月2026 00:26:03.013] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Time elapsed: 2286 ms
+[023月2026 00:26:03.116] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing view distance to 12, from 10
+[023月2026 00:26:03.117] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing simulation distance to 12, from 0
+[023月2026 00:26:03.967] [Netty Local Client IO #0/INFO] [net.minecraftforge.network.NetworkHooks/]: Connected to a modded server.
+[023月2026 00:26:04.035] [Server thread/INFO] [net.minecraft.server.players.PlayerList/]: Dev[local:E:513275f7] logged in with entity id 294 at (7.632339574831223, 68.0, -29.754842602887532)
+[023月2026 00:26:04.089] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev joined the game
+[023月2026 00:26:04.598] [Render thread/WARN] [net.minecraft.client.multiplayer.ClientPacketListener/]: Received passengers for unknown entity
+[023月2026 00:26:04.676] [Render thread/INFO] [net.minecraft.advancements.AdvancementList/]: Loaded 2 advancements
+[023月2026 00:26:05.291] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
+[023月2026 00:26:05.304] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[023月2026 00:26:06.333] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[023月2026 00:26:06.334] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[023月2026 00:26:22.211] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
+[023月2026 00:26:22.229] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[023月2026 00:26:22.234] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[023月2026 00:26:22.235] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[023月2026 00:26:23.626] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev has made the advancement [The World of Cobblemon!]
+[023月2026 00:26:23.633] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Dev has made the advancement [The World of Cobblemon!]
+[023月2026 00:26:23.673] [Render thread/INFO] [net.minecraft.advancements.AdvancementList/]: Loaded 15 advancements
+[023月2026 00:26:25.748] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] [AutoCobble] 有効
+[023月2026 00:26:25.749] [Render thread/INFO] [com.agodasi.autocobble.ClientEvents/]: [AutoCobble] toggled: ON
+[023月2026 00:26:29.652] [Render thread/INFO] [com.agodasi.autocobble.ClientEvents/]: [AutoCobble] Triggered interact on target: Sentret
+[023月2026 00:26:30.287] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/SOUNDS]: Unable to play empty soundEvent: cobblemon:battle.pvw.default
+[023月2026 00:26:32.648] [Render thread/INFO] [com.agodasi.autocobble.ClientEvents/]: [AutoCobble] Triggered interact on target: Bulbasaur
+[023月2026 00:26:35.649] [Render thread/INFO] [com.agodasi.autocobble.ClientEvents/]: [AutoCobble] Triggered interact on target: Bulbasaur
+[023月2026 00:26:38.647] [Render thread/INFO] [com.agodasi.autocobble.ClientEvents/]: [AutoCobble] Triggered interact on target: Bulbasaur
+[023月2026 00:26:41.646] [Render thread/INFO] [com.agodasi.autocobble.ClientEvents/]: [AutoCobble] Triggered interact on target: Bulbasaur
+[023月2026 00:29:29.898] [Render thread/INFO] [com.agodasi.autocobble.ClientEvents/]: [AutoCobble] Triggered interact on target: Bulbasaur
+[023月2026 00:29:31.711] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
+[023月2026 00:29:31.718] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[023月2026 00:29:31.723] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[023月2026 00:29:31.724] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[023月2026 00:29:32.894] [Render thread/INFO] [com.agodasi.autocobble.ClientEvents/]: [AutoCobble] Triggered interact on target: Bulbasaur
+[023月2026 00:29:33.080] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Run away from the opposing Pokémon to flee and end the battle.
+[023月2026 00:29:35.891] [Render thread/INFO] [com.agodasi.autocobble.ClientEvents/]: [AutoCobble] Triggered interact on target: Bulbasaur
+[023月2026 00:29:39.093] [Render thread/INFO] [com.agodasi.autocobble.ClientEvents/]: [AutoCobble] Triggered interact on target: Bulbasaur
+[023月2026 00:29:41.146] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] [AutoCobble] 無効
+[023月2026 00:29:41.146] [Render thread/INFO] [com.agodasi.autocobble.ClientEvents/]: [AutoCobble] toggled: OFF
+[023月2026 00:29:45.361] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
+[023月2026 00:29:45.379] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[023月2026 00:29:45.383] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[023月2026 00:29:45.384] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[023月2026 00:29:46.466] [Server thread/INFO] [net.minecraft.server.network.ServerGamePacketListenerImpl/]: Dev lost connection: Disconnected
+[023月2026 00:29:46.467] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev left the game
+[023月2026 00:29:46.471] [Server thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: No battle could be found with the id: e4fbb362-bccd-4704-ad77-fb9ac6d6382a
+[023月2026 00:29:46.471] [Server thread/INFO] [com.cobblemon.mod.common.Cobblemon/]: No battle could be found with the id: e4fbb362-bccd-4704-ad77-fb9ac6d6382a
+[023月2026 00:29:46.494] [Server thread/INFO] [net.minecraft.server.network.ServerGamePacketListenerImpl/]: Stopping singleplayer server as player logged out
+[023月2026 00:29:46.523] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Stopping server
+[023月2026 00:29:46.523] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving players
+[023月2026 00:29:46.523] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving worlds
+[023月2026 00:29:46.821] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[023月2026 00:29:47.182] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[023月2026 00:29:47.182] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[023月2026 00:29:47.196] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (New World (2)): All chunks are saved
+[023月2026 00:29:47.196] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[023月2026 00:29:47.196] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[023月2026 00:29:47.196] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage: All dimensions are saved
+[023月2026 00:29:49.570] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Stopping!
