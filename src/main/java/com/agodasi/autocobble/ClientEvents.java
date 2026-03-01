@@ -9,6 +9,22 @@ import com.cobblemon.mod.common.client.gui.battle.BattleGUI;
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
 import com.mojang.logging.LogUtils;
 
+import com.cobblemon.mod.common.client.gui.battle.subscreen.BattleActionSelection;
+import com.cobblemon.mod.common.client.battle.SingleActionRequest;
+import com.cobblemon.mod.common.client.battle.ActiveClientBattlePokemon;
+import com.cobblemon.mod.common.client.battle.ClientBattlePokemon;
+import com.cobblemon.mod.common.client.battle.ClientBattleActor;
+import com.cobblemon.mod.common.battles.ShowdownMoveset;
+import com.cobblemon.mod.common.battles.InBattleMove;
+import com.cobblemon.mod.common.battles.MoveActionResponse;
+import com.cobblemon.mod.common.battles.SwitchActionResponse;
+import com.cobblemon.mod.common.api.moves.Moves;
+import com.cobblemon.mod.common.api.moves.MoveTemplate;
+import com.cobblemon.mod.common.api.moves.categories.DamageCategories;
+import com.cobblemon.mod.common.pokemon.Pokemon;
+import java.util.Set;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
@@ -64,8 +80,13 @@ public class ClientEvents {
     /** キーを離すまでの残りTick数 */
     private static int releaseKeyTick = 0;
 
-    /** バトル画面で待機中のログ出力用カウンター */
-    private static int battleScreenLogCounter = 0;
+    /** バトル中かどうか */
+    private static boolean inBattle = false;
+
+    /**
+     * バトル終了時に回復ステートへ移行するためのフラグ
+     */
+    public static boolean needHealing = false;
 
     /**
      * 自動化ロジックが有効かどうかを返す。
@@ -93,6 +114,19 @@ public class ClientEvents {
             return;
         }
 
+        // クールダウンとキーの解放処理
+        if (actionCooldown > 0) {
+            actionCooldown--;
+        }
+
+        if (releaseKeyTick > 0) {
+            releaseKeyTick--;
+            if (releaseKeyTick == 0 && pressedKey != null) {
+                pressedKey.setDown(false);
+                pressedKey = null;
+            }
+        }
+
         // ──────────────────────────────────
         // GUIが開いている場合は移動を停止してスキップ
         // ──────────────────────────────────
@@ -105,30 +139,22 @@ public class ClientEvents {
             mc.options.keySprint.setDown(false);
 
             if (mc.screen instanceof BattleGUI) {
-                battleScreenLogCounter++;
-                if (battleScreenLogCounter >= 20) { // 約1秒(20Tick)に1回ログ出力
-                    battleScreenLogCounter = 0;
-                    LOGGER.info("[AutoCobble] Battle Screen Detected - Waiting for action...");
+                if (!inBattle) {
+                    inBattle = true;
+                    LOGGER.info("[AutoCobble] Entered Battle Screen.");
+                }
+
+                if (actionCooldown == 0 && enabled) {
+                    handleBattleGUI((BattleGUI) mc.screen, mc, player);
                 }
             } else {
-                battleScreenLogCounter = 0;
+                if (inBattle) {
+                    inBattle = false;
+                    needHealing = true; // バトル終了後にHEALINGフラグを立てる
+                    LOGGER.info("[AutoCobble] Exited Battle Screen. Set needHealing = true");
+                }
             }
             return;
-        } else {
-            battleScreenLogCounter = 0;
-        }
-
-        // クールダウンとキーの解放処理
-        if (actionCooldown > 0) {
-            actionCooldown--;
-        }
-
-        if (releaseKeyTick > 0) {
-            releaseKeyTick--;
-            if (releaseKeyTick == 0 && pressedKey != null) {
-                pressedKey.setDown(false);
-                pressedKey = null;
-            }
         }
 
         // ──────────────────────────────────
@@ -188,6 +214,233 @@ public class ClientEvents {
             // ターゲットがいない場合は移動停止
             mc.options.keyUp.setDown(false);
             mc.options.keySprint.setDown(false);
+        }
+    }
+
+    /**
+     * バトル画面での自動アクションロジック
+     */
+    private static void handleBattleGUI(BattleGUI gui, Minecraft mc, LocalPlayer player) {
+        ClientBattleActor actor = gui.getActor();
+        if (actor == null) {
+            LOGGER.info("[AutoCobble] handleBattleGUI: actor is null");
+            return;
+        }
+
+        BattleActionSelection selection = gui.getCurrentActionSelection();
+        if (selection == null) {
+            LOGGER.info("[AutoCobble] handleBattleGUI: selection is null");
+            return;
+        }
+
+        SingleActionRequest request = selection.getRequest();
+        if (request == null) {
+            LOGGER.info("[AutoCobble] handleBattleGUI: request is null");
+            return;
+        }
+
+        ActiveClientBattlePokemon myActive = request.getActivePokemon();
+        if (myActive == null) {
+            LOGGER.info("[AutoCobble] handleBattleGUI: myActive is null");
+            return;
+        }
+
+        ActiveClientBattlePokemon opponent = null;
+        for (ActiveClientBattlePokemon p : myActive.getAllActivePokemon()) {
+            if (!myActive.isAllied(p)) {
+                opponent = p;
+                break;
+            }
+        }
+
+        if (opponent == null) {
+            LOGGER.info("[AutoCobble] handleBattleGUI: opponent is null");
+            return;
+        }
+
+        ClientBattlePokemon myPokemon = myActive.getBattlePokemon();
+        ClientBattlePokemon oppPokemon = opponent.getBattlePokemon();
+
+        float myHpPct = myPokemon.getHpValue() / myPokemon.getMaxHp();
+        float oppHpPct = oppPokemon.getHpValue() / oppPokemon.getMaxHp();
+
+        Set<String> aspects = oppPokemon.getAspects();
+        boolean isCatchTarget = false;
+        if (aspects != null) {
+            String lower = aspects.toString().toLowerCase();
+            if (lower.contains("shiny") || lower.contains("legendary") || lower.contains("mythical")
+                    || lower.contains("ultrabeast")) {
+                isCatchTarget = true;
+            }
+        }
+
+        // --- 2. 交代ロジック ---
+        boolean forceSwitch = request.getForceSwitch();
+        if (forceSwitch || myHpPct <= 0.2f) {
+            List<Pokemon> party = actor.getPokemon();
+            for (Pokemon p : party) {
+                if (!p.getUuid().equals(myPokemon.getUuid())) {
+                    if (p.getHp() > 0 && ((float) p.getCurrentHealth() / p.getHp()) > 0.2f) {
+                        gui.selectAction(request, new SwitchActionResponse(p.getUuid()));
+                        actionCooldown = 40;
+                        LOGGER.info("[AutoCobble] Switched to Pokemon with UUID: " + p.getUuid());
+                        return;
+                    }
+                }
+            }
+            // 控えに20%以上のポケモンがいない場合、強制交代なら生きてるポケモンを出す
+            if (forceSwitch) {
+                for (Pokemon p : party) {
+                    if (!p.getUuid().equals(myPokemon.getUuid()) && p.getCurrentHealth() > 0) {
+                        gui.selectAction(request, new SwitchActionResponse(p.getUuid()));
+                        actionCooldown = 40;
+                        LOGGER.info("[AutoCobble] Forced switch to Pokemon with UUID: " + p.getUuid());
+                        return;
+                    }
+                }
+            }
+            // 強制交代でないなら徹底抗戦として下へ続く
+        }
+
+        if (forceSwitch) {
+            LOGGER.info("[AutoCobble] handleBattleGUI: forceSwitch is true, but no pokemon available to switch to");
+            return; // 交代必須だが交代先がいない（全滅）などの場合はこれ以上行動不能
+        }
+
+        // --- 1. & 3. 攻撃・捕獲ロジック ---
+        ShowdownMoveset moveSet = request.getMoveSet();
+        if (moveSet == null || moveSet.getMoves() == null || moveSet.getMoves().isEmpty()) {
+            LOGGER.info("[AutoCobble] handleBattleGUI: moveSet is null or empty");
+            return;
+        }
+
+        if (isCatchTarget) {
+            if (oppHpPct <= 0.3f) {
+                // ボール投擲
+                throwPokeBallFromHotbar(mc, player);
+                return;
+            } else {
+                // 安全な削り
+                InBattleMove bestMove = null;
+                boolean foundFalseSwipe = false;
+
+                for (InBattleMove move : moveSet.getMoves()) {
+                    if (!move.canBeUsed())
+                        continue;
+
+                    if (move.getId().equalsIgnoreCase("falseswipe")) {
+                        bestMove = move;
+                        foundFalseSwipe = true;
+                        break;
+                    }
+                }
+
+                if (!foundFalseSwipe) {
+                    // スコア（威力）を正確に計算する。STATUS技は選択しない。
+                    // 削りのため、威力が0より大きく最も低い技を選ぶ
+                    double minPower = 9999.0;
+                    for (InBattleMove move : moveSet.getMoves()) {
+                        if (!move.canBeUsed() || move.getPp() <= 0)
+                            continue;
+
+                        MoveTemplate tmpl = Moves.INSTANCE.getByName(move.getId());
+                        if (tmpl != null) {
+                            if (tmpl.getDamageCategory() == DamageCategories.INSTANCE.getSTATUS()) {
+                                continue;
+                            }
+                            double power = tmpl.getPower();
+                            if (power > 0 && power < minPower) {
+                                minPower = power;
+                                bestMove = move;
+                            }
+                        }
+                    }
+
+                    if (bestMove == null) {
+                        // 攻撃技がない場合のフォールバック
+                        for (InBattleMove move : moveSet.getMoves()) {
+                            if (!move.canBeUsed() || move.getPp() <= 0)
+                                continue;
+                            bestMove = move;
+                            break;
+                        }
+                    }
+                }
+
+                if (bestMove != null) {
+                    gui.selectAction(request, new MoveActionResponse(bestMove.getId(), opponent.getPNX(), ""));
+                    actionCooldown = 40;
+                    LOGGER.info("[AutoCobble] Safely attacked using Move: " + bestMove.getId());
+                } else {
+                    LOGGER.info("[AutoCobble] handleBattleGUI: No valid moves available for catch target");
+                }
+                return;
+            }
+        }
+
+        // 捕獲対象でない場合の通常攻撃
+        InBattleMove bestAttack = null;
+        double maxPower = -1.0;
+
+        for (InBattleMove move : moveSet.getMoves()) {
+            if (!move.canBeUsed() || move.getPp() <= 0)
+                continue;
+
+            MoveTemplate tmpl = Moves.INSTANCE.getByName(move.getId());
+            if (tmpl != null) {
+                if (tmpl.getDamageCategory() == DamageCategories.INSTANCE.getSTATUS()) {
+                    continue;
+                }
+                double power = tmpl.getPower();
+                if (power > maxPower) {
+                    maxPower = power;
+                    bestAttack = move;
+                }
+            }
+        }
+
+        if (bestAttack == null) {
+            // 攻撃技がない場合のフォールバック
+            for (InBattleMove move : moveSet.getMoves()) {
+                if (!move.canBeUsed() || move.getPp() <= 0)
+                    continue;
+                bestAttack = move;
+                break;
+            }
+        }
+
+        if (bestAttack != null) {
+            gui.selectAction(request, new MoveActionResponse(bestAttack.getId(), opponent.getPNX(), ""));
+            actionCooldown = 40;
+            LOGGER.info("[AutoCobble] Attacked using Move: " + bestAttack.getId());
+        } else {
+            LOGGER.info("[AutoCobble] handleBattleGUI: No valid moves available for normal target");
+        }
+    }
+
+    private static void throwPokeBallFromHotbar(Minecraft mc, LocalPlayer player) {
+        // ホットバーからボールを探す
+        int ballSlot = -1;
+        for (int i = 0; i < 9; i++) {
+            ItemStack stack = player.getInventory().getItem(i);
+            String itemName = stack.getItem().toString().toLowerCase();
+            if (itemName.contains("poke_ball") || itemName.contains("ball")) {
+                ballSlot = i;
+                break;
+            }
+        }
+
+        if (ballSlot != -1) {
+            player.getInventory().selected = ballSlot;
+            // 右クリックパケットの送信等により投擲
+            if (mc.gameMode != null) {
+                mc.gameMode.useItem(player, InteractionHand.MAIN_HAND);
+            }
+            actionCooldown = 40;
+            LOGGER.info("[AutoCobble] Threw a PokeBall from Hotbar slot " + ballSlot);
+        } else {
+            LOGGER.warn("[AutoCobble] Target requires capturing, but no Poke Balls found in hotbar!");
+            actionCooldown = 120; // ログスパム防止のため長めに待機
         }
     }
 
