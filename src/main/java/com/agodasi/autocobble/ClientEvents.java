@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Objects;
 import javax.annotation.Nonnull;
 
+import com.cobblemon.mod.common.client.gui.battle.BattleGUI;
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
 import com.mojang.logging.LogUtils;
 
@@ -63,6 +64,9 @@ public class ClientEvents {
     /** キーを離すまでの残りTick数 */
     private static int releaseKeyTick = 0;
 
+    /** バトル画面で待機中のログ出力用カウンター */
+    private static int battleScreenLogCounter = 0;
+
     /**
      * 自動化ロジックが有効かどうかを返す。
      */
@@ -87,6 +91,31 @@ public class ClientEvents {
 
         if (player == null) {
             return;
+        }
+
+        // ──────────────────────────────────
+        // GUIが開いている場合は移動を停止してスキップ
+        // ──────────────────────────────────
+        if (mc.screen != null) {
+            mc.options.keyUp.setDown(false);
+            mc.options.keyDown.setDown(false);
+            mc.options.keyLeft.setDown(false);
+            mc.options.keyRight.setDown(false);
+            mc.options.keyJump.setDown(false);
+            mc.options.keySprint.setDown(false);
+
+            if (mc.screen instanceof BattleGUI) {
+                battleScreenLogCounter++;
+                if (battleScreenLogCounter >= 20) { // 約1秒(20Tick)に1回ログ出力
+                    battleScreenLogCounter = 0;
+                    LOGGER.info("[AutoCobble] Battle Screen Detected - Waiting for action...");
+                }
+            } else {
+                battleScreenLogCounter = 0;
+            }
+            return;
+        } else {
+            battleScreenLogCounter = 0;
         }
 
         // クールダウンとキーの解放処理
