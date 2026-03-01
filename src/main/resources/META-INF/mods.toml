@@ -22,3 +22,10 @@ authors="${mod_authors}"
     versionRange="${minecraft_version_range}"
     ordering="NONE"
     side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="kotlinforforge"
+    mandatory=true
+    versionRange="[4.10.0,)"
+    ordering="NONE"
+    side="BOTH"

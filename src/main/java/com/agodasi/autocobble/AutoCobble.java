@@ -21,11 +21,14 @@ public class AutoCobble {
     private static final Logger LOGGER = LogUtils.getLogger();
 
     public AutoCobble(FMLJavaModLoadingContext context) {
+        LOGGER.info("AutoCobble constructor called, dist={}", FMLEnvironment.dist);
+
         // クライアント側のみ初期化
         if (FMLEnvironment.dist == Dist.CLIENT) {
             context.getModEventBus().addListener(this::onClientSetup);
             context.getModEventBus().addListener(this::onRegisterKeyMappings);
             MinecraftForge.EVENT_BUS.register(ClientEvents.class);
+            LOGGER.info("AutoCobble client events registered");
         }
     }
 
@@ -41,5 +44,6 @@ public class AutoCobble {
      */
     private void onRegisterKeyMappings(final RegisterKeyMappingsEvent event) {
         event.register(KeyBindings.TOGGLE_KEY);
+        LOGGER.info("AutoCobble keybinding registered: P key");
     }
 }

@@ -17,15 +17,14 @@ public class KeyBindings {
 
     /**
      * 自動化トグルキー。
-     * デフォルト: Rキー
+     * デフォルト: Pキー
      * 設定画面の「AutoCobble」カテゴリに表示される。
      */
     @Nonnull
     public static final KeyMapping TOGGLE_KEY = new KeyMapping(
-            "key.autocobble.toggle", // 翻訳キー
-            KeyConflictContext.IN_GAME, // ゲーム内でのみ有効
-            InputConstants.Type.KEYSYM, // キーボードキー
-            GLFW.GLFW_KEY_R, // デフォルトキー: R
-            "key.categories.autocobble" // カテゴリ名
-    );
+            "key.autocobble.toggle",
+            KeyConflictContext.IN_GAME,
+            InputConstants.Type.KEYSYM,
+            GLFW.GLFW_KEY_P,
+            "key.categories.autocobble");
 }
