@@ -181,8 +181,8 @@ public class ClientEvents {
 
                 player.displayClientMessage(
                         Objects.requireNonNull(Component.literal(
-                                String.format("§eTarget: §b%s §e(%.1fブロック先) X:%d Y:%d Z:%d",
-                                        name, dist, x, y, z))),
+                                Objects.requireNonNull(String.format("§eTarget: §b%s §e(%.1fブロック先) X:%d Y:%d Z:%d",
+                                        name, dist, x, y, z)))),
                         true); // trueでアクションバーに表示（チャット欄を汚さない）
             }
         }
