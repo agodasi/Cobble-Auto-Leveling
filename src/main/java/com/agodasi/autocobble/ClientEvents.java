@@ -21,6 +21,7 @@ import com.cobblemon.mod.common.battles.SwitchActionResponse;
 import com.cobblemon.mod.common.api.moves.Moves;
 import com.cobblemon.mod.common.api.moves.MoveTemplate;
 import com.cobblemon.mod.common.api.moves.categories.DamageCategories;
+import com.cobblemon.mod.common.api.types.ElementalType;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import java.util.Set;
 import net.minecraft.world.InteractionHand;
@@ -349,7 +350,12 @@ public class ClientEvents {
                                 continue;
                             }
                             double power = tmpl.getPower();
-                            if (power > 0 && power < minPower) {
+                            double multiplier = calculateEffectiveness(move, oppPokemon);
+                            double score = power * multiplier;
+
+                            // 削りのため、効果がない（0.0）技は選べない。
+                            // また、威力が最も低いものを選ぶ。
+                            if (score > 0 && power < minPower) {
                                 minPower = power;
                                 bestMove = move;
                             }
@@ -357,12 +363,18 @@ public class ClientEvents {
                     }
 
                     if (bestMove == null) {
-                        // 攻撃技がない場合のフォールバック
+                        // 攻撃技がない場合のフォールバック（変化技は除く）
                         for (InBattleMove move : moveSet.getMoves()) {
                             if (!move.canBeUsed() || move.getPp() <= 0)
                                 continue;
+                            MoveTemplate tmpl = Moves.INSTANCE.getByName(move.getId());
+                            if (tmpl != null && tmpl.getDamageCategory() == DamageCategories.INSTANCE.getSTATUS())
+                                continue;
                             bestMove = move;
                             break;
+                        }
+                        if (bestMove == null) {
+                            bestMove = moveSet.getMoves().get(0);
                         }
                     }
                 }
@@ -392,20 +404,29 @@ public class ClientEvents {
                     continue;
                 }
                 double power = tmpl.getPower();
-                if (power > maxPower) {
-                    maxPower = power;
+                double multiplier = calculateEffectiveness(move, oppPokemon);
+                double score = power * multiplier;
+
+                if (score > maxPower) {
+                    maxPower = score;
                     bestAttack = move;
                 }
             }
         }
 
         if (bestAttack == null) {
-            // 攻撃技がない場合のフォールバック
+            // 攻撃技がない場合のフォールバック（変化技は除く）
             for (InBattleMove move : moveSet.getMoves()) {
                 if (!move.canBeUsed() || move.getPp() <= 0)
                     continue;
+                MoveTemplate tmpl = Moves.INSTANCE.getByName(move.getId());
+                if (tmpl != null && tmpl.getDamageCategory() == DamageCategories.INSTANCE.getSTATUS())
+                    continue;
                 bestAttack = move;
                 break;
+            }
+            if (bestAttack == null) {
+                bestAttack = moveSet.getMoves().get(0);
             }
         }
 
@@ -622,6 +643,359 @@ public class ClientEvents {
             mc.options.keyJump.setDown(true);
         } else {
             mc.options.keyJump.setDown(false);
+        }
+    }
+
+    private static double calculateEffectiveness(InBattleMove move, ClientBattlePokemon opponent) {
+        MoveTemplate tmpl = Moves.INSTANCE.getByName(move.getId());
+        if (tmpl == null)
+            return 1.0;
+
+        String attackType = tmpl.getElementalType().getName().toLowerCase();
+
+        double multiplier = 1.0;
+        Iterable<ElementalType> types = opponent.getSpecies().getTypes();
+        for (ElementalType type : types) {
+            multiplier *= getTypeMultiplier(attackType, type.getName().toLowerCase());
+        }
+
+        String ability = opponent.getProperties().getAbility();
+        String species = opponent.getSpecies().getName().toLowerCase();
+        if (ability != null) {
+            ability = ability.toLowerCase();
+        } else {
+            // Safe fallback for user's specific case
+            if (species.equals("deerling") || species.equals("sawsbuck") || species.equals("marill")
+                    || species.equals("azumarill") || species.equals("azurill") || species.equals("bouffalant")
+                    || species.equals("miltank") || species.equals("girafarig") || species.equals("farigiraf")
+                    || species.equals("stantler") || species.equals("wyrdeer") || species.equals("zebstrika")
+                    || species.equals("blitzle") || species.equals("gogoat") || species.equals("skiddo")
+                    || species.equals("drampa"))
+                ability = "sapsipper";
+            if (species.equals("lapras") || species.equals("vaporeon") || species.equals("quagsire")
+                    || species.equals("clodsire") || species.equals("mantine") || species.equals("politoed"))
+                ability = "waterabsorb";
+            if (species.equals("jolteon") || species.equals("lanturn") || species.equals("thundurus"))
+                ability = "voltabsorb";
+            if (species.equals("growlithe") || species.equals("arcanine") || species.equals("ponyta")
+                    || species.equals("rapidash") || species.equals("flareon") || species.equals("houndour")
+                    || species.equals("houndoom") || species.equals("heatran") || species.equals("litwick")
+                    || species.equals("lampent") || species.equals("chandelure"))
+                ability = "flashfire";
+        }
+
+        if (ability != null) {
+            switch (ability) {
+                case "sapsipper":
+                    if (attackType.equals("grass"))
+                        return 0.0;
+                    break;
+                case "waterabsorb":
+                case "dryskin":
+                case "stormdrain":
+                    if (attackType.equals("water"))
+                        return 0.0;
+                    break;
+                case "voltabsorb":
+                case "motordrive":
+                case "lightningrod":
+                    if (attackType.equals("electric"))
+                        return 0.0;
+                    break;
+                case "flashfire":
+                case "wellbakedbody":
+                    if (attackType.equals("fire"))
+                        return 0.0;
+                    break;
+                case "levitate":
+                case "eartheater":
+                    if (attackType.equals("ground"))
+                        return 0.0;
+                    break;
+                case "thickfat":
+                    if (attackType.equals("fire") || attackType.equals("ice"))
+                        return 0.5;
+                    break;
+                case "purifyingsalt":
+                    if (attackType.equals("ghost"))
+                        return 0.5;
+                    break;
+                case "waterbubble":
+                    if (attackType.equals("fire"))
+                        return 0.5;
+                    break;
+                case "fluffy":
+                    if (attackType.equals("fire"))
+                        return 2.0;
+                    break;
+            }
+        }
+
+        if ("wonderguard".equals(ability)) {
+            if (multiplier <= 1.0)
+                return 0.0;
+        }
+
+        return multiplier;
+    }
+
+    private static double getTypeMultiplier(String attackType, String defendType) {
+        switch (attackType) {
+            case "normal":
+                switch (defendType) {
+                    case "rock":
+                    case "steel":
+                        return 0.5;
+                    case "ghost":
+                        return 0.0;
+                    default:
+                        return 1.0;
+                }
+            case "fire":
+                switch (defendType) {
+                    case "fire":
+                    case "water":
+                    case "rock":
+                    case "dragon":
+                        return 0.5;
+                    case "grass":
+                    case "ice":
+                    case "bug":
+                    case "steel":
+                        return 2.0;
+                    default:
+                        return 1.0;
+                }
+            case "water":
+                switch (defendType) {
+                    case "water":
+                    case "grass":
+                    case "dragon":
+                        return 0.5;
+                    case "fire":
+                    case "ground":
+                    case "rock":
+                        return 2.0;
+                    default:
+                        return 1.0;
+                }
+            case "electric":
+                switch (defendType) {
+                    case "electric":
+                    case "grass":
+                    case "dragon":
+                        return 0.5;
+                    case "water":
+                    case "flying":
+                        return 2.0;
+                    case "ground":
+                        return 0.0;
+                    default:
+                        return 1.0;
+                }
+            case "grass":
+                switch (defendType) {
+                    case "fire":
+                    case "grass":
+                    case "poison":
+                    case "flying":
+                    case "bug":
+                    case "dragon":
+                    case "steel":
+                        return 0.5;
+                    case "water":
+                    case "ground":
+                    case "rock":
+                        return 2.0;
+                    default:
+                        return 1.0;
+                }
+            case "ice":
+                switch (defendType) {
+                    case "fire":
+                    case "water":
+                    case "ice":
+                    case "steel":
+                        return 0.5;
+                    case "grass":
+                    case "ground":
+                    case "flying":
+                    case "dragon":
+                        return 2.0;
+                    default:
+                        return 1.0;
+                }
+            case "fighting":
+                switch (defendType) {
+                    case "poison":
+                    case "flying":
+                    case "psychic":
+                    case "bug":
+                    case "fairy":
+                        return 0.5;
+                    case "normal":
+                    case "ice":
+                    case "rock":
+                    case "dark":
+                    case "steel":
+                        return 2.0;
+                    case "ghost":
+                        return 0.0;
+                    default:
+                        return 1.0;
+                }
+            case "poison":
+                switch (defendType) {
+                    case "poison":
+                    case "ground":
+                    case "rock":
+                    case "ghost":
+                        return 0.5;
+                    case "grass":
+                    case "fairy":
+                        return 2.0;
+                    case "steel":
+                        return 0.0;
+                    default:
+                        return 1.0;
+                }
+            case "ground":
+                switch (defendType) {
+                    case "grass":
+                    case "bug":
+                        return 0.5;
+                    case "fire":
+                    case "electric":
+                    case "poison":
+                    case "rock":
+                    case "steel":
+                        return 2.0;
+                    case "flying":
+                        return 0.0;
+                    default:
+                        return 1.0;
+                }
+            case "flying":
+                switch (defendType) {
+                    case "electric":
+                    case "rock":
+                    case "steel":
+                        return 0.5;
+                    case "grass":
+                    case "fighting":
+                    case "bug":
+                        return 2.0;
+                    default:
+                        return 1.0;
+                }
+            case "psychic":
+                switch (defendType) {
+                    case "psychic":
+                    case "steel":
+                        return 0.5;
+                    case "fighting":
+                    case "poison":
+                        return 2.0;
+                    case "dark":
+                        return 0.0;
+                    default:
+                        return 1.0;
+                }
+            case "bug":
+                switch (defendType) {
+                    case "fire":
+                    case "fighting":
+                    case "poison":
+                    case "flying":
+                    case "ghost":
+                    case "steel":
+                    case "fairy":
+                        return 0.5;
+                    case "grass":
+                    case "psychic":
+                    case "dark":
+                        return 2.0;
+                    default:
+                        return 1.0;
+                }
+            case "rock":
+                switch (defendType) {
+                    case "fighting":
+                    case "ground":
+                    case "steel":
+                        return 0.5;
+                    case "fire":
+                    case "ice":
+                    case "flying":
+                    case "bug":
+                        return 2.0;
+                    default:
+                        return 1.0;
+                }
+            case "ghost":
+                switch (defendType) {
+                    case "dark":
+                        return 0.5;
+                    case "psychic":
+                    case "ghost":
+                        return 2.0;
+                    case "normal":
+                        return 0.0;
+                    default:
+                        return 1.0;
+                }
+            case "dragon":
+                switch (defendType) {
+                    case "steel":
+                        return 0.5;
+                    case "dragon":
+                        return 2.0;
+                    case "fairy":
+                        return 0.0;
+                    default:
+                        return 1.0;
+                }
+            case "dark":
+                switch (defendType) {
+                    case "fighting":
+                    case "dark":
+                    case "fairy":
+                        return 0.5;
+                    case "psychic":
+                    case "ghost":
+                        return 2.0;
+                    default:
+                        return 1.0;
+                }
+            case "steel":
+                switch (defendType) {
+                    case "fire":
+                    case "water":
+                    case "electric":
+                    case "steel":
+                        return 0.5;
+                    case "ice":
+                    case "rock":
+                    case "fairy":
+                        return 2.0;
+                    default:
+                        return 1.0;
+                }
+            case "fairy":
+                switch (defendType) {
+                    case "fire":
+                    case "poison":
+                    case "steel":
+                        return 0.5;
+                    case "fighting":
+                    case "dragon":
+                    case "dark":
+                        return 2.0;
+                    default:
+                        return 1.0;
+                }
+            default:
+                return 1.0;
         }
     }
 }
