@@ -10,6 +10,8 @@ import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.network.chat.Component;
+import net.minecraft.util.Mth;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.phys.AABB;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -20,7 +22,7 @@ import org.slf4j.Logger;
 /**
  * クライアント側イベント処理クラス。
  * Tickイベントでキー入力を監視し、ON/OFF状態を切り替える。
- * 自動化ON時は周囲のポケモンを検知し、最も近いポケモン情報を表示し続ける。
+ * 自動化ON時は周囲のポケモンを検知し、自動的に近づく。
  */
 @OnlyIn(Dist.CLIENT)
 public class ClientEvents {
@@ -31,7 +33,7 @@ public class ClientEvents {
     private static boolean enabled = false;
 
     /** ポケモン検知用ティックカウンター */
-    private static int tickCounter = 0;
+    private static int scanTickCounter = 0;
 
     /** ポケモン検知の実行間隔（ティック数）。20ティック ≈ 1秒 */
     private static final int SCAN_INTERVAL = 20;
@@ -39,10 +41,18 @@ public class ClientEvents {
     /** ポケモン検知の範囲（ブロック数） */
     private static final double SCAN_RADIUS = 30.0;
 
+    /** ポケモンに十分近いとみなす距離（ブロック数） */
+    private static final double ARRIVE_DISTANCE = 2.5;
+
+    /** 現在追跡中のポケモン */
+    private static PokemonEntity targetPokemon = null;
+
+    /** チャット表示用ティックカウンター（スパム防止） */
+    private static int chatTickCounter = 0;
+    private static final int CHAT_INTERVAL = 40;
+
     /**
      * 自動化ロジックが有効かどうかを返す。
-     *
-     * @return 有効なら true
      */
     public static boolean isEnabled() {
         return enabled;
@@ -52,11 +62,10 @@ public class ClientEvents {
      * クライアントTickイベントハンドラ。
      * 毎Tick呼ばれ、以下を行う:
      * 1) トグルキー(P)の押下チェック → ON/OFF切り替え + チャット通知
-     * 2) ONの場合、20tick毎にポケモン検知を実行
+     * 2) ONの場合、定期的にポケモン検知 + 毎Tickポケモンに向かって移動
      */
     @SubscribeEvent
     public static void onClientTick(TickEvent.ClientTickEvent event) {
-        // END phaseのみ処理（二重実行防止）
         if (event.phase != TickEvent.Phase.END) {
             return;
         }
@@ -64,7 +73,6 @@ public class ClientEvents {
         Minecraft mc = Minecraft.getInstance();
         LocalPlayer player = mc.player;
 
-        // プレイヤーがnull（メニュー画面等）なら何もしない
         if (player == null) {
             return;
         }
@@ -74,7 +82,24 @@ public class ClientEvents {
         // ──────────────────────────────────
         while (KeyBindings.TOGGLE_KEY.consumeClick()) {
             enabled = !enabled;
-            tickCounter = 0;
+            scanTickCounter = 0;
+            chatTickCounter = 0;
+
+            if (!enabled) {
+                // OFFにした場合、ターゲットをクリアして移動を停止
+                targetPokemon = null;
+                mc.options.keyUp.setDown(false);
+                mc.options.keySprint.setDown(false);
+
+                // Baritoneが利用可能ならキャンセル
+                try {
+                    if (BaritoneHelper.isAvailable()) {
+                        BaritoneHelper.cancelMovement();
+                    }
+                } catch (Throwable e) {
+                    // Baritone未導入時は無視
+                }
+            }
 
             String status = enabled ? "§a有効" : "§c無効";
             player.displayClientMessage(
@@ -84,28 +109,42 @@ public class ClientEvents {
         }
 
         // ──────────────────────────────────
-        // 2) 自動化ON時: ポケモン検知
+        // 2) 自動化ON時: ポケモン検知 & 移動
         // ──────────────────────────────────
-        if (enabled) {
-            tickCounter++;
-            if (tickCounter >= SCAN_INTERVAL) {
-                tickCounter = 0;
-                scanForPokemon(player);
-            }
+        if (!enabled) {
+            return;
+        }
+
+        // 定期的にポケモンをスキャンしてターゲットを更新
+        scanTickCounter++;
+        if (scanTickCounter >= SCAN_INTERVAL) {
+            scanTickCounter = 0;
+            updateTarget(player);
+        }
+
+        // ターゲットが無効になった場合はクリア
+        if (targetPokemon != null && (!targetPokemon.isAlive() || targetPokemon.isRemoved())) {
+            targetPokemon = null;
+        }
+
+        // ターゲットがいる場合、毎Tickポケモンに向かって移動
+        if (targetPokemon != null) {
+            moveTowardTarget(mc, player, targetPokemon);
+        } else {
+            // ターゲットがいない場合は移動停止
+            mc.options.keyUp.setDown(false);
+            mc.options.keySprint.setDown(false);
         }
     }
 
     /**
-     * 周囲のポケモンを検知し、最も近いポケモンの情報をチャット欄に表示する。
-     *
-     * @param player クライアントプレイヤー
+     * 周囲のポケモンをスキャンし、最も近いポケモンをターゲットに設定する。
      */
-    private static void scanForPokemon(LocalPlayer player) {
+    private static void updateTarget(LocalPlayer player) {
         if (player.level() == null) {
             return;
         }
 
-        // プレイヤーの現在座標を中心に半径 SCAN_RADIUS のAABBを生成
         double px = player.getX();
         double py = player.getY();
         double pz = player.getZ();
@@ -113,34 +152,93 @@ public class ClientEvents {
                 px - SCAN_RADIUS, py - SCAN_RADIUS, pz - SCAN_RADIUS,
                 px + SCAN_RADIUS, py + SCAN_RADIUS, pz + SCAN_RADIUS);
 
-        // AABB内のPokemonEntityを全て取得
         List<PokemonEntity> nearbyPokemon = player.level().getEntitiesOfClass(
                 PokemonEntity.class,
                 scanArea);
 
         if (nearbyPokemon.isEmpty()) {
+            targetPokemon = null;
             return;
         }
 
-        // プレイヤーから最も近いポケモンを取得
+        // 最も近いポケモンをターゲットに設定
         PokemonEntity closest = nearbyPokemon.stream()
                 .min(Comparator.comparingDouble(e -> e.distanceToSqr(player)))
                 .orElse(null);
 
-        if (closest == null) {
+        if (closest != null) {
+            targetPokemon = closest;
+
+            // チャット通知（スパム防止）
+            chatTickCounter++;
+            if (chatTickCounter >= CHAT_INTERVAL / SCAN_INTERVAL) {
+                chatTickCounter = 0;
+                String name = closest.getDisplayName().getString();
+                int x = (int) closest.getX();
+                int y = (int) closest.getY();
+                int z = (int) closest.getZ();
+                double dist = Math.sqrt(closest.distanceToSqr(player));
+
+                player.displayClientMessage(
+                        Objects.requireNonNull(Component.literal(
+                                String.format("§eTarget: §b%s §e(%.1fブロック先) X:%d Y:%d Z:%d",
+                                        name, dist, x, y, z))),
+                        true); // trueでアクションバーに表示（チャット欄を汚さない）
+            }
+        }
+    }
+
+    /**
+     * ターゲットポケモンに向かってプレイヤーを移動させる。
+     * プレイヤーの視線をポケモンに向け、前進キーを押し続ける。
+     */
+    private static void moveTowardTarget(Minecraft mc, LocalPlayer player, Entity target) {
+        double dx = target.getX() - player.getX();
+        double dy = (target.getY() + target.getEyeHeight() / 2.0) - (player.getY() + player.getEyeHeight());
+        double dz = target.getZ() - player.getZ();
+        double horizontalDist = Math.sqrt(dx * dx + dz * dz);
+
+        // 十分近い場合は移動停止
+        if (horizontalDist < ARRIVE_DISTANCE) {
+            mc.options.keyUp.setDown(false);
+            mc.options.keySprint.setDown(false);
             return;
         }
 
-        // ポケモンの名前と座標をチャット欄に表示し続ける
-        String name = closest.getDisplayName().getString();
-        int x = (int) closest.getX();
-        int y = (int) closest.getY();
-        int z = (int) closest.getZ();
+        // プレイヤーの視線をターゲットに向ける（yaw/pitch計算）
+        float targetYaw = (float) (Mth.atan2(dz, dx) * (180.0 / Math.PI)) - 90.0F;
+        float targetPitch = (float) -(Mth.atan2(dy, horizontalDist) * (180.0 / Math.PI));
 
-        player.displayClientMessage(
-                Objects.requireNonNull(Component.literal(
-                        Objects.requireNonNull(
-                                String.format("§eTarget Found: §b%s §eat X:%d Y:%d Z:%d", name, x, y, z)))),
-                false);
+        // 急激に回転しないよう、現在の角度からスムーズに補間
+        float currentYaw = player.getYRot();
+        float currentPitch = player.getXRot();
+
+        float yawDiff = Mth.wrapDegrees(targetYaw - currentYaw);
+        float pitchDiff = targetPitch - currentPitch;
+
+        // 1Tickで最大回転速度を制限（スムーズな旋回）
+        float maxRotSpeed = 15.0F;
+        float newYaw = currentYaw + Mth.clamp(yawDiff, -maxRotSpeed, maxRotSpeed);
+        float newPitch = currentPitch + Mth.clamp(pitchDiff, -maxRotSpeed, maxRotSpeed);
+
+        player.setYRot(newYaw);
+        player.setXRot(Mth.clamp(newPitch, -80.0F, 80.0F));
+
+        // 前進キーを押し続ける
+        mc.options.keyUp.setDown(true);
+
+        // 距離が遠い場合はスプリント
+        if (horizontalDist > 8.0) {
+            mc.options.keySprint.setDown(true);
+        } else {
+            mc.options.keySprint.setDown(false);
+        }
+
+        // ジャンプ判定：前方にブロックがある場合はジャンプ
+        if (player.horizontalCollision && player.onGround()) {
+            mc.options.keyJump.setDown(true);
+        } else {
+            mc.options.keyJump.setDown(false);
+        }
     }
 }

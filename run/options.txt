@@ -124,7 +124,7 @@ key_key.cobblemon.summary:key.keyboard.m
 key_key.cobblemon.downshiftparty:key.keyboard.down
 key_key.cobblemon.upshiftparty:key.keyboard.up
 key_key.cobblemon.throwpartypokemon:key.keyboard.r
-soundCategory_master:1.0
+soundCategory_master:0.13245033112582782
 soundCategory_music:1.0
 soundCategory_record:1.0
 soundCategory_weather:1.0

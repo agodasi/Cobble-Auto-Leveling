@@ -47,8 +47,8 @@ repositories {
 dependencies {
     minecraft 'net.minecraftforge:forge:1.20.1-47.3.33'
     
-    // Baritone
-    implementation fg.deobf('blank:baritone:1.10.1')
+    // Baritone (compile-only API, standalone mod goes in run/mods)
+    implementation fg.deobf('blank:baritone-api:1.10.3')
     
     // Cobblemon
     implementation fg.deobf('blank:forge:1.5.2+1.20.1')
