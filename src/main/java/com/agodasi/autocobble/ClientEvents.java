@@ -104,6 +104,9 @@ public class ClientEvents {
     private static double lastTargetY = 0;
     private static double lastTargetZ = 0;
 
+    /** Baritoneが経路探索中かどうかのフラグ */
+    private static boolean baritonePathing = false;
+
     /** バトル中かどうか */
     private static boolean inBattle = false;
 
@@ -199,6 +202,11 @@ public class ClientEvents {
                     fleeYaw = player.getYRot() + 180.0f; // 後ろを向く
                     targetPokemon = null; // ターゲットをリセット
                     needHealing = false; // タイムアウト時は一旦回復フラグも消して仕切り直す
+
+                    if (baritonePathing && player.connection != null) {
+                        player.connection.sendChat("#stop");
+                        baritonePathing = false;
+                    }
                     return;
                 }
 
@@ -288,6 +296,10 @@ public class ClientEvents {
             if (!enabled) {
                 mc.options.keyUp.setDown(false);
                 mc.options.keySprint.setDown(false);
+                if (baritonePathing && player.connection != null) {
+                    player.connection.sendChat("#stop");
+                    baritonePathing = false;
+                }
             }
 
             String status = enabled ? "§a有効" : "§c無効";
@@ -350,6 +362,10 @@ public class ClientEvents {
             // ターゲットがいない場合は移動停止
             mc.options.keyUp.setDown(false);
             mc.options.keySprint.setDown(false);
+            if (baritonePathing && player.connection != null) {
+                player.connection.sendChat("#stop");
+                baritonePathing = false;
+            }
         }
     }
 
@@ -370,6 +386,10 @@ public class ClientEvents {
                     needHealing = false;
                     mc.options.keyUp.setDown(false);
                     mc.options.keySprint.setDown(false);
+                    if (baritonePathing && player.connection != null) {
+                        player.connection.sendChat("#stop");
+                        baritonePathing = false;
+                    }
                     return;
                 } else {
                     LOGGER.info("[AutoCobble] Healing Machine found at: " + targetHealingMachine);
@@ -384,6 +404,10 @@ public class ClientEvents {
             double distSq = dx * dx + dy * dy + dz * dz;
 
             if (distSq <= 4.0) { // 距離が2ブロック以下
+                if (baritonePathing && player.connection != null) {
+                    player.connection.sendChat("#stop");
+                    baritonePathing = false;
+                }
                 mc.options.keyUp.setDown(false);
                 mc.options.keySprint.setDown(false);
                 mc.options.keyJump.setDown(false);
@@ -410,22 +434,14 @@ public class ClientEvents {
                     actionCooldown = 60; // インタラクト後のクールダウン
                 }
             } else {
-                float targetYaw = (float) (Math.atan2(dz, dx) * (180.0 / Math.PI)) - 90.0F;
-                player.setYRot(targetYaw);
-
-                mc.options.keyUp.setDown(true);
-
-                if (distSq > 25.0) {
-                    mc.options.keySprint.setDown(true);
-                } else {
-                    mc.options.keySprint.setDown(false);
+                if (!baritonePathing && player.connection != null) {
+                    player.connection.sendChat("#goto " + targetHealingMachine.getX() + " "
+                            + targetHealingMachine.getY() + " " + targetHealingMachine.getZ());
+                    baritonePathing = true;
                 }
-
-                if (player.horizontalCollision && player.onGround()) {
-                    mc.options.keyJump.setDown(true);
-                } else {
-                    mc.options.keyJump.setDown(false);
-                }
+                // 移動中は常に進行方向に視点を向ける
+                float movingYaw = (float) (Math.atan2(dz, dx) * (180.0 / Math.PI)) - 90.0F;
+                player.setYRot(movingYaw);
             }
         }
     }
@@ -509,6 +525,13 @@ public class ClientEvents {
                 isCatchTarget = true;
             }
         }
+        // aspectsで検出できない場合のフォールバック: 種族名から伝説判定
+        if (!isCatchTarget) {
+            String species = oppPokemon.getSpecies().getName().toLowerCase();
+            if (isLegendaryByName(species)) {
+                isCatchTarget = true;
+            }
+        }
 
         // --- 2. 交代ロジック ---
         boolean forceSwitch = request.getForceSwitch();
@@ -551,9 +574,17 @@ public class ClientEvents {
         }
 
         if (isCatchTarget) {
-            if (oppHpPct <= 0.3f) {
+            // HP 15%以下ならボールを投げる（従来の30%→15%に厳格化して削りすぎを防止）
+            // HP 10%以下なら絶対に攻撃しない（倒す危険があるため）
+            if (oppHpPct <= 0.5f) {
                 // ボール投擲
                 throwPokeBallFromHotbar(mc, player);
+                return;
+            } else if (oppHpPct <= 0.1f) {
+                // 安全ガード: HPが10%以下なら何もしない（攻撃禁止）
+                LOGGER.warn("[AutoCobble] isCatchTarget HP is critically low ({})! Skipping action to avoid KO.",
+                        oppHpPct);
+                actionCooldown = 20;
                 return;
             } else {
                 // 安全な削り
@@ -777,6 +808,9 @@ public class ClientEvents {
             lastTargetX = targetPokemon.getX();
             lastTargetY = targetPokemon.getY();
             lastTargetZ = targetPokemon.getZ();
+
+            // 目標が変わったらパス再計算
+            baritonePathing = false;
         }
 
         // チャット通知（スパム防止）
@@ -806,6 +840,10 @@ public class ClientEvents {
 
         // 2.0ブロック以下の場合は到達と判定し、エイム＆インタラクトを実行
         if (dist <= 2.0) {
+            if (baritonePathing && player.connection != null) {
+                player.connection.sendChat("#stop");
+                baritonePathing = false;
+            }
             mc.options.keyUp.setDown(false);
             mc.options.keySprint.setDown(false);
             mc.options.keyJump.setDown(false);
@@ -879,27 +917,15 @@ public class ClientEvents {
         }
 
         // 2.0ブロック以上の場合はターゲットに向かって移動
-        // プレイヤーの視線をポケモンに向ける
-        double dx = target.getX() - player.getX();
-        double dz = target.getZ() - player.getZ();
-        float targetYaw = (float) (Math.atan2(dz, dx) * (180.0 / Math.PI)) - 90.0F;
-        player.setYRot(targetYaw);
+        double dxMove = target.getX() - player.getX();
+        double dzMove = target.getZ() - player.getZ();
+        float movingYaw = (float) (Math.atan2(dzMove, dxMove) * (180.0 / Math.PI)) - 90.0F;
+        player.setYRot(movingYaw);
 
-        // 前進キーをONにする
-        mc.options.keyUp.setDown(true);
-
-        // スプリント（オプション）
-        if (dist > 5.0) {
-            mc.options.keySprint.setDown(true);
-        } else {
-            mc.options.keySprint.setDown(false);
-        }
-
-        // 段差がある場合にジャンプを試みる（簡易的な段差越え）
-        if (player.horizontalCollision && player.onGround()) {
-            mc.options.keyJump.setDown(true);
-        } else {
-            mc.options.keyJump.setDown(false);
+        if (!baritonePathing && player.connection != null) {
+            player.connection
+                    .sendChat("#goto " + (int) target.getX() + " " + (int) target.getY() + " " + (int) target.getZ());
+            baritonePathing = true;
         }
     }
 
@@ -1269,5 +1295,49 @@ public class ClientEvents {
             }
         }
         return new MoveActionResponse(move.getId(), targetPNX, "");
+    }
+
+    /**
+     * 種族名から伝説・幻・UBかどうかを判定するフォールバックメソッド。
+     * Cobblemon の aspects に "legendary" 等が含まれない場合のために使用する。
+     */
+    private static boolean isLegendaryByName(String species) {
+        // 伝説ポケモン
+        java.util.Set<String> legendaries = new java.util.HashSet<>(java.util.Arrays.asList(
+                // 鳥伝説
+                "articuno", "zapdos", "moltres",
+                // ミュウツー、ミュウ
+                "mewtwo", "mew",
+                // 第二世代
+                "raikou", "entei", "suicune", "lugia", "ho-oh", "celebi",
+                // 第三世代
+                "regirock", "regice", "registeel", "latias", "latios",
+                "kyogre", "groudon", "rayquaza", "jirachi", "deoxys",
+                // 第四世代
+                "uxie", "mesprit", "azelf", "dialga", "palkia", "heatran",
+                "regigigas", "giratina", "cresselia", "phione", "manaphy",
+                "darkrai", "shaymin", "arceus",
+                // 第五世代
+                "victini", "cobalion", "terrakion", "virizion", "tornadus",
+                "thundurus", "reshiram", "zekrom", "landorus", "kyurem",
+                "keldeo", "meloetta", "genesect",
+                // 第六世代
+                "xerneas", "yveltal", "zygarde", "diancie", "hoopa", "volcanion",
+                // 第七世代
+                "tapu-koko", "tapu-lele", "tapu-bulu", "tapu-fini",
+                "cosmog", "cosmoem", "solgaleo", "lunala", "nihilego",
+                "buzzwole", "pheromosa", "xurkitree", "celesteela", "kartana",
+                "guzzlord", "necrozma", "magearna", "marshadow", "poipole",
+                "naganadel", "stakataka", "blacephalon", "zeraora",
+                // 第八世代
+                "zacian", "zamazenta", "eternatus", "kubfu", "urshifu",
+                "zarude", "regieleki", "regidrago", "glastrier", "spectrier",
+                "calyrex", "enamorus",
+                // 第九世代
+                "wo-chien", "chien-pao", "ting-lu", "chi-yu",
+                "koraidon", "miraidon", "walking-wake", "iron-leaves",
+                "gouging-fire", "raging-bolt", "iron-boulder", "iron-crown",
+                "terapagos", "pecharunt"));
+        return legendaries.contains(species);
     }
 }

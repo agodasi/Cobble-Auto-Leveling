@@ -52,6 +52,9 @@ dependencies {
     
     // KotlinForForge
     implementation 'thedarkcolour:kotlinforforge:4.10.0'
+    
+    // Baritone (Standalone)
+    compileOnly fg.deobf('blank:baritone-standalone-forge:1.10.3')
 }
 
 tasks.named('processResources', ProcessResources).configure {
