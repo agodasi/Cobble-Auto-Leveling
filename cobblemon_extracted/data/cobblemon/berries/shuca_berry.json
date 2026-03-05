@@ -1,0 +1,153 @@
+{
+  "baseYield": {
+    "min": 2,
+    "max": 3
+  },
+  "preferredBiomeTags": [
+    "cobblemon:is_arid",
+    "cobblemon:is_grassland"
+  ],
+  "growthTime": {
+    "min": 50,
+    "max": 60
+  },
+  "refreshRate": {
+    "min": 16,
+    "max": 26
+  },
+  "favoriteMulches": [
+    "loamy",
+    "sandy"
+  ],
+  "growthFactors": [
+    {
+      "variant": "cobblemon:preferred_biome",
+      "bonusYield": {
+        "min": 1,
+        "max": 2
+      }
+    }
+  ],
+  "randomizedGrowthPoints": true,
+  "spawnConditions": [
+    {
+      "variant": "cobblemon:preferred_biome",
+      "minGroveSize": 3,
+      "maxGroveSize": 5
+    }
+  ],
+  "growthPoints": [
+    {
+      "position": {
+        "x": 1.5,
+        "y": 12.0,
+        "z": 8.0
+      },
+      "rotation": {
+        "x": -15.0,
+        "y": -90.0,
+        "z": 0.0
+      }
+    },
+    {
+      "position": {
+        "x": 8.0,
+        "y": 12.0,
+        "z": 1.5
+      },
+      "rotation": {
+        "x": 15.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "position": {
+        "x": 14.5,
+        "y": 12.0,
+        "z": 8.0
+      },
+      "rotation": {
+        "x": 15.0,
+        "y": -90.0,
+        "z": 0.0
+      }
+    },
+    {
+      "position": {
+        "x": 8.0,
+        "y": 12.0,
+        "z": 14.5
+      },
+      "rotation": {
+        "x": -165.0,
+        "y": 0.0,
+        "z": -180.0
+      }
+    },
+    {
+      "position": {
+        "x": 3.75,
+        "y": 10.0,
+        "z": 3.75
+      },
+      "rotation": {
+        "x": 15.0,
+        "y": 45.0,
+        "z": 0.0
+      }
+    },
+    {
+      "position": {
+        "x": 12.25,
+        "y": 10.0,
+        "z": 3.75
+      },
+      "rotation": {
+        "x": 15.0,
+        "y": -45.0,
+        "z": 0.0
+      }
+    },
+    {
+      "position": {
+        "x": 12.25,
+        "y": 10.0,
+        "z": 12.25
+      },
+      "rotation": {
+        "x": 15.0,
+        "y": -135.0,
+        "z": 0.0
+      }
+    },
+    {
+      "position": {
+        "x": 3.75,
+        "y": 10.0,
+        "z": 12.25
+      },
+      "rotation": {
+        "x": 15.0,
+        "y": 135.0,
+        "z": 0.0
+      }
+    }
+  ],
+  "mutations": {
+    "cobblemon:hopo_berry": "cobblemon:enigma_berry",
+    "cobblemon:rabuta_berry": "cobblemon:hondew_berry"
+  },
+  "sproutShape": "short-sprout",
+  "matureShape": "short-mature",
+  "flavors": {
+    "SPICY": 10,
+    "SWEET": 15
+  },
+  "weight": 2.0,
+  "tintIndexes": [],
+  "flowerModel": "cobblemon:flower.geo",
+  "flowerTexture": "cobblemon:flower",
+  "fruitModel": "cobblemon:shuca_berry.geo",
+  "fruitTexture": "cobblemon:shuca"
+}

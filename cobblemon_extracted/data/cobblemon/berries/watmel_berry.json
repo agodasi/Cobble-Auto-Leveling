@@ -1,0 +1,98 @@
+{
+  "baseYield": {
+    "min": 1,
+    "max": 3
+  },
+  "preferredBiomeTags": [
+    "cobblemon:is_jungle",
+    "cobblemon:is_swamp"
+  ],
+  "growthTime": {
+    "min": 75,
+    "max": 85
+  },
+  "refreshRate": {
+    "min": 15,
+    "max": 25
+  },
+  "favoriteMulches": [
+    "humid"
+  ],
+  "growthFactors": [
+    {
+      "variant": "cobblemon:preferred_biome",
+      "bonusYield": {
+        "min": 1,
+        "max": 1
+      }
+    }
+  ],
+  "randomizedGrowthPoints": true,
+  "spawnConditions": [],
+  "growthPoints": [
+    {
+      "position": {
+        "x": 7.0,
+        "y": 1.75,
+        "z": 7.0
+      },
+      "rotation": {
+        "x": 80.0,
+        "y": 30.0,
+        "z": -5.0
+      }
+    },
+    {
+      "position": {
+        "x": 8.75,
+        "y": 2.0,
+        "z": 7.0
+      },
+      "rotation": {
+        "x": 80.0,
+        "y": -35.0,
+        "z": -2.5
+      }
+    },
+    {
+      "position": {
+        "x": 6.75,
+        "y": 2.0,
+        "z": 7.0
+      },
+      "rotation": {
+        "x": -77.5,
+        "y": -25.0,
+        "z": 0.0
+      }
+    },
+    {
+      "position": {
+        "x": 9.25,
+        "y": 1.5,
+        "z": 7.0
+      },
+      "rotation": {
+        "x": -85.0,
+        "y": 22.5,
+        "z": -2.5
+      }
+    }
+  ],
+  "mutations": {
+    "cobblemon:qualot_berry": "cobblemon:ganlon_berry",
+    "cobblemon:chilan_berry": "cobblemon:custap_berry"
+  },
+  "sproutShape": "lilypad-sprout",
+  "matureShape": "lilypad-mature",
+  "flavors": {
+    "SWEET": 40,
+    "BITTER": 10
+  },
+  "weight": 1.0,
+  "tintIndexes": [],
+  "flowerModel": "cobblemon:flower.geo",
+  "flowerTexture": "cobblemon:flower",
+  "fruitModel": "cobblemon:watmel_berry.geo",
+  "fruitTexture": "cobblemon:watmel"
+}

@@ -1,0 +1,19 @@
+{
+  "species": "cobblemon:heatmor",
+  "order": 0,
+  "variations": [
+    {
+      "aspects": [],
+      "poser": "cobblemon:heatmor",
+      "model": "cobblemon:heatmor.geo",
+      "texture": "cobblemon:textures/pokemon/0631_heatmor/heatmor.png",
+      "layers": []
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "cobblemon:textures/pokemon/0631_heatmor/heatmor_shiny.png"
+    }
+  ]
+}

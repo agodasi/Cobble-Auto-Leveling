@@ -1,0 +1,176 @@
+{
+  "baseYield": {
+    "min": 3,
+    "max": 6
+  },
+  "preferredBiomeTags": [
+    "cobblemon:is_mountain",
+    "cobblemon:is_taiga"
+  ],
+  "growthTime": {
+    "min": 45,
+    "max": 55
+  },
+  "refreshRate": {
+    "min": 15,
+    "max": 25
+  },
+  "favoriteMulches": [
+    "coarse"
+  ],
+  "growthFactors": [
+    {
+      "variant": "cobblemon:preferred_biome",
+      "bonusYield": {
+        "min": 1,
+        "max": 2
+      }
+    }
+  ],
+  "randomizedGrowthPoints": true,
+  "spawnConditions": [
+    {
+      "variant": "cobblemon:preferred_biome",
+      "minGroveSize": 3,
+      "maxGroveSize": 5
+    }
+  ],
+  "growthPoints": [
+    {
+      "position": {
+        "x": 7.0,
+        "y": 25.5,
+        "z": 6.0
+      },
+      "rotation": {
+        "x": 27.5,
+        "y": 42.5,
+        "z": 12.5
+      }
+    },
+    {
+      "position": {
+        "x": 7.0,
+        "y": 25.0,
+        "z": 10.0
+      },
+      "rotation": {
+        "x": -10.0,
+        "y": -22.5,
+        "z": -17.5
+      }
+    },
+    {
+      "position": {
+        "x": 10.0,
+        "y": 25.0,
+        "z": 8.25
+      },
+      "rotation": {
+        "x": 15.0,
+        "y": 77.5,
+        "z": 40.0
+      }
+    },
+    {
+      "position": {
+        "x": 6.0,
+        "y": 19.5,
+        "z": 7.0
+      },
+      "rotation": {
+        "x": 10.0,
+        "y": 20.0,
+        "z": -15.0
+      }
+    },
+    {
+      "position": {
+        "x": 7.0,
+        "y": 19.5,
+        "z": 10.25
+      },
+      "rotation": {
+        "x": -32.5,
+        "y": -50.0,
+        "z": 15.0
+      }
+    },
+    {
+      "position": {
+        "x": 10.0,
+        "y": 19.5,
+        "z": 9.0
+      },
+      "rotation": {
+        "x": -12.5,
+        "y": 40.0,
+        "z": 15.0
+      }
+    },
+    {
+      "position": {
+        "x": 9.0,
+        "y": 19.5,
+        "z": 5.5
+      },
+      "rotation": {
+        "x": 20.0,
+        "y": -37.5,
+        "z": -5.0
+      }
+    },
+    {
+      "position": {
+        "x": 7.25,
+        "y": 13.5,
+        "z": 5.5
+      },
+      "rotation": {
+        "x": 10.0,
+        "y": 32.5,
+        "z": -5.0
+      }
+    },
+    {
+      "position": {
+        "x": 6.25,
+        "y": 13.25,
+        "z": 9.75
+      },
+      "rotation": {
+        "x": -15.0,
+        "y": -12.5,
+        "z": -7.5
+      }
+    },
+    {
+      "position": {
+        "x": 10.5,
+        "y": 12.75,
+        "z": 8.25
+      },
+      "rotation": {
+        "x": -17.5,
+        "y": 12.5,
+        "z": 2.5
+      }
+    }
+  ],
+  "mutations": {
+    "cobblemon:oran_berry": "cobblemon:leppa_berry",
+    "cobblemon:wiki_berry": "cobblemon:cornn_berry"
+  },
+  "sproutShape": "tall-sprout",
+  "matureShape": "tall-mature",
+  "flavors": {
+    "DRY": 10,
+    "SWEET": 10
+  },
+  "weight": 15.0,
+  "tintIndexes": [],
+  "flowerModel": "cobblemon:flower.geo",
+  "flowerTexture": "cobblemon:flower",
+  "fruitModel": "cobblemon:bluk_berry.geo",
+  "fruitTexture": "cobblemon:bluk"
+}

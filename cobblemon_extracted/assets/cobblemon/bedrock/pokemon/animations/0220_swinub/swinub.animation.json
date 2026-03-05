@@ -1,0 +1,45 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.swinub.ground_idle": {
+			"loop": true
+		},
+		"animation.swinub.blink": {
+			"animation_length": 0.16667,
+			"bones": {
+				"left_eye": {
+					"rotation": {
+						"0.0": [0, 0, -7.5],
+						"0.125": [0, 0, -7.5],
+						"0.1667": [0, 0, 0]
+					},
+					"position": {
+						"0.0": [0, -0.25, 0],
+						"0.125": [0, -0.25, 0],
+						"0.1667": [0, 0, 0]
+					}
+				},
+				"right_eye": {
+					"rotation": {
+						"0.0": [0, 0, 7.5],
+						"0.125": [0, 0, 7.5],
+						"0.1667": [0, 0, 0]
+					},
+					"position": {
+						"0.0": [0, -0.25, 0],
+						"0.125": [0, -0.25, 0],
+						"0.1667": [0, 0, 0]
+					}
+				}
+			}
+		},
+		"animation.swinub.cry": {
+			"animation_length": 1.33333,
+			"sound_effects": {
+				"0.0417": {
+					"effect": "pokemon.swinub.cry"
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,125 @@
+{
+  "baseYield": {
+    "min": 1,
+    "max": 2
+  },
+  "preferredBiomeTags": [
+    "cobblemon:is_forest"
+  ],
+  "growthTime": {
+    "min": 95,
+    "max": 105
+  },
+  "refreshRate": {
+    "min": 20,
+    "max": 30
+  },
+  "favoriteMulches": [
+    "peat"
+  ],
+  "growthFactors": [
+    {
+      "variant": "cobblemon:preferred_biome",
+      "bonusYield": {
+        "min": 1,
+        "max": 1
+      }
+    }
+  ],
+  "randomizedGrowthPoints": true,
+  "spawnConditions": [],
+  "growthPoints": [
+    {
+      "position": {
+        "x": 7.0,
+        "y": 12.5,
+        "z": 6.5
+      },
+      "rotation": {
+        "x": 52.5,
+        "y": -27.5,
+        "z": -70.0
+      }
+    },
+    {
+      "position": {
+        "x": 9.5,
+        "y": 12.5,
+        "z": 8.0
+      },
+      "rotation": {
+        "x": 7.5,
+        "y": -5.0,
+        "z": 60.0
+      }
+    },
+    {
+      "position": {
+        "x": 7.25,
+        "y": 12.5,
+        "z": 9.5
+      },
+      "rotation": {
+        "x": -62.5,
+        "y": 35.0,
+        "z": -80.0
+      }
+    },
+    {
+      "position": {
+        "x": 9.0,
+        "y": 12.0,
+        "z": 6.5
+      },
+      "rotation": {
+        "x": 67.5,
+        "y": 27.5,
+        "z": 82.5
+      }
+    },
+    {
+      "position": {
+        "x": 6.6,
+        "y": 12.5,
+        "z": 8.0
+      },
+      "rotation": {
+        "x": -2.5,
+        "y": 12.5,
+        "z": -65.0
+      }
+    },
+    {
+      "position": {
+        "x": 9.0,
+        "y": 12.0,
+        "z": 9.5
+      },
+      "rotation": {
+        "x": -55.0,
+        "y": -27.5,
+        "z": 77.5
+      }
+    }
+  ],
+  "mutations": {
+    "cobblemon:kelpsy_berry": "cobblemon:starf_berry",
+    "cobblemon:qualot_berry": "cobblemon:starf_berry",
+    "cobblemon:hondew_berry": "cobblemon:starf_berry",
+    "cobblemon:grepa_berry": "cobblemon:starf_berry",
+    "cobblemon:tamato_berry": "cobblemon:starf_berry"
+  },
+  "sproutShape": "frill-sprout",
+  "matureShape": "frill-mature",
+  "flavors": {
+    "SPICY": 10,
+    "SWEET": 10,
+    "BITTER": 10
+  },
+  "weight": 1.0,
+  "tintIndexes": [],
+  "flowerModel": "cobblemon:flower.geo",
+  "flowerTexture": "cobblemon:flower",
+  "fruitModel": "cobblemon:pomeg_berry.geo",
+  "fruitTexture": "cobblemon:pomeg"
+}

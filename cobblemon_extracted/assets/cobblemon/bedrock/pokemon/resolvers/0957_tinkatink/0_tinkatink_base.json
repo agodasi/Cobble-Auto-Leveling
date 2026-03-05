@@ -1,0 +1,19 @@
+{
+  "species": "cobblemon:tinkatink",
+  "order": 0,
+  "variations": [
+    {
+      "aspects": [],
+      "poser": "cobblemon:tinkatink",
+      "model": "cobblemon:tinkatink.geo",
+      "texture": "cobblemon:textures/pokemon/0957_tinkatink/tinkatink.png",
+      "layers": []
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "cobblemon:textures/pokemon/0957_tinkatink/tinkatink_shiny.png"
+    }
+  ]
+}

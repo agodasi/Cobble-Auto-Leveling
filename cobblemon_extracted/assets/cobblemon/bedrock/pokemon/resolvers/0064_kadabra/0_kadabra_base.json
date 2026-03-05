@@ -1,0 +1,19 @@
+{
+  "species": "cobblemon:kadabra",
+  "order": 0,
+  "variations": [
+    {
+      "aspects": [],
+      "poser": "cobblemon:kadabra",
+      "model": "cobblemon:kadabra_male.geo",
+      "texture": "cobblemon:textures/pokemon/0064_kadabra/kadabra.png",
+      "layers": []
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "cobblemon:textures/pokemon/0064_kadabra/kadabra_shiny.png"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "species": "cobblemon:tinkaton",
+  "order": 0,
+  "variations": [
+    {
+      "aspects": [],
+      "poser": "cobblemon:tinkaton",
+      "model": "cobblemon:tinkaton.geo",
+      "texture": "cobblemon:textures/pokemon/0959_tinkaton/tinkaton.png",
+      "layers": []
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "cobblemon:textures/pokemon/0959_tinkaton/tinkaton_shiny.png"
+    }
+  ]
+}

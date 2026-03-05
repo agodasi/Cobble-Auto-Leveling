@@ -1,0 +1,19 @@
+{
+  "maxScale": 0.7,
+  "yTranslation": 0,
+  "yGrowthPoint": 0.5625,
+  "animations": [
+    "bedrock(anorith_fetus, sleep)"
+  ],
+  "quirks": [
+    {
+      "name": "quirk",
+      "animations": [
+        "bedrock(anorith_fetus, quirk)"
+      ],
+      "loopTimes": 1,
+      "minSeconds": 30,
+      "maxSeconds": 60
+    }
+  ]
+}

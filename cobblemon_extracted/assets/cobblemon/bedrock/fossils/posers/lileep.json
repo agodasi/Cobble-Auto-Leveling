@@ -1,0 +1,19 @@
+{
+  "maxScale": 0.7,
+  "yTranslation": 0.2,
+  "yGrowthPoint": 0.625,
+  "animations": [
+    "bedrock(lileep_fetus, sleep)"
+  ],
+  "quirks": [
+    {
+      "name": "quirk",
+      "animations": [
+        "bedrock(lileep_fetus, quirk)"
+      ],
+      "loopTimes": 1,
+      "minSeconds": 30,
+      "maxSeconds": 60
+    }
+  ]
+}

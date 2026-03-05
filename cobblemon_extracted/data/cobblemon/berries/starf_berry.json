@@ -1,0 +1,121 @@
+{
+  "baseYield": {
+    "min": 1,
+    "max": 3
+  },
+  "preferredBiomeTags": [
+    "cobblemon:is_plains"
+  ],
+  "growthTime": {
+    "min": 75,
+    "max": 85
+  },
+  "refreshRate": {
+    "min": 16,
+    "max": 26
+  },
+  "favoriteMulches": [
+    "loamy"
+  ],
+  "growthFactors": [
+    {
+      "variant": "cobblemon:preferred_biome",
+      "bonusYield": {
+        "min": 1,
+        "max": 1
+      }
+    }
+  ],
+  "randomizedGrowthPoints": true,
+  "spawnConditions": [],
+  "growthPoints": [
+    {
+      "position": {
+        "x": 8.75,
+        "y": 6.5,
+        "z": 6.0
+      },
+      "rotation": {
+        "x": 77.5,
+        "y": 22.5,
+        "z": -170.0
+      }
+    },
+    {
+      "position": {
+        "x": 6.25,
+        "y": 6.5,
+        "z": 8.25
+      },
+      "rotation": {
+        "x": -15.0,
+        "y": 45.0,
+        "z": -120.0
+      }
+    },
+    {
+      "position": {
+        "x": 9.5,
+        "y": 6.5,
+        "z": 9.5
+      },
+      "rotation": {
+        "x": -55.0,
+        "y": -30.0,
+        "z": 152.5
+      }
+    },
+    {
+      "position": {
+        "x": 7.75,
+        "y": 8.25,
+        "z": 9.0
+      },
+      "rotation": {
+        "x": -130.0,
+        "y": -50.0,
+        "z": -32.5
+      }
+    },
+    {
+      "position": {
+        "x": 7.5,
+        "y": 8.25,
+        "z": 6.75
+      },
+      "rotation": {
+        "x": 157.5,
+        "y": 10.0,
+        "z": 20.0
+      }
+    },
+    {
+      "position": {
+        "x": 9.25,
+        "y": 8.25,
+        "z": 7.75
+      },
+      "rotation": {
+        "x": 165.0,
+        "y": 65.0,
+        "z": -45.0
+      }
+    }
+  ],
+  "mutations": {},
+  "sproutShape": "short-sprout",
+  "matureShape": "short-mature",
+  "flavors": {
+    "SPICY": 30,
+    "DRY": 10,
+    "SWEET": 30,
+    "BITTER": 10,
+    "SOUR": 30
+  },
+  "weight": 1.0,
+  "tintIndexes": [],
+  "flowerModel": "cobblemon:flower.geo",
+  "flowerTexture": "cobblemon:flower",
+  "fruitModel": "cobblemon:starf_berry.geo",
+  "fruitTexture": "cobblemon:starf"
+}

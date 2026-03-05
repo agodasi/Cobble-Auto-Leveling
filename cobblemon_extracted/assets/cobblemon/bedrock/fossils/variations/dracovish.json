@@ -1,0 +1,13 @@
+{
+  "name": "cobblemon:dracovish",
+  "order": 0,
+  "variations": [
+    {
+      "aspects": [],
+      "poser": "cobblemon:dracovish",
+      "model": "cobblemon:dracovish_fetus.geo",
+      "texture": "cobblemon:textures/fossils/dracovish.png",
+      "layers": []
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.piloswine.ground_idle": {
+			"loop": true,
+			"bones": {
+				"front_right_hair": {
+					"rotation": [-10, 0, 5]
+				},
+				"front_left_hair": {
+					"rotation": [-7.5, 0, -10]
+				},
+				"right_ear": {
+					"rotation": [0, 0, -75]
+				},
+				"left_ear": {
+					"rotation": [0, 0, 70]
+				}
+			}
+		},
+		"animation.piloswine.render": {
+			"loop": true,
+			"bones": {
+				"torso": {
+					"rotation": [-17.5, 0, 0]
+				},
+				"back_fur_right": {
+					"rotation": [2.5, 0, -15]
+				},
+				"back_fur_left": {
+					"rotation": [2.5, 0, 15]
+				},
+				"fur_back": {
+					"rotation": [20, 0, 0]
+				},
+				"torso2": {
+					"rotation": [7.5, 0, 0]
+				},
+				"front_right_hair": {
+					"rotation": [-2.5, 0, 5]
+				},
+				"front_left_hair": {
+					"rotation": [-2.5, 0, -12.5]
+				},
+				"front_fur_right": {
+					"rotation": [0, 0, -17.5]
+				},
+				"front_fur_left": {
+					"rotation": [0, 0, 17.5]
+				},
+				"snout": {
+					"rotation": [-2.5, 0, 0]
+				},
+				"right_ear": {
+					"rotation": [0, 0, -72.5]
+				},
+				"left_ear": {
+					"rotation": [0, 0, 65]
+				},
+				"right_front_foot": {
+					"rotation": [17.25002, 2.99318, -9.54589]
+				},
+				"left_front_foot": {
+					"rotation": [22.32648, -2.86313, 6.93488]
+				},
+				"left_back_foot": {
+					"rotation": [0, -12.5, 0]
+				},
+				"right_back_foot": {
+					"rotation": [0, 10, 0]
+				}
+			}
+		},
+		"animation.piloswine.blink": {
+			"animation_length": 0.125,
+			"bones": {
+				"eyelid_left": {
+					"position": {
+						"0.0": [0, 0, -0.1],
+						"0.0833": [0, 0, -0.1],
+						"0.125": [0, 0, 0]
+					}
+				},
+				"eyelid_right": {
+					"position": {
+						"0.0": [0, 0, -0.1],
+						"0.0833": [0, 0, -0.1],
+						"0.125": [0, 0, 0]
+					}
+				}
+			}
+		},
+		"animation.piloswine.cry": {
+			"animation_length": 1.33333,
+			"sound_effects": {
+				"0.0417": {
+					"effect": "pokemon.piloswine.cry"
+				}
+			}
+		}
+	}
+}

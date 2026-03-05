@@ -1,0 +1,8 @@
+{
+  "type": "choice",
+  "keys": ["season"],
+  "default": "spring",
+  "choices": ["summer", "autumn", "winter", "spring"],
+  "isAspect": true,
+  "needsKey": false
+}

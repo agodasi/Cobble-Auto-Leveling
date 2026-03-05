@@ -1,0 +1,130 @@
+{
+  "baseYield": {
+    "min": 2,
+    "max": 3
+  },
+  "preferredBiomeTags": [
+    "cobblemon:is_peak",
+    "cobblemon:is_temperate",
+    "cobblemon:is_sky"
+  ],
+  "growthTime": {
+    "min": 50,
+    "max": 60
+  },
+  "refreshRate": {
+    "min": 16,
+    "max": 26
+  },
+  "favoriteMulches": [
+    "loamy",
+    "peat"
+  ],
+  "growthFactors": [
+    {
+      "variant": "cobblemon:preferred_biome",
+      "bonusYield": {
+        "min": 1,
+        "max": 2
+      }
+    }
+  ],
+  "randomizedGrowthPoints": true,
+  "spawnConditions": [
+    {
+      "variant": "cobblemon:preferred_biome",
+      "minGroveSize": 3,
+      "maxGroveSize": 5
+    }
+  ],
+  "growthPoints": [
+    {
+      "position": {
+        "x": 7.0,
+        "y": 1.25,
+        "z": 7.0
+      },
+      "rotation": {
+        "x": 25.0,
+        "y": -2.5,
+        "z": -137.5
+      }
+    },
+    {
+      "position": {
+        "x": 9.0,
+        "y": 1.25,
+        "z": 9.0
+      },
+      "rotation": {
+        "x": -27.5,
+        "y": -5.0,
+        "z": 135.0
+      }
+    },
+    {
+      "position": {
+        "x": 9.25,
+        "y": 0.5,
+        "z": 5.75
+      },
+      "rotation": {
+        "x": 70.0,
+        "y": -30.0,
+        "z": 70.0
+      }
+    },
+    {
+      "position": {
+        "x": 6.75,
+        "y": 0.25,
+        "z": 10.0
+      },
+      "rotation": {
+        "x": -110.0,
+        "y": 30.0,
+        "z": 110.0
+      }
+    },
+    {
+      "position": {
+        "x": 9.75,
+        "y": 1.5,
+        "z": 6.75
+      },
+      "rotation": {
+        "x": 117.5,
+        "y": -62.5,
+        "z": 52.5
+      }
+    },
+    {
+      "position": {
+        "x": 6.25,
+        "y": 1.5,
+        "z": 9.5
+      },
+      "rotation": {
+        "x": -50.0,
+        "y": 70.0,
+        "z": 137.5
+      }
+    }
+  ],
+  "mutations": {
+    "cobblemon:hopo_berry": "cobblemon:enigma_berry",
+    "cobblemon:belue_berry": "cobblemon:rowap_berry"
+  },
+  "sproutShape": "blossom-sprout",
+  "matureShape": "blossom-mature",
+  "flavors": {
+    "DRY": 10,
+    "BITTER": 15
+  },
+  "weight": 2.0,
+  "tintIndexes": [],
+  "flowerModel": "cobblemon:flower.geo",
+  "flowerTexture": "cobblemon:flower",
+  "fruitModel": "cobblemon:coba_berry.geo",
+  "fruitTexture": "cobblemon:coba"
+}

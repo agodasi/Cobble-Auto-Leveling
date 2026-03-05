@@ -1,0 +1,9 @@
+{
+  "maxScale": 0.7,
+  "yTranslation": -0.2,
+  "animations": [
+    "bedrock(gilded_chest, opening)",
+    "bedrock(gilded_chest, open)",
+    "bedrock(gilded_chest, closing)"
+  ]
+}

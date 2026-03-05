@@ -1,0 +1,6 @@
+{
+  "context": "surface",
+  "condition": {
+    "fluid": "#minecraft:water"
+  }
+}

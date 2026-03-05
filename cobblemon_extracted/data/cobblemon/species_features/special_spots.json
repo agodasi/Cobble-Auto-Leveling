@@ -1,0 +1,13 @@
+{
+  "type": "choice",
+  "keys": ["special_spots"],
+  "default": "false",
+  "choices": [
+    "1",
+    "2",
+    "3",
+    "4"
+  ],
+  "isAspect": true,
+  "aspectFormat": "special-spots-{{choice}}"
+}

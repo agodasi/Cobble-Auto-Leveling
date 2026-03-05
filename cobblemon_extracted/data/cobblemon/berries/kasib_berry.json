@@ -1,0 +1,120 @@
+{
+  "baseYield": {
+    "min": 2,
+    "max": 3
+  },
+  "preferredBiomeTags": [
+    "cobblemon:is_dripstone",
+    "cobblemon:is_lush",
+    "cobblemon:is_spooky",
+    "cobblemon:is_swamp",
+    "cobblemon:is_taiga"
+  ],
+  "growthTime": {
+    "min": 50,
+    "max": 60
+  },
+  "refreshRate": {
+    "min": 16,
+    "max": 26
+  },
+  "favoriteMulches": [
+    "coarse",
+    "humid"
+  ],
+  "growthFactors": [
+    {
+      "variant": "cobblemon:preferred_biome",
+      "bonusYield": {
+        "min": 1,
+        "max": 2
+      }
+    }
+  ],
+  "randomizedGrowthPoints": true,
+  "spawnConditions": [
+    {
+      "variant": "cobblemon:preferred_biome",
+      "minGroveSize": 3,
+      "maxGroveSize": 5
+    }
+  ],
+  "growthPoints": [
+    {
+      "position": {
+        "x": 7.75,
+        "y": 22.0,
+        "z": 10.0
+      },
+      "rotation": {
+        "x": -147.5,
+        "y": -10.0,
+        "z": 180.0
+      }
+    },
+    {
+      "position": {
+        "x": 8.75,
+        "y": 22.0,
+        "z": 7.25
+      },
+      "rotation": {
+        "x": 35.0,
+        "y": -35.0,
+        "z": 0.0
+      }
+    },
+    {
+      "position": {
+        "x": 10.75,
+        "y": 7.5,
+        "z": 9.25
+      },
+      "rotation": {
+        "x": -150.0,
+        "y": -55.0,
+        "z": -180.0
+      }
+    },
+    {
+      "position": {
+        "x": 6.0,
+        "y": 15.5,
+        "z": 8.5
+      },
+      "rotation": {
+        "x": -150.0,
+        "y": 87.5,
+        "z": -180.0
+      }
+    },
+    {
+      "position": {
+        "x": 8.0,
+        "y": 11.5,
+        "z": 6.0
+      },
+      "rotation": {
+        "x": 32.5,
+        "y": 0.0,
+        "z": 0.0
+      }
+    }
+  ],
+  "mutations": {
+    "cobblemon:hopo_berry": "cobblemon:enigma_berry",
+    "cobblemon:enigma_berry": "cobblemon:kee_berry"
+  },
+  "sproutShape": "platform-sprout",
+  "matureShape": "platform-mature",
+  "flavors": {
+    "DRY": 10,
+    "SWEET": 20
+  },
+  "weight": 2.0,
+  "tintIndexes": [],
+  "flowerModel": "cobblemon:flower.geo",
+  "flowerTexture": "cobblemon:flower",
+  "fruitModel": "cobblemon:kasib_berry.geo",
+  "fruitTexture": "cobblemon:kasib"
+}

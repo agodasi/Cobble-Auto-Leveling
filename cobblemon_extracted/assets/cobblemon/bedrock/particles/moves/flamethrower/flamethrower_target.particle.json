@@ -1,0 +1,61 @@
+{
+	"format_version": "1.10.0",
+	"particle_effect": {
+		"description": {
+			"identifier": "cobblemon:flamethrower_target",
+			"basic_render_parameters": {
+				"material": "particles_alpha",
+				"texture": "textures/particles/hit"
+			}
+		},
+		"events": {
+			"flamethrower_impact": {
+				"sound_effect": {
+					"event_name": "flamethrower.impact"
+				}
+			}
+		},
+		"components": {
+			"minecraft:emitter_rate_instant": {
+				"num_particles": 1
+			},
+			"minecraft:emitter_lifetime_once": {
+				"active_time": 1
+			},
+			"minecraft:emitter_lifetime_events": {
+				"creation_event": "flamethrower_impact"
+			},
+			"minecraft:emitter_shape_point": {},
+			"minecraft:particle_lifetime_expression": {
+				"max_lifetime": 0.5
+			},
+			"minecraft:particle_initial_spin": {
+				"rotation": "math.random(0,90)"
+			},
+			"minecraft:particle_appearance_billboard": {
+				"size": [1, 1],
+				"facing_camera_mode": "rotate_xyz",
+				"uv": {
+					"texture_width": 32,
+					"texture_height": 160,
+					"flipbook": {
+						"base_UV": [0, 0],
+						"size_UV": [32, 32],
+						"step_UV": [0, 32],
+						"frames_per_second": 24
+					}
+				}
+			},
+			"minecraft:particle_appearance_tinting": {
+				"color": {
+					"interpolant": "v.particle_age / 4*24",
+					"gradient": {
+						"0.0": "#FFFFBC51",
+						"0.76": "#FFDE3017",
+						"0.9": "#FF2A2222"
+					}
+				}
+			}
+		}
+	}
+}

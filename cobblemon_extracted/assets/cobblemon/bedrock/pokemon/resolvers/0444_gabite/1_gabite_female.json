@@ -1,0 +1,12 @@
+{
+  "species": "cobblemon:gabite",
+  "order": 1,
+  "variations": [
+    {
+      "aspects": [
+        "female"
+      ],
+      "model": "cobblemon:gabite_female.geo"
+    }
+  ]
+}

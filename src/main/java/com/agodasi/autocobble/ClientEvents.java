@@ -23,6 +23,12 @@ import com.cobblemon.mod.common.api.moves.MoveTemplate;
 import com.cobblemon.mod.common.api.moves.categories.DamageCategories;
 import com.cobblemon.mod.common.api.types.ElementalType;
 import com.cobblemon.mod.common.pokemon.Pokemon;
+import com.cobblemon.mod.common.api.storage.party.PlayerPartyStore;
+import com.cobblemon.mod.common.Cobblemon;
+
+import com.cobblemon.mod.common.api.moves.MoveSet;
+import com.cobblemon.mod.common.api.moves.Move;
+import com.cobblemon.mod.common.pokemon.status.PersistentStatusContainer;
 import java.util.Set;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.item.ItemStack;
@@ -33,6 +39,10 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.event.TickEvent;
@@ -60,6 +70,18 @@ public class ClientEvents {
 
     /** ポケモン検知の範囲（ブロック数） */
     private static final double SCAN_RADIUS = 30.0;
+
+    /** バトル進行がない時のタイムアウト（ティック数）。20ティック * 60秒 = 1200ティック */
+    private static final int BATTLE_TIMEOUT_TICKS = 200;
+
+    /** 現在バトルでの経過ティック数 */
+    private static int battleStuckTickCounter = 0;
+
+    /** 強制逃走と離脱用のフラグとカウンター */
+    private static boolean fleeing = false;
+    private static int fleeTickCounter = 0;
+    private static final int FLEE_DURATION_TICKS = 200; // 5秒間逃げる
+    private static float fleeYaw = 0.0f;
 
     /** 現在追跡中のポケモン */
     private static PokemonEntity targetPokemon = null;
@@ -89,6 +111,9 @@ public class ClientEvents {
      * バトル終了時に回復ステートへ移行するためのフラグ
      */
     public static boolean needHealing = false;
+
+    private static BlockPos targetHealingMachine = null;
+    private static int healingScanTickCounter = 0;
 
     /**
      * 自動化ロジックが有効かどうかを返す。
@@ -143,17 +168,110 @@ public class ClientEvents {
             if (mc.screen instanceof BattleGUI) {
                 if (!inBattle) {
                     inBattle = true;
+                    battleStuckTickCounter = 0; // バトル開始時にカウンターリセット
                     LOGGER.info("[AutoCobble] Entered Battle Screen.");
                 }
 
+                battleStuckTickCounter++;
+                if (battleStuckTickCounter >= BATTLE_TIMEOUT_TICKS) {
+                    LOGGER.warn("[AutoCobble] Battle timeout reached (1 minute). Attempting to force exit and flee.");
+                    mc.setScreen(null); // GUIを強制的に閉じる
+
+                    // Rキー（戻す/逃げるキー）をシミュレート
+                    KeyMapping recallKey = null;
+                    for (KeyMapping key : mc.options.keyMappings) {
+                        String name = key.getName().toLowerCase();
+                        if (name.contains("recall") || name.equals("key.cobblemon.recall")
+                                || name.equals("cobblemon.key.recall")) {
+                            recallKey = key;
+                            break;
+                        }
+                    }
+                    if (recallKey != null) {
+                        recallKey.setDown(true);
+                        pressedKey = recallKey;
+                        releaseKeyTick = 2;
+                    }
+
+                    inBattle = false;
+                    fleeing = true;
+                    fleeTickCounter = 0;
+                    fleeYaw = player.getYRot() + 180.0f; // 後ろを向く
+                    targetPokemon = null; // ターゲットをリセット
+                    needHealing = false; // タイムアウト時は一旦回復フラグも消して仕切り直す
+                    return;
+                }
+
                 if (actionCooldown == 0 && enabled) {
+                    int prevCooldown = actionCooldown;
                     handleBattleGUI((BattleGUI) mc.screen, mc, player);
+                    if (actionCooldown > prevCooldown) {
+                        // アクションが実行されたらタイムアウトカウンターをリセット
+                        battleStuckTickCounter = 0;
+                    }
                 }
             } else {
                 if (inBattle) {
                     inBattle = false;
-                    needHealing = true; // バトル終了後にHEALINGフラグを立てる
-                    LOGGER.info("[AutoCobble] Exited Battle Screen. Set needHealing = true");
+                    battleStuckTickCounter = 0;
+
+                    // バトル終了時のパーティ回復チェック
+                    boolean shouldHeal = false;
+                    try {
+                        PlayerPartyStore party = Cobblemon.INSTANCE.getStorage().getParty(player.getUUID());
+                        if (party != null) {
+                            for (int i = 0; i < party.size(); i++) {
+                                Pokemon p = party.get(i);
+                                if (p == null)
+                                    continue;
+
+                                // 1. HPが50%以下または、ひんし
+                                float hpPct = (float) p.getCurrentHealth() / p.getHp();
+                                if (hpPct <= 0.5f || p.getCurrentHealth() <= 0) {
+                                    shouldHeal = true;
+                                    break;
+                                }
+
+                                // 2. PPが3以下の技があるか
+                                MoveSet moveset = p.getMoveSet();
+                                boolean lowPp = false;
+                                for (Move move : moveset.getMoves()) {
+                                    if (move != null && move.getCurrentPp() <= 3) {
+                                        lowPp = true;
+                                        break;
+                                    }
+                                }
+                                if (lowPp) {
+                                    shouldHeal = true;
+                                    break;
+                                }
+
+                                // 3. 状態異常 (どく、まひ、ねむり、やけど、こおり) があるか
+                                // Cobblemonの持続型状態異常は getStatus() 等で取得する
+                                PersistentStatusContainer status = p.getStatus();
+                                if (status != null && status.getStatus() != null) {
+                                    String statusId = status.getStatus().getName().getPath().toLowerCase();
+                                    if (statusId.contains("poison") || statusId.contains("paralysis")
+                                            || statusId.contains("sleep") || statusId.contains("burn")
+                                            || statusId.contains("freeze")) {
+                                        shouldHeal = true;
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+                    } catch (Exception e) {
+                        LOGGER.warn("[AutoCobble] Error checking party status for healing: ", e);
+                        shouldHeal = true; // エラー時は安全のために回復に向かわせる
+                    }
+
+                    needHealing = shouldHeal;
+                    if (needHealing) {
+                        LOGGER.info(
+                                "[AutoCobble] Exited Battle Screen. Party needs healing (HP <= 50%, low PP, fainted, or status ailment). Set needHealing = true");
+                    } else {
+                        LOGGER.info("[AutoCobble] Exited Battle Screen. Party is healthy.");
+                    }
                 }
             }
             return;
@@ -180,10 +298,37 @@ public class ClientEvents {
         }
 
         // ──────────────────────────────────
-        // 2) 自動化ON時: ポケモン検知 & 移動
+        // 2) 自動化ON時: 状態に応じた処理 (逃走 or 回復 or ポケモン検知＆移動)
         // ──────────────────────────────────
         if (!enabled) {
             return;
+        }
+
+        if (fleeing) {
+            fleeTickCounter++;
+            player.setYRot(fleeYaw);
+            mc.options.keyUp.setDown(true);
+            mc.options.keySprint.setDown(true);
+
+            if (player.horizontalCollision && player.onGround()) {
+                mc.options.keyJump.setDown(true);
+            } else {
+                mc.options.keyJump.setDown(false);
+            }
+
+            if (fleeTickCounter >= FLEE_DURATION_TICKS) {
+                fleeing = false;
+                mc.options.keyUp.setDown(false);
+                mc.options.keySprint.setDown(false);
+                mc.options.keyJump.setDown(false);
+                LOGGER.info("[AutoCobble] Finished fleeing. Resuming normal operations.");
+            }
+            return; // 逃走中は他の行動をしない
+        }
+
+        if (needHealing) {
+            handleHealingMovement(mc, player);
+            return; // 回復中は通常のポケモン検知・移動を行わない
         }
 
         // 定期的にポケモンをスキャンしてターゲットを更新
@@ -206,6 +351,106 @@ public class ClientEvents {
             mc.options.keyUp.setDown(false);
             mc.options.keySprint.setDown(false);
         }
+    }
+
+    private static void handleHealingMovement(Minecraft mc, LocalPlayer player) {
+        healingScanTickCounter++;
+        if (healingScanTickCounter >= SCAN_INTERVAL) {
+            healingScanTickCounter = 0;
+
+            if (targetHealingMachine == null) {
+                targetHealingMachine = findHealingMachine(player);
+                if (targetHealingMachine == null) {
+                    player.displayClientMessage(
+                            java.util.Objects.requireNonNull(net.minecraft.network.chat.Component.literal(
+                                    "§c[AutoCobble] Healing Machine not found! Auto system disabled for safety.")),
+                            false);
+                    LOGGER.warn("[AutoCobble] Healing Machine not found! Disabling auto.");
+                    enabled = false;
+                    needHealing = false;
+                    mc.options.keyUp.setDown(false);
+                    mc.options.keySprint.setDown(false);
+                    return;
+                } else {
+                    LOGGER.info("[AutoCobble] Healing Machine found at: " + targetHealingMachine);
+                }
+            }
+        }
+
+        if (targetHealingMachine != null) {
+            double dx = targetHealingMachine.getX() + 0.5 - player.getX();
+            double dy = targetHealingMachine.getY() + 0.5 - player.getY();
+            double dz = targetHealingMachine.getZ() + 0.5 - player.getZ();
+            double distSq = dx * dx + dy * dy + dz * dz;
+
+            if (distSq <= 4.0) { // 距離が2ブロック以下
+                mc.options.keyUp.setDown(false);
+                mc.options.keySprint.setDown(false);
+                mc.options.keyJump.setDown(false);
+
+                if (actionCooldown == 0) {
+                    float targetYaw = (float) (Math.atan2(dz, dx) * (180.0 / Math.PI)) - 90.0F;
+                    player.setYRot(targetYaw);
+                    player.setXRot((float) -(Math.atan2(dy, Math.sqrt(dx * dx + dz * dz)) * (180.0 / Math.PI)));
+
+                    BlockHitResult hitResult = new BlockHitResult(
+                            new Vec3(targetHealingMachine.getX() + 0.5, targetHealingMachine.getY() + 0.5,
+                                    targetHealingMachine.getZ() + 0.5),
+                            Direction.UP,
+                            java.util.Objects.requireNonNull(targetHealingMachine),
+                            false);
+
+                    if (mc.gameMode != null) {
+                        mc.gameMode.useItemOn(player, InteractionHand.MAIN_HAND, hitResult);
+                        LOGGER.info("[AutoCobble] Interacted with Healing Machine.");
+                    }
+
+                    needHealing = false;
+                    targetHealingMachine = null;
+                    actionCooldown = 60; // インタラクト後のクールダウン
+                }
+            } else {
+                float targetYaw = (float) (Math.atan2(dz, dx) * (180.0 / Math.PI)) - 90.0F;
+                player.setYRot(targetYaw);
+
+                mc.options.keyUp.setDown(true);
+
+                if (distSq > 25.0) {
+                    mc.options.keySprint.setDown(true);
+                } else {
+                    mc.options.keySprint.setDown(false);
+                }
+
+                if (player.horizontalCollision && player.onGround()) {
+                    mc.options.keyJump.setDown(true);
+                } else {
+                    mc.options.keyJump.setDown(false);
+                }
+            }
+        }
+    }
+
+    private static BlockPos findHealingMachine(LocalPlayer player) {
+        BlockPos center = player.blockPosition();
+        int rx = 30;
+        int ry = 10;
+        int rz = 30;
+
+        BlockPos pos1 = center.offset(-rx, -ry, -rz);
+        BlockPos pos2 = center.offset(rx, ry, rz);
+
+        return BlockPos
+                .betweenClosedStream(java.util.Objects.requireNonNull(pos1), java.util.Objects.requireNonNull(pos2))
+                .filter(pos -> {
+                    net.minecraft.world.level.block.state.BlockState state = player.level()
+                            .getBlockState(java.util.Objects.requireNonNull(pos));
+                    net.minecraft.resources.ResourceLocation registryName = ForgeRegistries.BLOCKS
+                            .getKey(state.getBlock());
+                    return registryName != null && "cobblemon:healing_machine".equals(registryName.toString());
+                })
+                .map(BlockPos::immutable)
+                .min(java.util.Comparator.comparingDouble(pos -> pos.distSqr(center)))
+                .orElse(null);
     }
 
     /**
@@ -315,18 +560,28 @@ public class ClientEvents {
                 InBattleMove bestMove = null;
                 boolean foundFalseSwipe = false;
 
+                // 2ターン技などで「使わなければならない」技が優先
                 for (InBattleMove move : moveSet.getMoves()) {
-                    if (!move.canBeUsed())
-                        continue;
-
-                    if (move.getId().equalsIgnoreCase("falseswipe")) {
+                    if (move.mustBeUsed()) {
                         bestMove = move;
-                        foundFalseSwipe = true;
                         break;
                     }
                 }
 
-                if (!foundFalseSwipe) {
+                if (bestMove == null) {
+                    for (InBattleMove move : moveSet.getMoves()) {
+                        if (!move.canBeUsed())
+                            continue;
+
+                        if (move.getId().equalsIgnoreCase("falseswipe")) {
+                            bestMove = move;
+                            foundFalseSwipe = true;
+                            break;
+                        }
+                    }
+                }
+
+                if (bestMove == null && !foundFalseSwipe) {
                     // スコア（威力）を正確に計算する。STATUS技は選択しない。
                     // 削りのため、威力が0より大きく最も低い技を選ぶ
                     double minPower = 9999.0;
@@ -384,22 +639,32 @@ public class ClientEvents {
         InBattleMove bestAttack = null;
         double maxPower = -1.0;
 
+        // 2ターン技などで「使わなければならない」技が優先
         for (InBattleMove move : moveSet.getMoves()) {
-            if (!move.canBeUsed() || move.getPp() <= 0)
-                continue;
+            if (move.mustBeUsed()) {
+                bestAttack = move;
+                break;
+            }
+        }
 
-            MoveTemplate tmpl = Moves.INSTANCE.getByName(move.getId());
-            if (tmpl != null) {
-                if (tmpl.getDamageCategory() == DamageCategories.INSTANCE.getSTATUS()) {
+        if (bestAttack == null) {
+            for (InBattleMove move : moveSet.getMoves()) {
+                if (!move.canBeUsed() || move.getPp() <= 0)
                     continue;
-                }
-                double power = tmpl.getPower();
-                double multiplier = calculateEffectiveness(move, oppPokemon);
-                double score = power * multiplier;
 
-                if (score > maxPower) {
-                    maxPower = score;
-                    bestAttack = move;
+                MoveTemplate tmpl = Moves.INSTANCE.getByName(move.getId());
+                if (tmpl != null) {
+                    if (tmpl.getDamageCategory() == DamageCategories.INSTANCE.getSTATUS()) {
+                        continue;
+                    }
+                    double power = tmpl.getPower();
+                    double multiplier = calculateEffectiveness(move, oppPokemon);
+                    double score = power * multiplier;
+
+                    if (score > maxPower) {
+                        maxPower = score;
+                        bestAttack = move;
+                    }
                 }
             }
         }

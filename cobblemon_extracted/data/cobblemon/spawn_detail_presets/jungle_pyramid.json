@@ -1,0 +1,18 @@
+{
+  "condition": {
+	"structures": [
+	  "minecraft:jungle_pyramid"
+    ],
+	"minY": 62,
+	"neededBaseBlocks": [
+      "minecraft:cobblestone",
+	  "#minecraft:mossy_cobblestone"
+    ],
+	"neededNearbyBlocks": [
+      "minecraft:chiseled_stone_bricks",
+	  "minecraft:cobblestone",
+	  "minecraft:cobblestone_stairs",
+	  "minecraft:mossy_cobblestone"
+	]
+  }
+}

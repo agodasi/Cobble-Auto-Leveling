@@ -1,0 +1,145 @@
+{
+  "baseYield": {
+    "min": 2,
+    "max": 4
+  },
+  "preferredBiomeTags": [
+    "cobblemon:is_plains"
+  ],
+  "growthTime": {
+    "min": 55,
+    "max": 65
+  },
+  "refreshRate": {
+    "min": 15,
+    "max": 25
+  },
+  "favoriteMulches": [
+    "loamy"
+  ],
+  "growthFactors": [
+    {
+      "variant": "cobblemon:preferred_biome",
+      "bonusYield": {
+        "min": 1,
+        "max": 2
+      }
+    }
+  ],
+  "randomizedGrowthPoints": true,
+  "spawnConditions": [],
+  "growthPoints": [
+    {
+      "position": {
+        "x": 8.0,
+        "y": 10.0,
+        "z": 5.0
+      },
+      "rotation": {
+        "x": 15.0,
+        "y": 5.0,
+        "z": -177.5
+      }
+    },
+    {
+      "position": {
+        "x": 5.0,
+        "y": 10.0,
+        "z": 8.0
+      },
+      "rotation": {
+        "x": 0.0,
+        "y": -87.5,
+        "z": -160.0
+      }
+    },
+    {
+      "position": {
+        "x": 11.0,
+        "y": 10.0,
+        "z": 8.0
+      },
+      "rotation": {
+        "x": 2.5,
+        "y": 82.5,
+        "z": 165.0
+      }
+    },
+    {
+      "position": {
+        "x": 8.0,
+        "y": 10.0,
+        "z": 11.0
+      },
+      "rotation": {
+        "x": -15.0,
+        "y": -5.0,
+        "z": -177.5
+      }
+    },
+    {
+      "position": {
+        "x": 5.0,
+        "y": 6.25,
+        "z": 5.0
+      },
+      "rotation": {
+        "x": 140.0,
+        "y": 45.0,
+        "z": -5.0
+      }
+    },
+    {
+      "position": {
+        "x": 11.0,
+        "y": 5.75,
+        "z": 5.0
+      },
+      "rotation": {
+        "x": 140.0,
+        "y": -35.0,
+        "z": -2.5
+      }
+    },
+    {
+      "position": {
+        "x": 5.0,
+        "y": 6.0,
+        "z": 11.0
+      },
+      "rotation": {
+        "x": -140.0,
+        "y": -45.0,
+        "z": -5.0
+      }
+    },
+    {
+      "position": {
+        "x": 11.0,
+        "y": 6.25,
+        "z": 11.0
+      },
+      "rotation": {
+        "x": -40.0,
+        "y": -50.0,
+        "z": -175.0
+      }
+    }
+  ],
+  "mutations": {
+    "cobblemon:rindo_berry": "cobblemon:kelpsy_berry",
+    "cobblemon:passho_berry": "cobblemon:pamtre_berry"
+  },
+  "sproutShape": "short-sprout",
+  "matureShape": "short-mature",
+  "flavors": {
+    "DRY": 20,
+    "SWEET": 10
+  },
+  "weight": 1.0,
+  "tintIndexes": [],
+  "flowerModel": "cobblemon:flower.geo",
+  "flowerTexture": "cobblemon:flower",
+  "fruitModel": "cobblemon:cornn_berry.geo",
+  "fruitTexture": "cobblemon:cornn"
+}

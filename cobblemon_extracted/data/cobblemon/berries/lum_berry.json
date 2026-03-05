@@ -1,0 +1,123 @@
+{
+  "baseYield": {
+    "min": 1,
+    "max": 3
+  },
+  "preferredBiomeTags": [
+    "cobblemon:is_jungle",
+    "cobblemon:is_swamp"
+  ],
+  "growthTime": {
+    "min": 75,
+    "max": 85
+  },
+  "refreshRate": {
+    "min": 17,
+    "max": 27
+  },
+  "favoriteMulches": [
+    "humid"
+  ],
+  "growthFactors": [
+    {
+      "variant": "cobblemon:preferred_biome",
+      "bonusYield": {
+        "min": 1,
+        "max": 1
+      }
+    }
+  ],
+  "randomizedGrowthPoints": true,
+  "spawnConditions": [],
+  "growthPoints": [
+    {
+      "position": {
+        "x": 2.25,
+        "y": 13.75,
+        "z": 8.0
+      },
+      "rotation": {
+        "x": 22.5,
+        "y": -17.5,
+        "z": -52.5
+      }
+    },
+    {
+      "position": {
+        "x": 6.0,
+        "y": 12.0,
+        "z": 8.25
+      },
+      "rotation": {
+        "x": -42.5,
+        "y": -20.0,
+        "z": 25.0
+      }
+    },
+    {
+      "position": {
+        "x": 7.25,
+        "y": 20.75,
+        "z": 7.25
+      },
+      "rotation": {
+        "x": 100.0,
+        "y": 42.5,
+        "z": 95.0
+      }
+    },
+    {
+      "position": {
+        "x": 10.0,
+        "y": 19.75,
+        "z": 8.0
+      },
+      "rotation": {
+        "x": -65.0,
+        "y": -7.5,
+        "z": 15.0
+      }
+    }
+  ],
+  "mutations": {
+    "cobblemon:figy_berry": "cobblemon:sitrus_berry",
+    "cobblemon:wiki_berry": "cobblemon:sitrus_berry",
+    "cobblemon:mago_berry": "cobblemon:sitrus_berry",
+    "cobblemon:aguav_berry": "cobblemon:sitrus_berry",
+    "cobblemon:iapapa_berry": "cobblemon:sitrus_berry",
+    "cobblemon:leppa_berry": "cobblemon:hopo_berry"
+  },
+  "sproutShape": [
+    {
+      "minX": 0,
+      "minY": -1,
+      "minZ": 0,
+      "maxX": 16,
+      "maxY": 16,
+      "maxZ": 16
+    }
+  ],
+  "matureShape": [
+    {
+      "minX": 0,
+      "minY": -1,
+      "minZ": 0,
+      "maxX": 16,
+      "maxY": 24,
+      "maxZ": 16
+    }
+  ],
+  "flavors": {
+    "SPICY": 10,
+    "DRY": 10,
+    "SWEET": 10,
+    "BITTER": 10,
+    "SOUR": 10
+  },
+  "weight": 1.0,
+  "tintIndexes": [],
+  "flowerModel": "cobblemon:flower.geo",
+  "flowerTexture": "cobblemon:flower",
+  "fruitModel": "cobblemon:lum_berry.geo",
+  "fruitTexture": "cobblemon:lum"
+}

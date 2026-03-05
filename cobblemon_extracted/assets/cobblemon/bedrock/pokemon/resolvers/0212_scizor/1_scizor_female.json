@@ -1,0 +1,12 @@
+{
+  "species": "cobblemon:scizor",
+  "order": 1,
+  "variations": [
+    {
+      "aspects": [
+        "female"
+      ],
+      "model": "cobblemon:scizor_female.geo"
+    }
+  ]
+}

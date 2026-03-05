@@ -1,0 +1,48 @@
+{
+  "species": "cobblemon:elgyem",
+  "order": 0,
+  "variations": [
+    {
+      "aspects": [],
+      "poser": "cobblemon:elgyem",
+      "model": "cobblemon:elgyem.geo",
+      "texture": "cobblemon:textures/pokemon/0605_elgyem/elgyem.png",
+      "layers": [
+        {
+          "name": "color",
+          "texture": {
+            "frames": [
+              "cobblemon:textures/pokemon/0605_elgyem/glow/hand_glow_green.png",
+              "cobblemon:textures/pokemon/0605_elgyem/glow/hand_glow_red.png",
+              "cobblemon:textures/pokemon/0605_elgyem/glow/hand_glow_yellow.png"
+            ],
+            "fps": 5,
+            "loop": true
+          },
+          "emissive": true
+        }
+      ]
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "cobblemon:textures/pokemon/0605_elgyem/elgyem_shiny.png",
+      "layers": [
+        {
+          "name": "color",
+          "texture": {
+            "frames": [
+              "cobblemon:textures/pokemon/0605_elgyem/glow/hand_shiny_blue.png",
+              "cobblemon:textures/pokemon/0605_elgyem/glow/hand_shiny_purple.png",
+              "cobblemon:textures/pokemon/0605_elgyem/glow/hand_shiny_yellow.png"
+            ],
+            "fps": 5,
+            "loop": true
+          },
+          "emissive": true
+        }
+      ]
+    }
+  ]
+}

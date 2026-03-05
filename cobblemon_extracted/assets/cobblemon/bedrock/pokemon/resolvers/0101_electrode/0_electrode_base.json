@@ -1,0 +1,19 @@
+{
+  "species": "cobblemon:electrode",
+  "order": 0,
+  "variations": [
+    {
+      "aspects": [],
+      "poser": "cobblemon:electrode",
+      "model": "cobblemon:electrode.geo",
+      "texture": "cobblemon:textures/pokemon/0101_electrode/electrode.png",
+      "layers": []
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "cobblemon:textures/pokemon/0101_electrode/electrode_shiny.png"
+    }
+  ]
+}

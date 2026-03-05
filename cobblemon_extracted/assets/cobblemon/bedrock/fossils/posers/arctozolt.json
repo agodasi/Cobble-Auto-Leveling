@@ -1,0 +1,29 @@
+{
+  "maxScale": 0.85,
+  "yTranslation": 0,
+  "yGrowthPoint": 0.75,
+
+  "animations": [
+    "bedrock(arctozolt_fetus, sleep)"
+  ],
+  "quirks": [
+    {
+      "name": "quirk",
+      "animations": [
+        "bedrock(arctozolt_fetus, quirk1)"
+      ],
+      "loopTimes": 1,
+      "minSeconds": 45,
+      "maxSeconds": 120
+    },
+    {
+      "name": "quirk",
+      "animations": [
+        "bedrock(arctozolt_fetus, quirk2)"
+      ],
+      "loopTimes": 1,
+      "minSeconds": 45,
+      "maxSeconds": 120
+    }
+  ]
+}

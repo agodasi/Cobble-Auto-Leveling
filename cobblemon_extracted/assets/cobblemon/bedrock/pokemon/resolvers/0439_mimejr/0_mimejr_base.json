@@ -1,0 +1,19 @@
+{
+  "species": "cobblemon:mimejr",
+  "order": 0,
+  "variations": [
+    {
+      "aspects": [],
+      "poser": "cobblemon:mimejr",
+      "model": "cobblemon:mimejr.geo",
+      "texture": "cobblemon:textures/pokemon/0439_mimejr/mimejr.png",
+      "layers": []
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "cobblemon:textures/pokemon/0439_mimejr/mimejr_shiny.png"
+    }
+  ]
+}

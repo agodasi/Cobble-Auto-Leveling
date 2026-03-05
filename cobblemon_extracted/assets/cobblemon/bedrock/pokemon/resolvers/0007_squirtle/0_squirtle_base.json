@@ -1,0 +1,19 @@
+{
+  "species": "cobblemon:squirtle",
+  "order": 0,
+  "variations": [
+    {
+      "aspects": [],
+      "poser": "cobblemon:squirtle",
+      "model": "cobblemon:squirtle.geo",
+      "texture": "cobblemon:textures/pokemon/0007_squirtle/squirtle.png",
+      "layers": []
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "cobblemon:textures/pokemon/0007_squirtle/squirtle_shiny.png"
+    }
+  ]
+}

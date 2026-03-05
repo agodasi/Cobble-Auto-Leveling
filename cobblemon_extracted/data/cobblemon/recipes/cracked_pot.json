@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "cobblemon:chipped_pot"
+  },
+  "result": "cobblemon:cracked_pot"
+}

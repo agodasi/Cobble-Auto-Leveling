@@ -1,0 +1,20 @@
+{
+  "maxScale": 0.9,
+  "yTranslation": 0.1,
+  "yGrowthPoint": 0.625,
+
+  "animations": [
+    "bedrock(tyrunt_fetus, sleep)"
+  ],
+  "quirks": [
+    {
+      "name": "quirk",
+      "animations": [
+        "bedrock(tyrunt_fetus, quirk)"
+      ],
+      "loopTimes": 1,
+      "minSeconds": 30,
+      "maxSeconds": 60
+    }
+  ]
+}
