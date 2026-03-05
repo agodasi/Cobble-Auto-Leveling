@@ -30,7 +30,6 @@ import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.network.chat.Component;
-import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
@@ -62,9 +61,6 @@ public class ClientEvents {
     /** ポケモン検知の範囲（ブロック数） */
     private static final double SCAN_RADIUS = 30.0;
 
-    /** ポケモンに十分近いとみなす距離（ブロック数） */
-    private static final double ARRIVE_DISTANCE = 1.0;
-
     /** 現在追跡中のポケモン */
     private static PokemonEntity targetPokemon = null;
 
@@ -80,6 +76,11 @@ public class ClientEvents {
 
     /** キーを離すまでの残りTick数 */
     private static int releaseKeyTick = 0;
+
+    /** ターゲットの座標（目標を更新するかどうかの判定用） */
+    private static double lastTargetX = 0;
+    private static double lastTargetY = 0;
+    private static double lastTargetZ = 0;
 
     /** バトル中かどうか */
     private static boolean inBattle = false;
@@ -167,19 +168,8 @@ public class ClientEvents {
             chatTickCounter = 0;
 
             if (!enabled) {
-                // OFFにした場合、ターゲットをクリアして移動を停止
-                targetPokemon = null;
                 mc.options.keyUp.setDown(false);
                 mc.options.keySprint.setDown(false);
-
-                // Baritoneが利用可能ならキャンセル
-                try {
-                    if (BaritoneHelper.isAvailable()) {
-                        BaritoneHelper.cancelMovement();
-                    }
-                } catch (Throwable e) {
-                    // Baritone未導入時は無視
-                }
             }
 
             String status = enabled ? "§a有効" : "§c無効";
@@ -380,7 +370,7 @@ public class ClientEvents {
                 }
 
                 if (bestMove != null) {
-                    gui.selectAction(request, new MoveActionResponse(bestMove.getId(), opponent.getPNX(), ""));
+                    gui.selectAction(request, createMoveAction(bestMove, opponent));
                     actionCooldown = 40;
                     LOGGER.info("[AutoCobble] Safely attacked using Move: " + bestMove.getId());
                 } else {
@@ -431,7 +421,7 @@ public class ClientEvents {
         }
 
         if (bestAttack != null) {
-            gui.selectAction(request, new MoveActionResponse(bestAttack.getId(), opponent.getPNX(), ""));
+            gui.selectAction(request, createMoveAction(bestAttack, opponent));
             actionCooldown = 40;
             LOGGER.info("[AutoCobble] Attacked using Move: " + bestAttack.getId());
         } else {
@@ -485,7 +475,12 @@ public class ClientEvents {
                 scanArea);
 
         if (nearbyPokemon.isEmpty()) {
-            targetPokemon = null;
+            if (targetPokemon != null) {
+                targetPokemon = null;
+                lastTargetX = 0;
+                lastTargetY = 0;
+                lastTargetZ = 0;
+            }
             return;
         }
 
@@ -494,25 +489,45 @@ public class ClientEvents {
                 .min(Comparator.comparingDouble(e -> e.distanceToSqr(player)))
                 .orElse(null);
 
-        if (closest != null) {
+        if (closest == null)
+            return;
+
+        boolean isNewTarget = targetPokemon == null || !targetPokemon.getUUID().equals(closest.getUUID());
+
+        // 新しい対象か、または対象が前回の目標地点から4ブロック以上移動した場合のみ目標更新
+        double dx = closest.getX() - lastTargetX;
+        double dy = closest.getY() - lastTargetY;
+        double dz = closest.getZ() - lastTargetZ;
+        double distSqFromLastGoal = dx * dx + dy * dy + dz * dz;
+
+        if (isNewTarget || distSqFromLastGoal > 16.0) {
             targetPokemon = closest;
-
-            // チャット通知（スパム防止）
-            chatTickCounter++;
-            if (chatTickCounter >= CHAT_INTERVAL / SCAN_INTERVAL) {
-                chatTickCounter = 0;
-                String name = closest.getDisplayName().getString();
-                int x = (int) closest.getX();
-                int y = (int) closest.getY();
-                int z = (int) closest.getZ();
-                double dist = Math.sqrt(closest.distanceToSqr(player));
-
-                player.displayClientMessage(
-                        Objects.requireNonNull(Component.literal(
-                                Objects.requireNonNull(String.format("§eTarget: §b%s §e(%.1fブロック先) X:%d Y:%d Z:%d",
-                                        name, dist, x, y, z)))),
-                        true); // trueでアクションバーに表示（チャット欄を汚さない）
+            if (isNewTarget) {
+                LOGGER.info("[AutoCobble] Navigating to new target: " + closest.getDisplayName().getString());
+            } else {
+                LOGGER.info("[AutoCobble] Target moved significantly. Updating goal.");
             }
+
+            lastTargetX = targetPokemon.getX();
+            lastTargetY = targetPokemon.getY();
+            lastTargetZ = targetPokemon.getZ();
+        }
+
+        // チャット通知（スパム防止）
+        chatTickCounter++;
+        if (chatTickCounter >= CHAT_INTERVAL / SCAN_INTERVAL) {
+            chatTickCounter = 0;
+            String name = closest.getDisplayName().getString();
+            int x = (int) closest.getX();
+            int y = (int) closest.getY();
+            int z = (int) closest.getZ();
+            double dist = Math.sqrt(closest.distanceToSqr(player));
+
+            player.displayClientMessage(
+                    Objects.requireNonNull(Component.literal(
+                            Objects.requireNonNull(String.format("§eTarget: §b%s §e(%.1fブロック先) X:%d Y:%d Z:%d",
+                                    name, dist, x, y, z)))),
+                    true); // trueでアクションバーに表示（チャット欄を汚さない）
         }
     }
 
@@ -523,8 +538,8 @@ public class ClientEvents {
     private static void moveTowardTarget(Minecraft mc, LocalPlayer player, @Nonnull Entity target) {
         double dist = player.distanceTo(target);
 
-        // 1.0ブロック以下の場合は到達と判定し、エイム＆インタラクトを実行
-        if (dist <= 1.0) {
+        // 2.0ブロック以下の場合は到達と判定し、エイム＆インタラクトを実行
+        if (dist <= 2.0) {
             mc.options.keyUp.setDown(false);
             mc.options.keySprint.setDown(false);
             mc.options.keyJump.setDown(false);
@@ -597,48 +612,24 @@ public class ClientEvents {
             return;
         }
 
+        // 2.0ブロック以上の場合はターゲットに向かって移動
+        // プレイヤーの視線をポケモンに向ける
         double dx = target.getX() - player.getX();
-        double dy = (target.getY() + target.getEyeHeight() / 2.0) - (player.getY() + player.getEyeHeight());
         double dz = target.getZ() - player.getZ();
-        double horizontalDist = Math.sqrt(dx * dx + dz * dz);
+        float targetYaw = (float) (Math.atan2(dz, dx) * (180.0 / Math.PI)) - 90.0F;
+        player.setYRot(targetYaw);
 
-        // 念のため、既存の距離判定による移動停止（ARRIVE_DISTANCE = 1.0 に変更済み）
-        if (horizontalDist < ARRIVE_DISTANCE) {
-            mc.options.keyUp.setDown(false);
-            mc.options.keySprint.setDown(false);
-            return;
-        }
-
-        // プレイヤーの視線をターゲットに向ける（yaw/pitch計算）
-        float targetYaw = (float) (Mth.atan2(dz, dx) * (180.0 / Math.PI)) - 90.0F;
-        float targetPitch = (float) -(Mth.atan2(dy, horizontalDist) * (180.0 / Math.PI));
-
-        // 急激に回転しないよう、現在の角度からスムーズに補間
-        float currentYaw = player.getYRot();
-        float currentPitch = player.getXRot();
-
-        float yawDiff = Mth.wrapDegrees(targetYaw - currentYaw);
-        float pitchDiff = targetPitch - currentPitch;
-
-        // 1Tickで最大回転速度を制限（スムーズな旋回）
-        float maxRotSpeed = 15.0F;
-        float newYaw = currentYaw + Mth.clamp(yawDiff, -maxRotSpeed, maxRotSpeed);
-        float newPitch = currentPitch + Mth.clamp(pitchDiff, -maxRotSpeed, maxRotSpeed);
-
-        player.setYRot(newYaw);
-        player.setXRot(Mth.clamp(newPitch, -80.0F, 80.0F));
-
-        // 前進キーを押し続ける
+        // 前進キーをONにする
         mc.options.keyUp.setDown(true);
 
-        // 距離が遠い場合はスプリント
-        if (horizontalDist > 8.0) {
+        // スプリント（オプション）
+        if (dist > 5.0) {
             mc.options.keySprint.setDown(true);
         } else {
             mc.options.keySprint.setDown(false);
         }
 
-        // ジャンプ判定：前方にブロックがある場合はジャンプ
+        // 段差がある場合にジャンプを試みる（簡易的な段差越え）
         if (player.horizontalCollision && player.onGround()) {
             mc.options.keyJump.setDown(true);
         } else {
@@ -997,5 +988,20 @@ public class ClientEvents {
             default:
                 return 1.0;
         }
+    }
+
+    private static MoveActionResponse createMoveAction(InBattleMove move,
+            com.cobblemon.mod.common.client.battle.ActiveClientBattlePokemon opponent) {
+        String targetPNX = opponent.getPNX();
+        MoveTemplate tmpl = Moves.INSTANCE.getByName(move.getId());
+        if (tmpl != null) {
+            String targetType = tmpl.getTarget().name();
+            // 範囲攻撃（Razor Leafなど）や自身対象の技は特定のターゲットを指定するとエラーになるため、nullを渡す
+            if (!targetType.equals("normal") && !targetType.equals("adjacentAlly") && !targetType.equals("adjacentFoe")
+                    && !targetType.equals("any")) {
+                targetPNX = null;
+            }
+        }
+        return new MoveActionResponse(move.getId(), targetPNX, "");
     }
 }

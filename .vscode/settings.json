@@ -1,5 +1,6 @@
 {
     "java.compile.nullAnalysis.mode": "automatic",
-    "java.configuration.updateBuildConfiguration": "interactive",
-    "terminal.integrated.accessibleViewFocusOnCommandExecution": true
+    "java.configuration.updateBuildConfiguration": "disabled",
+    "terminal.integrated.accessibleViewFocusOnCommandExecution": true,
+    "git.ignoreLimitWarning": true
 }

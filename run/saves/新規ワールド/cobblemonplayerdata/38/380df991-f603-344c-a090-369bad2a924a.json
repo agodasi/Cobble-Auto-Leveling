@@ -10,16 +10,23 @@
   "advancementData": {
     "totalCaptureCount": 0,
     "totalEggsHatched": 0,
-    "totalEvolvedCount": 0,
-    "totalBattleVictoryCount": 1,
+    "totalEvolvedCount": 1,
+    "totalBattleVictoryCount": 12,
     "totalPvPBattleVictoryCount": 0,
-    "totalPvWBattleVictoryCount": 1,
+    "totalPvWBattleVictoryCount": 12,
     "totalPvNBattleVictoryCount": 0,
     "totalShinyCaptureCount": 0,
     "totalTradedCount": 0,
     "totalTypeCaptureCounts": {},
     "totalDefeatedCounts": {
-      "cobblemon:pidgey": 1
+      "cobblemon:pidgey": 2,
+      "cobblemon:zigzagoon": 2,
+      "cobblemon:nickit": 1,
+      "cobblemon:taillow": 1,
+      "cobblemon:rattata": 1,
+      "cobblemon:tandemaus": 1,
+      "cobblemon:sentret": 2,
+      "cobblemon:mareep": 2
     },
     "aspectsCollected": {}
   }

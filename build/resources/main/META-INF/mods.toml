@@ -29,3 +29,10 @@ authors="agodasi"
     versionRange="[4.10.0,)"
     ordering="NONE"
     side="BOTH"
+
+[[dependencies.autocobble]]
+    modId="baritone"
+    mandatory=false
+    versionRange="*"
+    ordering="NONE"
+    side="CLIENT"
