@@ -484,8 +484,9 @@ public class ClientEvents {
             return;
         }
 
-        // 最も近いポケモンをターゲットに設定
+        // 最も近いポケモンをターゲットに設定 (所有されているポケモンは除外)
         PokemonEntity closest = nearbyPokemon.stream()
+                .filter(e -> e.getOwnerUUID() == null)
                 .min(Comparator.comparingDouble(e -> e.distanceToSqr(player)))
                 .orElse(null);
 

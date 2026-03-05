@@ -30,9 +30,3 @@ authors="${mod_authors}"
     ordering="NONE"
     side="BOTH"
 
-[[dependencies.${mod_id}]]
-    modId="baritone"
-    mandatory=false
-    versionRange="*"
-    ordering="NONE"
-    side="CLIENT"
