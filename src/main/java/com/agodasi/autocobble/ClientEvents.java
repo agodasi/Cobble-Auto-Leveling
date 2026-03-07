@@ -69,19 +69,13 @@ public class ClientEvents {
     private static final int SCAN_INTERVAL = 20;
 
     /** ポケモン検知の範囲（ブロック数） */
-    private static final double SCAN_RADIUS = 30.0;
+    private static final double SCAN_RADIUS = 45.0;
 
     /** バトル進行がない時のタイムアウト（ティック数）。20ティック * 60秒 = 1200ティック */
     private static final int BATTLE_TIMEOUT_TICKS = 200;
 
     /** 現在バトルでの経過ティック数 */
     private static int battleStuckTickCounter = 0;
-
-    /** 強制逃走と離脱用のフラグとカウンター */
-    private static boolean fleeing = false;
-    private static int fleeTickCounter = 0;
-    private static final int FLEE_DURATION_TICKS = 200; // 5秒間逃げる
-    private static float fleeYaw = 0.0f;
 
     /** 現在追跡中のポケモン */
     private static PokemonEntity targetPokemon = null;
@@ -106,6 +100,9 @@ public class ClientEvents {
 
     /** Baritoneが経路探索中かどうかのフラグ */
     private static boolean baritonePathing = false;
+
+    /** 待機のために回復装置へ移動中かどうかのフラグ */
+    private static boolean isIdleMoving = false;
 
     /** バトル中かどうか */
     private static boolean inBattle = false;
@@ -157,9 +154,6 @@ public class ClientEvents {
             }
         }
 
-        // ──────────────────────────────────
-        // GUIが開いている場合は移動を停止してスキップ
-        // ──────────────────────────────────
         if (mc.screen != null) {
             mc.options.keyUp.setDown(false);
             mc.options.keyDown.setDown(false);
@@ -171,16 +165,15 @@ public class ClientEvents {
             if (mc.screen instanceof BattleGUI) {
                 if (!inBattle) {
                     inBattle = true;
-                    battleStuckTickCounter = 0; // バトル開始時にカウンターリセット
+                    battleStuckTickCounter = 0;
                     LOGGER.info("[AutoCobble] Entered Battle Screen.");
                 }
 
                 battleStuckTickCounter++;
                 if (battleStuckTickCounter >= BATTLE_TIMEOUT_TICKS) {
-                    LOGGER.warn("[AutoCobble] Battle timeout reached (1 minute). Attempting to force exit and flee.");
-                    mc.setScreen(null); // GUIを強制的に閉じる
+                    LOGGER.warn("[AutoCobble] Battle timeout reached. Force exiting.");
+                    mc.setScreen(null);
 
-                    // Rキー（戻す/逃げるキー）をシミュレート
                     KeyMapping recallKey = null;
                     for (KeyMapping key : mc.options.keyMappings) {
                         String name = key.getName().toLowerCase();
@@ -197,11 +190,8 @@ public class ClientEvents {
                     }
 
                     inBattle = false;
-                    fleeing = true;
-                    fleeTickCounter = 0;
-                    fleeYaw = player.getYRot() + 180.0f; // 後ろを向く
-                    targetPokemon = null; // ターゲットをリセット
-                    needHealing = false; // タイムアウト時は一旦回復フラグも消して仕切り直す
+                    targetPokemon = null;
+                    needHealing = false;
 
                     if (baritonePathing && player.connection != null) {
                         player.connection.sendChat("#stop");
@@ -214,74 +204,73 @@ public class ClientEvents {
                     int prevCooldown = actionCooldown;
                     handleBattleGUI((BattleGUI) mc.screen, mc, player);
                     if (actionCooldown > prevCooldown) {
-                        // アクションが実行されたらタイムアウトカウンターをリセット
                         battleStuckTickCounter = 0;
                     }
                 }
-            } else {
-                if (inBattle) {
-                    inBattle = false;
-                    battleStuckTickCounter = 0;
+            }
+        }
 
-                    // バトル終了時のパーティ回復チェック
-                    boolean shouldHeal = false;
-                    try {
-                        PlayerPartyStore party = Cobblemon.INSTANCE.getStorage().getParty(player.getUUID());
-                        if (party != null) {
-                            for (int i = 0; i < party.size(); i++) {
-                                Pokemon p = party.get(i);
-                                if (p == null)
-                                    continue;
+        // ──────────────────────────────────
+        // バトル終了検知と回復チェック
+        // ──────────────────────────────────
+        if (inBattle && (mc.screen == null || !(mc.screen instanceof BattleGUI))) {
+            inBattle = false;
+            battleStuckTickCounter = 0;
 
-                                // 1. HPが50%以下または、ひんし
-                                float hpPct = (float) p.getCurrentHealth() / p.getHp();
-                                if (hpPct <= 0.5f || p.getCurrentHealth() <= 0) {
-                                    shouldHeal = true;
-                                    break;
-                                }
+            boolean shouldHeal = false;
+            try {
+                PlayerPartyStore party = Cobblemon.INSTANCE.getStorage().getParty(player.getUUID());
+                if (party != null) {
+                    for (int i = 0; i < party.size(); i++) {
+                        Pokemon p = party.get(i);
+                        if (p == null)
+                            continue;
 
-                                // 2. PPが3以下の技があるか
-                                MoveSet moveset = p.getMoveSet();
-                                boolean lowPp = false;
-                                for (Move move : moveset.getMoves()) {
-                                    if (move != null && move.getCurrentPp() <= 3) {
-                                        lowPp = true;
-                                        break;
-                                    }
-                                }
-                                if (lowPp) {
-                                    shouldHeal = true;
-                                    break;
-                                }
+                        float hpPct = (float) p.getCurrentHealth() / p.getHp();
+                        if (hpPct <= 0.5f || p.getCurrentHealth() <= 0) {
+                            shouldHeal = true;
+                            break;
+                        }
 
-                                // 3. 状態異常 (どく、まひ、ねむり、やけど、こおり) があるか
-                                // Cobblemonの持続型状態異常は getStatus() 等で取得する
-                                PersistentStatusContainer status = p.getStatus();
-                                if (status != null && status.getStatus() != null) {
-                                    String statusId = status.getStatus().getName().getPath().toLowerCase();
-                                    if (statusId.contains("poison") || statusId.contains("paralysis")
-                                            || statusId.contains("sleep") || statusId.contains("burn")
-                                            || statusId.contains("freeze")) {
-                                        shouldHeal = true;
-                                        break;
-                                    }
-                                }
+                        MoveSet moveset = p.getMoveSet();
+                        boolean lowPp = false;
+                        for (Move move : moveset.getMoves()) {
+                            if (move != null && move.getCurrentPp() <= 3) {
+                                lowPp = true;
+                                break;
                             }
                         }
-                    } catch (Exception e) {
-                        LOGGER.warn("[AutoCobble] Error checking party status for healing: ", e);
-                        shouldHeal = true; // エラー時は安全のために回復に向かわせる
-                    }
+                        if (lowPp) {
+                            shouldHeal = true;
+                            break;
+                        }
 
-                    needHealing = shouldHeal;
-                    if (needHealing) {
-                        LOGGER.info(
-                                "[AutoCobble] Exited Battle Screen. Party needs healing (HP <= 50%, low PP, fainted, or status ailment). Set needHealing = true");
-                    } else {
-                        LOGGER.info("[AutoCobble] Exited Battle Screen. Party is healthy.");
+                        PersistentStatusContainer status = p.getStatus();
+                        if (status != null && status.getStatus() != null) {
+                            String statusId = status.getStatus().getName().getPath().toLowerCase();
+                            if (statusId.contains("poison") || statusId.contains("paralysis")
+                                    || statusId.contains("sleep") || statusId.contains("burn")
+                                    || statusId.contains("freeze")) {
+                                shouldHeal = true;
+                                break;
+                            }
+                        }
                     }
                 }
+            } catch (Exception e) {
+                LOGGER.warn("[AutoCobble] Error checking party status for healing: ", e);
+                shouldHeal = true;
             }
+
+            needHealing = shouldHeal;
+            if (needHealing) {
+                LOGGER.info("[AutoCobble] Exited Battle Screen. Party needs healing. Set needHealing = true");
+            } else {
+                LOGGER.info("[AutoCobble] Exited Battle Screen. Party is healthy.");
+            }
+        }
+
+        if (mc.screen != null) {
             return;
         }
 
@@ -302,9 +291,8 @@ public class ClientEvents {
                 }
             }
 
-            String status = enabled ? "§a有効" : "§c無効";
-            player.displayClientMessage(
-                    Objects.requireNonNull(Component.literal("[AutoCobble] " + status)),
+            String statusValue = enabled ? "§a有効" : "§c無効";
+            player.displayClientMessage(Objects.requireNonNull(Component.literal("[AutoCobble] " + statusValue)),
                     false);
             LOGGER.info("[AutoCobble] toggled: {}", enabled ? "ON" : "OFF");
         }
@@ -316,31 +304,9 @@ public class ClientEvents {
             return;
         }
 
-        if (fleeing) {
-            fleeTickCounter++;
-            player.setYRot(fleeYaw);
-            mc.options.keyUp.setDown(true);
-            mc.options.keySprint.setDown(true);
-
-            if (player.horizontalCollision && player.onGround()) {
-                mc.options.keyJump.setDown(true);
-            } else {
-                mc.options.keyJump.setDown(false);
-            }
-
-            if (fleeTickCounter >= FLEE_DURATION_TICKS) {
-                fleeing = false;
-                mc.options.keyUp.setDown(false);
-                mc.options.keySprint.setDown(false);
-                mc.options.keyJump.setDown(false);
-                LOGGER.info("[AutoCobble] Finished fleeing. Resuming normal operations.");
-            }
-            return; // 逃走中は他の行動をしない
-        }
-
         if (needHealing) {
             handleHealingMovement(mc, player);
-            return; // 回復中は通常のポケモン検知・移動を行わない
+            return;
         }
 
         // 定期的にポケモンをスキャンしてターゲットを更新
@@ -351,20 +317,71 @@ public class ClientEvents {
         }
 
         // ターゲットが無効になった場合はクリア
-        if (targetPokemon != null && (!targetPokemon.isAlive() || targetPokemon.isRemoved())) {
+        PokemonEntity currentTarget = targetPokemon;
+        if (currentTarget != null && (!currentTarget.isAlive() || currentTarget.isRemoved())) {
             targetPokemon = null;
+            currentTarget = null;
         }
 
         // ターゲットがいる場合、毎Tickポケモンに向かって移動
-        if (targetPokemon != null) {
-            moveTowardTarget(mc, player, targetPokemon);
+        if (currentTarget != null) {
+            isIdleMoving = false;
+            moveTowardTarget(mc, player, currentTarget);
         } else {
-            // ターゲットがいない場合は移動停止
-            mc.options.keyUp.setDown(false);
-            mc.options.keySprint.setDown(false);
-            if (baritonePathing && player.connection != null) {
-                player.connection.sendChat("#stop");
-                baritonePathing = false;
+            handleIdleMovement(mc, player);
+        }
+    }
+
+    /**
+     * 待機状態の処理。ポケモンがいない場合、近くの回復装置へ移動する。
+     */
+    private static void handleIdleMovement(Minecraft mc, LocalPlayer player) {
+        // 定期的に回復装置をスキャン
+        healingScanTickCounter++;
+        if (healingScanTickCounter >= SCAN_INTERVAL) {
+            healingScanTickCounter = 0;
+            BlockPos machinePos = findHealingMachine(player);
+
+            if (machinePos != null) {
+                double distSq = player.distanceToSqr(machinePos.getX() + 0.5, machinePos.getY() + 0.5,
+                        machinePos.getZ() + 0.5);
+
+                // 既に近く（3ブロック以内）にいる場合は停止
+                if (distSq <= 9.0) {
+                    if (baritonePathing && player.connection != null) {
+                        player.connection.sendChat("#stop");
+                        baritonePathing = false;
+                    }
+                    isIdleMoving = false;
+                } else if (!isIdleMoving) {
+                    // 遠くにいる場合は移動開始
+                    if (player.connection != null) {
+                        player.connection.sendChat(
+                                "#goto " + machinePos.getX() + " " + machinePos.getY() + " " + machinePos.getZ());
+                        baritonePathing = true;
+                        isIdleMoving = true;
+                        LOGGER.info("[AutoCobble] No targets found. Moving to idle spot at healing machine: {}",
+                                machinePos);
+                    }
+                }
+
+                // 移動中は常に進行方向に視点を向ける
+                if (isIdleMoving) {
+                    double dx = machinePos.getX() + 0.5 - player.getX();
+                    double dz = machinePos.getZ() + 0.5 - player.getZ();
+                    float movingYaw = (float) (Math.atan2(dz, dx) * (180.0 / Math.PI)) - 90.0F;
+                    player.setYRot(movingYaw);
+                }
+            } else {
+                // 回復装置も見つからない場合は完全に停止
+                if (baritonePathing && player.connection != null) {
+                    player.connection.sendChat("#stop");
+                    baritonePathing = false;
+                }
+                isIdleMoving = false;
+
+                mc.options.keyUp.setDown(false);
+                mc.options.keySprint.setDown(false);
             }
         }
     }
@@ -448,9 +465,9 @@ public class ClientEvents {
 
     private static BlockPos findHealingMachine(LocalPlayer player) {
         BlockPos center = player.blockPosition();
-        int rx = 30;
-        int ry = 10;
-        int rz = 30;
+        int rx = 45;
+        int ry = 15;
+        int rz = 45;
 
         BlockPos pos1 = center.offset(-rx, -ry, -rz);
         BlockPos pos2 = center.offset(rx, ry, rz);
@@ -916,17 +933,17 @@ public class ClientEvents {
             return;
         }
 
-        // 2.0ブロック以上の場合はターゲットに向かって移動
-        double dxMove = target.getX() - player.getX();
-        double dzMove = target.getZ() - player.getZ();
-        float movingYaw = (float) (Math.atan2(dzMove, dxMove) * (180.0 / Math.PI)) - 90.0F;
-        player.setYRot(movingYaw);
-
         if (!baritonePathing && player.connection != null) {
             player.connection
                     .sendChat("#goto " + (int) target.getX() + " " + (int) target.getY() + " " + (int) target.getZ());
             baritonePathing = true;
         }
+
+        // 2.0ブロック以上の場合はターゲットに向かって移動（視点制御）
+        double dxMove = target.getX() - player.getX();
+        double dzMove = target.getZ() - player.getZ();
+        float movingYaw = (float) (Math.atan2(dzMove, dxMove) * (180.0 / Math.PI)) - 90.0F;
+        player.setYRot(movingYaw);
     }
 
     private static double calculateEffectiveness(InBattleMove move, ClientBattlePokemon opponent) {
