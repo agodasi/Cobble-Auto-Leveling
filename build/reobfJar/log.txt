@@ -239,4 +239,5 @@ Writing Output: E:\program files\auto-minecraft\pokemon\build\reobfJar\output.ja
   com/agodasi/autocobble/AutoCobble.class
   com/agodasi/autocobble/ClientEvents.class
   com/agodasi/autocobble/KeyBindings.class
+  com/agodasi/autocobble/TestReflection.class
   pack.mcmeta

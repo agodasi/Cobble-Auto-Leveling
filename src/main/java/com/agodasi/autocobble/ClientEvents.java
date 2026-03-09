@@ -62,6 +62,38 @@ public class ClientEvents {
     /** 自動化ロジックの有効/無効状態 */
     private static boolean enabled = false;
 
+    /** 伝説・幻・UBポケモンの名前セット（判別用・メモリ最適化） */
+    private static final java.util.Set<String> LEGENDARY_POKEMON = new java.util.HashSet<>(java.util.Arrays.asList(
+            // 鳥伝説
+            "articuno", "zapdos", "moltres",
+            // ミュウツー、ミュウ
+            "mewtwo", "mew",
+            // 第二世代
+            "raikou", "entei", "suicune", "lugia", "ho-oh", "celebi",
+            // 第三世代
+            "regirock", "regice", "registeel", "latias", "latios",
+            "kyogre", "groudon", "rayquaza", "jirachi", "deoxys",
+            // 第四世代
+            "uxie", "mesprit", "azelf", "dialga", "palkia", "heatran",
+            "regigigas", "giratina", "cresselia", "phione", "manaphy", "darkrai", "shaymin", "arceus",
+            // 第五世代
+            "victini", "cobalion", "terrakion", "virizion", "tornadus", "thundurus", "reshiram", "zekrom",
+            "landorus", "kyurem", "keldeo", "meloetta", "genesect",
+            // 第六世代
+            "xerneas", "yveltal", "zygarde", "diancie", "hoopa", "volcanion",
+            // 第七世代
+            "type: null", "silvally", "tapu koko", "tapu lele", "tapu bulu", "tapu fini",
+            "cosmog", "cosmoem", "solgaleo", "lunala", "nihilego", "buzzwole", "pheromosa", "xurkitree",
+            "celesteela", "kartana", "guzzlord", "necrozma", "magearna", "marshadow", "poipole", "naganadel",
+            "stakataka", "blacephalon", "zeraora", "meltan", "melmetal",
+            // 第八世代
+            "zacian", "zamazenta", "eternatus", "kubfu", "urshifu", "zarude", "regieleki", "regidrago",
+            "glastrier", "spectrier", "calyrex", "enamorus",
+            // 第九世代
+            "wo-chien", "chien-pao", "ting-lu", "chi-yu", "koraidon", "miraidon", "walking wake", "iron leaves",
+            "okidogi", "munkidori", "fezandipiti", "ogerpon", "terapagos", "iron boulder", "iron crown",
+            "gouging fire", "raging bolt", "pecharunt"));
+
     /** ポケモン検知用ティックカウンター */
     private static int scanTickCounter = 0;
 
@@ -79,6 +111,10 @@ public class ClientEvents {
 
     /** 現在追跡中のポケモン */
     private static PokemonEntity targetPokemon = null;
+
+    /** 待機/回復関連のインターバルカウンタ */
+    private static int healingScanTickCounter = 0;
+    private static int healingStuckTickCounter = 0;
 
     /** チャット表示用ティックカウンター（スパム防止） */
     private static int chatTickCounter = 0;
@@ -101,9 +137,6 @@ public class ClientEvents {
     /** Baritoneが経路探索中かどうかのフラグ */
     private static boolean baritonePathing = false;
 
-    /** 待機のために回復装置へ移動中かどうかのフラグ */
-    private static boolean isIdleMoving = false;
-
     /** バトル中かどうか */
     private static boolean inBattle = false;
 
@@ -113,7 +146,18 @@ public class ClientEvents {
     public static boolean needHealing = false;
 
     private static BlockPos targetHealingMachine = null;
-    private static int healingScanTickCounter = 0;
+
+    /** 睡眠管理用の変数 */
+    private static int nightsPassedWithoutSleep = 0;
+    private static long lastDayHandled = -1;
+    private static boolean needSleep = false;
+    private static boolean isWaitingForMorning = false;
+    private static int sleepCancelTickCounter = 0;
+    private static BlockPos targetBed = null;
+    private static int sleepScanTickCounter = 0;
+
+    /** 戦闘終了時のタイムスタンプ（ティック数） */
+    private static long lastBattleEndTime = 0;
 
     /**
      * 自動化ロジックが有効かどうかを返す。
@@ -139,6 +183,32 @@ public class ClientEvents {
 
         if (player == null) {
             return;
+        }
+
+        // ──────────────────────────────────
+        // 夜数カウントと睡眠判定
+        // ──────────────────────────────────
+        if (mc.level != null) {
+            long time = mc.level.getDayTime();
+            long currentDay = time / 24000;
+            long timeOfDay = time % 24000;
+
+            // 夕方（12500〜）になったらカウント判定
+            if (timeOfDay >= 12500 && currentDay > lastDayHandled) {
+                lastDayHandled = currentDay;
+                nightsPassedWithoutSleep++;
+                LOGGER.info("[AutoCobble] Night falls. Nights without sleep: {}", nightsPassedWithoutSleep);
+                if (nightsPassedWithoutSleep >= 3) {
+                    needSleep = true;
+                    LOGGER.info("[AutoCobble] 3 nights passed. needSleep set to true.");
+                }
+            }
+
+            // 朝になったら待機フラグを解除（0〜1000の間を朝と判定）
+            if (isWaitingForMorning && timeOfDay >= 0 && timeOfDay < 1000) {
+                isWaitingForMorning = false;
+                LOGGER.info("[AutoCobble] Morning arrived. Resuming auto-exploration.");
+            }
         }
 
         // クールダウンとキーの解放処理
@@ -176,9 +246,9 @@ public class ClientEvents {
 
                     KeyMapping recallKey = null;
                     for (KeyMapping key : mc.options.keyMappings) {
-                        String name = key.getName().toLowerCase();
-                        if (name.contains("recall") || name.equals("key.cobblemon.recall")
-                                || name.equals("cobblemon.key.recall")) {
+                        String name = key.getName();
+                        if (name.contains("recall") || "key.cobblemon.recall".equals(name)
+                                || "cobblemon.key.recall".equals(name)) {
                             recallKey = key;
                             break;
                         }
@@ -227,31 +297,63 @@ public class ClientEvents {
                             continue;
 
                         float hpPct = (float) p.getCurrentHealth() / p.getHp();
-                        if (hpPct <= 0.5f || p.getCurrentHealth() <= 0) {
-                            shouldHeal = true;
-                            break;
-                        }
 
-                        MoveSet moveset = p.getMoveSet();
-                        boolean lowPp = false;
-                        for (Move move : moveset.getMoves()) {
-                            if (move != null && move.getCurrentPp() <= 3) {
-                                lowPp = true;
+                        if (i == 0) {
+                            // 先頭ポケモン: HP 50%以下、または瀕死
+                            if (hpPct <= 0.5f || p.getCurrentHealth() <= 0) {
+                                shouldHeal = true;
+                                player.displayClientMessage(
+                                        java.util.Objects.requireNonNull(Component.literal("§e[AutoCobble] 先頭の "
+                                                + p.getDisplayName().getString() + " のHPが低下しています ("
+                                                + (int) (hpPct * 100)
+                                                + "%)")),
+                                        false);
                                 break;
                             }
-                        }
-                        if (lowPp) {
-                            shouldHeal = true;
-                            break;
-                        }
 
-                        PersistentStatusContainer status = p.getStatus();
-                        if (status != null && status.getStatus() != null) {
-                            String statusId = status.getStatus().getName().getPath().toLowerCase();
-                            if (statusId.contains("poison") || statusId.contains("paralysis")
-                                    || statusId.contains("sleep") || statusId.contains("burn")
-                                    || statusId.contains("freeze")) {
+                            // 先頭ポケモン: PP枯渇チェック
+                            MoveSet moveset = p.getMoveSet();
+                            boolean lowPp = false;
+                            for (Move move : moveset.getMoves()) {
+                                if (move != null && move.getCurrentPp() <= 3 && move.getCurrentPp() < move.getMaxPp()) {
+                                    lowPp = true;
+                                    player.displayClientMessage(
+                                            java.util.Objects.requireNonNull(Component.literal("§e[AutoCobble] 先頭の "
+                                                    + p.getDisplayName().getString() + " のPPが僅かです ("
+                                                    + move.getCurrentPp()
+                                                    + ")")),
+                                            false);
+                                    break;
+                                }
+                            }
+                            if (lowPp) {
                                 shouldHeal = true;
+                                break;
+                            }
+
+                            // 先頭ポケモン: 状態異常チェック
+                            PersistentStatusContainer status = p.getStatus();
+                            if (status != null && status.getStatus() != null) {
+                                String statusId = status.getStatus().getName().getPath().toLowerCase();
+                                if (statusId.contains("poison") || statusId.contains("paralysis")
+                                        || statusId.contains("sleep") || statusId.contains("burn")
+                                        || statusId.contains("freeze")) {
+                                    shouldHeal = true;
+                                    player.displayClientMessage(
+                                            java.util.Objects.requireNonNull(Component.literal("§e[AutoCobble] 先頭の "
+                                                    + p.getDisplayName().getString() + " が状態異常です (" + statusId + ")")),
+                                            false);
+                                    break;
+                                }
+                            }
+                        } else {
+                            // 2番目以降のポケモン: 瀕死の場合のみ回復
+                            if (p.getCurrentHealth() <= 0) {
+                                shouldHeal = true;
+                                player.displayClientMessage(
+                                        java.util.Objects.requireNonNull(Component.literal("§e[AutoCobble] 控えの "
+                                                + p.getDisplayName().getString() + " が瀕死です")),
+                                        false);
                                 break;
                             }
                         }
@@ -263,10 +365,25 @@ public class ClientEvents {
             }
 
             needHealing = shouldHeal;
+            lastBattleEndTime = mc.level != null ? mc.level.getGameTime() : 0;
+            // 戦闘終了直後に最速で次のターゲットを探すようにカウンターをリセット
+            scanTickCounter = SCAN_INTERVAL;
+
             if (needHealing) {
+                // 回復理由を通知（1匹分だけ代表して表示）
                 LOGGER.info("[AutoCobble] Exited Battle Screen. Party needs healing. Set needHealing = true");
             } else {
                 LOGGER.info("[AutoCobble] Exited Battle Screen. Party is healthy.");
+
+                // 回復が不要な場合、もし夜で徹夜日数を満たしていればすぐにベッドに向かうかチェック
+                if (mc.level != null && nightsPassedWithoutSleep >= 3) {
+                    long timeOfDay = mc.level.getDayTime() % 24000;
+                    if (timeOfDay >= 12500 && timeOfDay <= 23000) {
+                        needSleep = true;
+                        LOGGER.info(
+                                "[AutoCobble] Post-battle check: 3 nights passed and it is night. needSleep set to true.");
+                    }
+                }
             }
         }
 
@@ -309,6 +426,11 @@ public class ClientEvents {
             return;
         }
 
+        if (needSleep || isWaitingForMorning) {
+            handleSleepMovement(mc, player);
+            return;
+        }
+
         // 定期的にポケモンをスキャンしてターゲットを更新
         scanTickCounter++;
         if (scanTickCounter >= SCAN_INTERVAL) {
@@ -325,65 +447,27 @@ public class ClientEvents {
 
         // ターゲットがいる場合、毎Tickポケモンに向かって移動
         if (currentTarget != null) {
-            isIdleMoving = false;
             moveTowardTarget(mc, player, currentTarget);
         } else {
-            handleIdleMovement(mc, player);
+            // 戦闘終了直後（100ティック = 5秒間）は待機移動を開始しない
+            long currentTime = mc.level != null ? mc.level.getGameTime() : 0;
+            if (currentTime - lastBattleEndTime > 100) {
+                handleIdleMovement(mc, player);
+            }
         }
     }
 
     /**
-     * 待機状態の処理。ポケモンがいない場合、近くの回復装置へ移動する。
+     * 待機状態の処理。ポケモンがいない場合、その場で停止して待機する。
      */
     private static void handleIdleMovement(Minecraft mc, LocalPlayer player) {
-        // 定期的に回復装置をスキャン
-        healingScanTickCounter++;
-        if (healingScanTickCounter >= SCAN_INTERVAL) {
-            healingScanTickCounter = 0;
-            BlockPos machinePos = findHealingMachine(player);
-
-            if (machinePos != null) {
-                double distSq = player.distanceToSqr(machinePos.getX() + 0.5, machinePos.getY() + 0.5,
-                        machinePos.getZ() + 0.5);
-
-                // 既に近く（3ブロック以内）にいる場合は停止
-                if (distSq <= 9.0) {
-                    if (baritonePathing && player.connection != null) {
-                        player.connection.sendChat("#stop");
-                        baritonePathing = false;
-                    }
-                    isIdleMoving = false;
-                } else if (!isIdleMoving) {
-                    // 遠くにいる場合は移動開始
-                    if (player.connection != null) {
-                        player.connection.sendChat(
-                                "#goto " + machinePos.getX() + " " + machinePos.getY() + " " + machinePos.getZ());
-                        baritonePathing = true;
-                        isIdleMoving = true;
-                        LOGGER.info("[AutoCobble] No targets found. Moving to idle spot at healing machine: {}",
-                                machinePos);
-                    }
-                }
-
-                // 移動中は常に進行方向に視点を向ける
-                if (isIdleMoving) {
-                    double dx = machinePos.getX() + 0.5 - player.getX();
-                    double dz = machinePos.getZ() + 0.5 - player.getZ();
-                    float movingYaw = (float) (Math.atan2(dz, dx) * (180.0 / Math.PI)) - 90.0F;
-                    player.setYRot(movingYaw);
-                }
-            } else {
-                // 回復装置も見つからない場合は完全に停止
-                if (baritonePathing && player.connection != null) {
-                    player.connection.sendChat("#stop");
-                    baritonePathing = false;
-                }
-                isIdleMoving = false;
-
-                mc.options.keyUp.setDown(false);
-                mc.options.keySprint.setDown(false);
-            }
+        if (baritonePathing && player.connection != null) {
+            player.connection.sendChat("#stop");
+            baritonePathing = false;
         }
+
+        mc.options.keyUp.setDown(false);
+        mc.options.keySprint.setDown(false);
     }
 
     private static void handleHealingMovement(Minecraft mc, LocalPlayer player) {
@@ -407,9 +491,11 @@ public class ClientEvents {
                         player.connection.sendChat("#stop");
                         baritonePathing = false;
                     }
+                    healingStuckTickCounter = 0;
                     return;
                 } else {
                     LOGGER.info("[AutoCobble] Healing Machine found at: " + targetHealingMachine);
+                    healingStuckTickCounter = 0; // 新規探索時にリセット
                 }
             }
         }
@@ -448,9 +534,26 @@ public class ClientEvents {
 
                     needHealing = false;
                     targetHealingMachine = null;
+                    healingStuckTickCounter = 0;
                     actionCooldown = 60; // インタラクト後のクールダウン
                 }
             } else {
+                // 回復装置に向かっている時間を計測
+                healingStuckTickCounter++;
+                if (healingStuckTickCounter > 200) { // 10秒経過しても到着できなかった場合
+                    LOGGER.warn("[AutoCobble] Healing machine approach timed out (stuck). Retrying pathing...");
+                    if (baritonePathing && player.connection != null) {
+                        player.connection.sendChat("#stop");
+                        baritonePathing = false;
+                    }
+                    // 目標をリセットして次のTickで再スキャンを促す
+                    targetHealingMachine = null;
+                    healingStuckTickCounter = 0;
+                    mc.options.keyUp.setDown(false);
+                    mc.options.keySprint.setDown(false);
+                    return;
+                }
+
                 if (!baritonePathing && player.connection != null) {
                     player.connection.sendChat("#goto " + targetHealingMachine.getX() + " "
                             + targetHealingMachine.getY() + " " + targetHealingMachine.getZ());
@@ -461,6 +564,136 @@ public class ClientEvents {
                 player.setYRot(movingYaw);
             }
         }
+    }
+
+    private static void handleSleepMovement(Minecraft mc, LocalPlayer player) {
+        if (mc.level == null)
+            return;
+
+        // 夜間（12500〜23000）のみ寝ることができる
+        long time = mc.level.getDayTime() % 24000;
+        if (time < 12500 || time > 23000) {
+            if (needSleep) {
+                LOGGER.info("[AutoCobble] Not night time yet. Waiting to sleep.");
+            }
+            // 朝になったらリセット
+            if (time < 1000) {
+                if (needSleep || isWaitingForMorning) {
+                    needSleep = false;
+                    isWaitingForMorning = false;
+                    nightsPassedWithoutSleep = 0;
+                    targetBed = null;
+                    LOGGER.info("[AutoCobble] Morning reached. Resetting sleep status and resuming work.");
+                }
+            }
+            return;
+        }
+
+        if (isWaitingForMorning) {
+            // 夜中にベッドを使用した直後の待機時間。
+            // プレイヤーが睡眠状態かを監視し、キャンセル（ベッドから出た／入れなかった）を検知する
+            if (!player.isSleeping()) {
+                sleepCancelTickCounter++;
+                if (sleepCancelTickCounter > 60) { // 約3秒連続で起きていたらキャンセルとみなす
+                    isWaitingForMorning = false;
+                    sleepCancelTickCounter = 0;
+                    targetBed = null;
+                    LOGGER.info("[AutoCobble] Player is not sleeping. Sleep canceled. Resuming auto-exploration.");
+                }
+            } else {
+                sleepCancelTickCounter = 0; // 寝ていればリセット
+            }
+
+            // 行動を停止して朝を待機（またはキャンセルされるまで）、ここから下には進まない
+            return;
+        }
+
+        sleepScanTickCounter++;
+        if (sleepScanTickCounter >= SCAN_INTERVAL) {
+            sleepScanTickCounter = 0;
+
+            if (targetBed == null) {
+                targetBed = findBed(player);
+                if (targetBed == null) {
+                    if (chatTickCounter % 5 == 0) {
+                        player.displayClientMessage(
+                                java.util.Objects.requireNonNull(
+                                        Component.literal("§c[AutoCobble] Bed not found! Cannot sleep.")),
+                                false);
+                    }
+                    return;
+                } else {
+                    LOGGER.info("[AutoCobble] Bed found at: {}", targetBed);
+                }
+            }
+        }
+
+        if (targetBed != null) {
+            double dx = targetBed.getX() + 0.5 - player.getX();
+            double dy = targetBed.getY() + 0.5 - player.getY();
+            double dz = targetBed.getZ() + 0.5 - player.getZ();
+            double distSq = dx * dx + dy * dy + dz * dz;
+
+            if (distSq <= 4.0) { // 2ブロック以内
+                if (baritonePathing && player.connection != null) {
+                    player.connection.sendChat("#stop");
+                    baritonePathing = false;
+                }
+                mc.options.keyUp.setDown(false);
+
+                if (actionCooldown == 0) {
+                    float targetYaw = (float) (Math.atan2(dz, dx) * (180.0 / Math.PI)) - 90.0F;
+                    player.setYRot(targetYaw);
+                    player.setXRot(0); // 真っ直ぐ見る
+
+                    BlockHitResult hitResult = new BlockHitResult(
+                            new Vec3(targetBed.getX() + 0.5, targetBed.getY() + 0.5, targetBed.getZ() + 0.5),
+                            Direction.UP,
+                            java.util.Objects.requireNonNull(targetBed),
+                            false);
+
+                    if (mc.gameMode != null) {
+                        mc.gameMode.useItemOn(player, InteractionHand.MAIN_HAND, hitResult);
+                        LOGGER.info("[AutoCobble] Interacted with Bed. Waiting for morning.");
+                    }
+
+                    // 寝る動作に入ったら、朝になるまで待機状態に移行する
+                    needSleep = false;
+                    isWaitingForMorning = true;
+                    targetBed = null;
+                    actionCooldown = 100; // 長めの待機
+                }
+            } else {
+                if (!baritonePathing && player.connection != null) {
+                    player.connection
+                            .sendChat("#goto " + targetBed.getX() + " " + targetBed.getY() + " " + targetBed.getZ());
+                    baritonePathing = true;
+                }
+                float movingYaw = (float) (Math.atan2(dz, dx) * (180.0 / Math.PI)) - 90.0F;
+                player.setYRot(movingYaw);
+            }
+        }
+    }
+
+    private static BlockPos findBed(LocalPlayer player) {
+        BlockPos center = player.blockPosition();
+        int rx = 45;
+        int ry = 15;
+        int rz = 45;
+
+        BlockPos pos1 = center.offset(-rx, -ry, -rz);
+        BlockPos pos2 = center.offset(rx, ry, rz);
+
+        return BlockPos
+                .betweenClosedStream(java.util.Objects.requireNonNull(pos1), java.util.Objects.requireNonNull(pos2))
+                .filter(pos -> {
+                    net.minecraft.world.level.block.state.BlockState state = player.level()
+                            .getBlockState(java.util.Objects.requireNonNull(pos));
+                    return state.getBlock() instanceof net.minecraft.world.level.block.BedBlock;
+                })
+                .map(BlockPos::immutable)
+                .min(java.util.Comparator.comparingDouble(pos -> pos.distSqr(center)))
+                .orElse(null);
     }
 
     private static BlockPos findHealingMachine(LocalPlayer player) {
@@ -479,7 +712,8 @@ public class ClientEvents {
                             .getBlockState(java.util.Objects.requireNonNull(pos));
                     net.minecraft.resources.ResourceLocation registryName = ForgeRegistries.BLOCKS
                             .getKey(state.getBlock());
-                    return registryName != null && "cobblemon:healing_machine".equals(registryName.toString());
+                    return registryName != null && registryName.getNamespace().equals("cobblemon")
+                            && registryName.getPath().equals("healing_machine");
                 })
                 .map(BlockPos::immutable)
                 .min(java.util.Comparator.comparingDouble(pos -> pos.distSqr(center)))
@@ -594,8 +828,8 @@ public class ClientEvents {
             // HP 15%以下ならボールを投げる（従来の30%→15%に厳格化して削りすぎを防止）
             // HP 10%以下なら絶対に攻撃しない（倒す危険があるため）
             if (oppHpPct <= 0.5f) {
-                // ボール投擲
-                throwPokeBallFromHotbar(mc, player);
+                // ボール投擲 (ターゲットとして targetPokemon を渡す)
+                throwPokeBallFromHotbar(mc, player, targetPokemon);
                 return;
             } else if (oppHpPct <= 0.1f) {
                 // 安全ガード: HPが10%以下なら何もしない（攻撃禁止）
@@ -742,7 +976,7 @@ public class ClientEvents {
         }
     }
 
-    private static void throwPokeBallFromHotbar(Minecraft mc, LocalPlayer player) {
+    private static void throwPokeBallFromHotbar(Minecraft mc, LocalPlayer player, Entity target) {
         // ホットバーからボールを探す
         int ballSlot = -1;
         for (int i = 0; i < 9; i++) {
@@ -755,6 +989,26 @@ public class ClientEvents {
         }
 
         if (ballSlot != -1) {
+            // 投げる前にターゲットに視線を合わせる (再エイム)
+            if (target != null) {
+                Vec3 eyePos = player.getEyePosition();
+                double targetX = target.getX();
+                double targetY = target.getY() + target.getBbHeight() / 2.0;
+                double targetZ = target.getZ();
+
+                double dxAim = targetX - eyePos.x;
+                double dyAim = targetY - eyePos.y;
+                double dzAim = targetZ - eyePos.z;
+                double horizontalAimDist = Math.sqrt(dxAim * dxAim + dzAim * dzAim);
+
+                float targetYaw = (float) (Math.atan2(dzAim, dxAim) * (180.0 / Math.PI)) - 90.0F;
+                float targetPitch = (float) -(Math.atan2(dyAim, horizontalAimDist) * (180.0 / Math.PI));
+
+                player.setYRot(targetYaw);
+                player.setXRot(targetPitch);
+                LOGGER.info("[AutoCobble] Rotated to target before throwing PokeBall");
+            }
+
             player.getInventory().selected = ballSlot;
             // 右クリックパケットの送信等により投擲
             if (mc.gameMode != null) {
@@ -797,9 +1051,9 @@ public class ClientEvents {
             return;
         }
 
-        // 最も近いポケモンをターゲットに設定 (所有されているポケモンは除外)
+        // 最も近いポケモンをターゲットに設定 (所有されているポケモンは除外、さらに10ブロック以上下のポケモンは落下死防止のため除外)
         PokemonEntity closest = nearbyPokemon.stream()
-                .filter(e -> e.getOwnerUUID() == null)
+                .filter(e -> e.getOwnerUUID() == null && (player.getY() - e.getY() < 10.0))
                 .min(Comparator.comparingDouble(e -> e.distanceToSqr(player)))
                 .orElse(null);
 
@@ -838,6 +1092,7 @@ public class ClientEvents {
             int x = (int) closest.getX();
             int y = (int) closest.getY();
             int z = (int) closest.getZ();
+            // GUI表示用なのでここはMath.sqrtを許容
             double dist = Math.sqrt(closest.distanceToSqr(player));
 
             player.displayClientMessage(
@@ -853,10 +1108,10 @@ public class ClientEvents {
      * プレイヤーの視線をポケモンに向け、前進キーを押し続ける。
      */
     private static void moveTowardTarget(Minecraft mc, LocalPlayer player, @Nonnull Entity target) {
-        double dist = player.distanceTo(target);
+        double distSq = player.distanceToSqr(target);
 
-        // 2.0ブロック以下の場合は到達と判定し、エイム＆インタラクトを実行
-        if (dist <= 2.0) {
+        // 3.0ブロック以下の場合は到達と判定し、エイム＆インタラクトを実行
+        if (distSq <= 9.0) { // 3.0 * 3.0
             if (baritonePathing && player.connection != null) {
                 player.connection.sendChat("#stop");
                 baritonePathing = false;
@@ -889,8 +1144,8 @@ public class ClientEvents {
                 // 【キー入力のシミュレート】
                 KeyMapping interactKey = null;
                 for (KeyMapping key : mc.options.keyMappings) {
-                    String name = key.getName().toLowerCase();
-                    String category = key.getCategory().toLowerCase();
+                    String name = key.getName();
+                    String category = key.getCategory();
 
                     // Cobblemonのキー（特に send_out や interact）を探す
                     if (category.contains("cobblemon") || name.contains("cobblemon")) {
@@ -909,8 +1164,9 @@ public class ClientEvents {
                 // 見つからなかった場合のフォールバック検索
                 if (interactKey == null) {
                     for (KeyMapping key : mc.options.keyMappings) {
-                        if (key.getName().equals("key.cobblemon.send_out")
-                                || key.getName().equals("cobblemon.key.send_out")) {
+                        String name = key.getName();
+                        if ("key.cobblemon.send_out".equals(name)
+                                || "cobblemon.key.send_out".equals(name)) {
                             interactKey = key;
                             break;
                         }
@@ -1314,47 +1570,7 @@ public class ClientEvents {
         return new MoveActionResponse(move.getId(), targetPNX, "");
     }
 
-    /**
-     * 種族名から伝説・幻・UBかどうかを判定するフォールバックメソッド。
-     * Cobblemon の aspects に "legendary" 等が含まれない場合のために使用する。
-     */
     private static boolean isLegendaryByName(String species) {
-        // 伝説ポケモン
-        java.util.Set<String> legendaries = new java.util.HashSet<>(java.util.Arrays.asList(
-                // 鳥伝説
-                "articuno", "zapdos", "moltres",
-                // ミュウツー、ミュウ
-                "mewtwo", "mew",
-                // 第二世代
-                "raikou", "entei", "suicune", "lugia", "ho-oh", "celebi",
-                // 第三世代
-                "regirock", "regice", "registeel", "latias", "latios",
-                "kyogre", "groudon", "rayquaza", "jirachi", "deoxys",
-                // 第四世代
-                "uxie", "mesprit", "azelf", "dialga", "palkia", "heatran",
-                "regigigas", "giratina", "cresselia", "phione", "manaphy",
-                "darkrai", "shaymin", "arceus",
-                // 第五世代
-                "victini", "cobalion", "terrakion", "virizion", "tornadus",
-                "thundurus", "reshiram", "zekrom", "landorus", "kyurem",
-                "keldeo", "meloetta", "genesect",
-                // 第六世代
-                "xerneas", "yveltal", "zygarde", "diancie", "hoopa", "volcanion",
-                // 第七世代
-                "tapu-koko", "tapu-lele", "tapu-bulu", "tapu-fini",
-                "cosmog", "cosmoem", "solgaleo", "lunala", "nihilego",
-                "buzzwole", "pheromosa", "xurkitree", "celesteela", "kartana",
-                "guzzlord", "necrozma", "magearna", "marshadow", "poipole",
-                "naganadel", "stakataka", "blacephalon", "zeraora",
-                // 第八世代
-                "zacian", "zamazenta", "eternatus", "kubfu", "urshifu",
-                "zarude", "regieleki", "regidrago", "glastrier", "spectrier",
-                "calyrex", "enamorus",
-                // 第九世代
-                "wo-chien", "chien-pao", "ting-lu", "chi-yu",
-                "koraidon", "miraidon", "walking-wake", "iron-leaves",
-                "gouging-fire", "raging-bolt", "iron-boulder", "iron-crown",
-                "terapagos", "pecharunt"));
-        return legendaries.contains(species);
+        return LEGENDARY_POKEMON.contains(species.toLowerCase());
     }
 }
