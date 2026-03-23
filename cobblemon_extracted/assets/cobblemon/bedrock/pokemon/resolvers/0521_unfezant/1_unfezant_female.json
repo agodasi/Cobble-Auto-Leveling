@@ -1,0 +1,20 @@
+{
+  "species": "cobblemon:unfezant",
+  "order": 1,
+  "variations": [
+    {
+      "aspects": [
+        "female"
+      ],
+      "model": "cobblemon:unfezant_female.geo",
+      "texture": "cobblemon:textures/pokemon/0521_unfezant/unfezant_female.png"
+    },
+    {
+      "aspects": [
+        "female",
+        "shiny"
+      ],
+      "texture": "cobblemon:textures/pokemon/0521_unfezant/unfezant_female_shiny.png"
+    }
+  ]
+}

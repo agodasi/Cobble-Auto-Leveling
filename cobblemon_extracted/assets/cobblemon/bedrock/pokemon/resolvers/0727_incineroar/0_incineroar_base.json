@@ -1,0 +1,19 @@
+{
+  "species": "cobblemon:incineroar",
+  "order": 0,
+  "variations": [
+    {
+      "aspects": [],
+      "poser": "cobblemon:incineroar",
+      "model": "cobblemon:incineroar.geo",
+      "texture": "cobblemon:textures/pokemon/0727_incineroar/incineroar.png",
+      "layers": []
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "cobblemon:textures/pokemon/0727_incineroar/incineroar_shiny.png"
+    }
+  ]
+}

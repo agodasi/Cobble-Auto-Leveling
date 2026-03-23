@@ -1,0 +1,32 @@
+{
+  "timeline": [
+    {
+      "type": "add_holds",
+      "holds": ["effects"]
+    },
+    {
+      "type": "animation",
+      "animation": ["flamethrower", "fire", "special"],
+      "delay": 1.15
+    },
+    {
+      "type": "entity_molang",
+      "expressions": ["q.play_animation(q.bedrock_stateful('particle_dummy', 'flamethrower_actor'))"],
+      "delay": 0.6
+    },
+    {
+      "type": "entity_molang",
+      "expressions": ["q.play_animation(q.bedrock_stateful('particle_dummy', 'flamethrower_target'))"],
+      "entityCondition": "q.entity.is_user == false && q.missed(q.entity.uuid) == false",
+      "delay": 0.1
+    },
+    {
+      "type": "remove_holds",
+      "holds": ["effects"]
+    },
+    {
+      "type": "pause",
+      "pause": 1.9
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "age": "0"
+      },
+      "apply": {
+        "model": "cobblemon:block/berries/planted",
+        "uvlock": false
+      }
+    },
+    {
+      "when": {
+        "age": "1"
+      },
+      "apply": {
+        "model": "cobblemon:block/berries/sprout",
+        "uvlock": false
+      }
+    },
+    {
+      "when": {
+        "age": "2"
+      },
+      "apply": {
+        "model": "cobblemon:block/berries/magost_young",
+        "uvlock": false
+      }
+    },
+    {
+      "when": {
+        "age": "3"
+      },
+      "apply": {
+        "model": "cobblemon:block/berries/magost_mature",
+        "uvlock": false
+      }
+    },
+    {
+      "when": {
+        "age": "4"
+      },
+      "apply": {
+        "model": "cobblemon:block/berries/magost_mature",
+        "uvlock": false
+      }
+    },
+    {
+      "when": {
+        "age": "5"
+      },
+      "apply": {
+        "model": "cobblemon:block/berries/magost_mature",
+        "uvlock": false
+      }
+    },
+    {
+      "when": {
+        "mulch": "coarse"
+      },
+      "apply": {
+        "model": "cobblemon:block/coarse_mulch"
+      }
+    },
+    {
+      "when": {
+        "mulch": "growth"
+      },
+      "apply": {
+        "model": "cobblemon:block/growth_mulch"
+      }
+    },
+    {
+      "when": {
+        "mulch": "humid"
+      },
+      "apply": {
+        "model": "cobblemon:block/humid_mulch"
+      }
+    },
+    {
+      "when": {
+        "mulch": "loamy"
+      },
+      "apply": {
+        "model": "cobblemon:block/loamy_mulch"
+      }
+    },
+    {
+      "when": {
+        "mulch": "peat"
+      },
+      "apply": {
+        "model": "cobblemon:block/peat_mulch"
+      }
+    },
+    {
+      "when": {
+        "mulch": "rich"
+      },
+      "apply": {
+        "model": "cobblemon:block/rich_mulch"
+      }
+    },
+    {
+      "when": {
+        "mulch": "sandy"
+      },
+      "apply": {
+        "model": "cobblemon:block/sandy_mulch"
+      }
+    },
+    {
+      "when": {
+        "mulch": "surprise"
+      },
+      "apply": {
+        "model": "cobblemon:block/surprise_mulch"
+      }
+    }
+  ]
+}

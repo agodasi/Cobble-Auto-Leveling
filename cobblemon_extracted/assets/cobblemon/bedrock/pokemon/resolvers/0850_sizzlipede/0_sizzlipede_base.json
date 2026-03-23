@@ -1,0 +1,19 @@
+{
+  "species": "cobblemon:sizzlipede",
+  "order": 0,
+  "variations": [
+    {
+      "aspects": [],
+      "poser": "cobblemon:sizzlipede",
+      "model": "cobblemon:sizzlipede.geo",
+      "texture": "cobblemon:textures/pokemon/0850_sizzlipede/sizzlipede.png",
+      "layers": []
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "cobblemon:textures/pokemon/0850_sizzlipede/sizzlipede_shiny.png"
+    }
+  ]
+}

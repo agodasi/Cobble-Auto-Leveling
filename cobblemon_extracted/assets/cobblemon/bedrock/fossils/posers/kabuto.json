@@ -1,0 +1,20 @@
+{
+  "maxScale": 0.85,
+  "yTranslation": 0.1,
+  "yGrowthPoint": 0.3125,
+
+  "animations": [
+    "bedrock(kabuto_fetus, sleep)"
+  ],
+  "quirks": [
+    {
+      "name": "quirk",
+      "animations": [
+        "bedrock(kabuto_fetus, quirk)"
+      ],
+      "loopTimes": 1,
+      "minSeconds": 30,
+      "maxSeconds": 60
+    }
+  ]
+}

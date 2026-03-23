@@ -1,0 +1,13 @@
+{
+  "type": "choice",
+  "keys": ["squawkabilly_color"],
+  "default": "random",
+  "choices": [
+    "blue",
+    "gray",
+    "green",
+    "yellow"
+  ],
+  "isAspect": true,
+  "aspectFormat": "squawkabilly-color-{{choice}}"
+}

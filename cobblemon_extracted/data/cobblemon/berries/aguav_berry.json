@@ -1,0 +1,121 @@
+{
+  "baseYield": {
+    "min": 2,
+    "max": 4
+  },
+  "preferredBiomeTags": [
+    "cobblemon:is_jungle",
+    "cobblemon:is_swamp"
+  ],
+  "growthTime": {
+    "min": 55,
+    "max": 65
+  },
+  "refreshRate": {
+    "min": 15,
+    "max": 25
+  },
+  "favoriteMulches": [
+    "humid"
+  ],
+  "growthFactors": [
+    {
+      "variant": "cobblemon:preferred_biome",
+      "bonusYield": {
+        "min": 1,
+        "max": 2
+      }
+    }
+  ],
+  "randomizedGrowthPoints": true,
+  "spawnConditions": [],
+  "growthPoints": [
+    {
+      "position": {
+        "x": 7.75,
+        "y": 19.25,
+        "z": 8.0
+      },
+      "rotation": {
+        "x": 60.0,
+        "y": 80.0,
+        "z": -85.0
+      }
+    },
+    {
+      "position": {
+        "x": 7.75,
+        "y": 20.0,
+        "z": 8.25
+      },
+      "rotation": {
+        "x": 132.5,
+        "y": -45.0,
+        "z": -2.5
+      }
+    },
+    {
+      "position": {
+        "x": 8.0,
+        "y": 19.75,
+        "z": 8.0
+      },
+      "rotation": {
+        "x": -145.0,
+        "y": 7.5,
+        "z": -15.0
+      }
+    },
+    {
+      "position": {
+        "x": 8.25,
+        "y": 22.0,
+        "z": 8.0
+      },
+      "rotation": {
+        "x": 145.0,
+        "y": 12.5,
+        "z": 5.0
+      }
+    },
+    {
+      "position": {
+        "x": 7.75,
+        "y": 22.5,
+        "z": 7.5
+      },
+      "rotation": {
+        "x": -25.0,
+        "y": 70.0,
+        "z": 120.0
+      }
+    },
+    {
+      "position": {
+        "x": 8.0,
+        "y": 22.25,
+        "z": 8.0
+      },
+      "rotation": {
+        "x": -157.5,
+        "y": 17.5,
+        "z": 27.5
+      }
+    }
+  ],
+  "mutations": {
+    "cobblemon:lum_berry": "cobblemon:sitrus_berry",
+    "cobblemon:wepear_berry": "cobblemon:rabuta_berry"
+  },
+  "sproutShape": "stand-sprout",
+  "matureShape": "stand-mature",
+  "flavors": {
+    "BITTER": 15
+  },
+  "weight": 1.0,
+  "tintIndexes": [],
+  "flowerModel": "cobblemon:flower.geo",
+  "flowerTexture": "cobblemon:flower",
+  "fruitModel": "cobblemon:aguav_berry.geo",
+  "fruitTexture": "cobblemon:aguav"
+}

@@ -1,0 +1,8 @@
+{
+  "type": "choice",
+  "keys": ["fish_stripes", "striped"],
+  "default": "random",
+  "choices": ["red", "blue", "white"],
+  "isAspect": true,
+  "aspectFormat": "{{choice}}striped"
+}

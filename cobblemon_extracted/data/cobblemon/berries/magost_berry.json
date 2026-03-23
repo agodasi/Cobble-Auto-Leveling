@@ -1,0 +1,134 @@
+{
+  "baseYield": {
+    "min": 2,
+    "max": 4
+  },
+  "preferredBiomeTags": [
+    "cobblemon:is_jungle",
+    "cobblemon:is_swamp"
+  ],
+  "growthTime": {
+    "min": 55,
+    "max": 65
+  },
+  "refreshRate": {
+    "min": 15,
+    "max": 25
+  },
+  "favoriteMulches": [
+    "humid"
+  ],
+  "growthFactors": [
+    {
+      "variant": "cobblemon:preferred_biome",
+      "bonusYield": {
+        "min": 1,
+        "max": 2
+      }
+    }
+  ],
+  "randomizedGrowthPoints": true,
+  "spawnConditions": [],
+  "growthPoints": [
+    {
+      "position": {
+        "x": 8.0,
+        "y": 12.5,
+        "z": 8.0
+      },
+      "rotation": {
+        "x": -180.0,
+        "y": 10.0,
+        "z": 0.0
+      }
+    },
+    {
+      "position": {
+        "x": 6.5,
+        "y": 12.0,
+        "z": 7.0
+      },
+      "rotation": {
+        "x": 152.5,
+        "y": 25.0,
+        "z": 2.5
+      }
+    },
+    {
+      "position": {
+        "x": 6.5,
+        "y": 12.0,
+        "z": 8.5
+      },
+      "rotation": {
+        "x": -175.0,
+        "y": -7.5,
+        "z": 25.0
+      }
+    },
+    {
+      "position": {
+        "x": 7.5,
+        "y": 12.0,
+        "z": 9.5
+      },
+      "rotation": {
+        "x": -62.5,
+        "y": 52.5,
+        "z": 130.0
+      }
+    },
+    {
+      "position": {
+        "x": 9.5,
+        "y": 12.0,
+        "z": 9.0
+      },
+      "rotation": {
+        "x": -35.0,
+        "y": -45.0,
+        "z": -170.0
+      }
+    },
+    {
+      "position": {
+        "x": 9.5,
+        "y": 12.0,
+        "z": 7.5
+      },
+      "rotation": {
+        "x": 175.0,
+        "y": -22.5,
+        "z": -30.0
+      }
+    },
+    {
+      "position": {
+        "x": 8.5,
+        "y": 12.0,
+        "z": 6.5
+      },
+      "rotation": {
+        "x": 132.5,
+        "y": 47.5,
+        "z": -50.0
+      }
+    }
+  ],
+  "mutations": {
+    "cobblemon:roseli_berry": "cobblemon:qualot_berry",
+    "cobblemon:tanga_berry": "cobblemon:watmel_berry"
+  },
+  "sproutShape": "frill-sprout",
+  "matureShape": "frill-mature",
+  "flavors": {
+    "SWEET": 20,
+    "BITTER": 10
+  },
+  "weight": 1.0,
+  "tintIndexes": [],
+  "flowerModel": "cobblemon:flower.geo",
+  "flowerTexture": "cobblemon:flower",
+  "fruitModel": "cobblemon:magost_berry.geo",
+  "fruitTexture": "cobblemon:magost"
+}

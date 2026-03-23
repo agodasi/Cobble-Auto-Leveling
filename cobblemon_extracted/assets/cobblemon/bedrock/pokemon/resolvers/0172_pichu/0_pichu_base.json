@@ -1,0 +1,19 @@
+{
+  "species": "cobblemon:pichu",
+  "order": 0,
+  "variations": [
+    {
+      "aspects": [],
+      "poser": "cobblemon:pichu",
+      "model": "cobblemon:pichu.geo",
+      "texture": "cobblemon:textures/pokemon/0172_pichu/pichu.png",
+      "layers": []
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "cobblemon:textures/pokemon/0172_pichu/pichu_shiny.png"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "species": "cobblemon:centiskorch",
+  "order": 0,
+  "variations": [
+    {
+      "aspects": [],
+      "poser": "cobblemon:centiskorch",
+      "model": "cobblemon:centiskorch.geo",
+      "texture": "cobblemon:textures/pokemon/0851_centiskorch/centiskorch.png",
+      "layers": []
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "cobblemon:textures/pokemon/0851_centiskorch/centiskorch_shiny.png"
+    }
+  ]
+}

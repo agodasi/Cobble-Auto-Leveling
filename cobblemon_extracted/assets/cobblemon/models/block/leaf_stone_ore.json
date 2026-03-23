@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "cobblemon:block/leaf_stone_ore"
+  }
+}

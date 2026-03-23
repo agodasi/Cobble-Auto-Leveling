@@ -1,0 +1,12 @@
+{
+  "species": "cobblemon:venusaur",
+  "order": 1,
+  "variations": [
+    {
+      "aspects": [
+        "female"
+      ],
+      "model": "cobblemon:venusaur_female.geo"
+    }
+  ]
+}

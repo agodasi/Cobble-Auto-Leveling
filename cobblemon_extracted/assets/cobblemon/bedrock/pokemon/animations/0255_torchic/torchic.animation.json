@@ -1,0 +1,81 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.torchic.blink": {
+			"animation_length": 0.16667,
+			"bones": {
+				"eyelid_left": {
+					"position": {
+						"0.0": [0, 0, -0.1],
+						"0.125": [0, 0, -0.1],
+						"0.1667": [0, 0, 0]
+					}
+				},
+				"eyelid_right": {
+					"position": {
+						"0.0": [0, 0, -0.1],
+						"0.125": [0, 0, -0.1],
+						"0.1667": [0, 0, 0]
+					}
+				}
+			}
+		},
+		"animation.torchic.cry": {
+			"animation_length": 1.5,
+			"sound_effects": {
+				"0.04": {
+					"effect": "pokemon.torchic.cry"
+				}
+			},
+			"bones": {
+				"neck": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [10, 0, 0],
+						"1.25": [10, 0, 0],
+						"1.5": [0, 0, 0]
+					}
+				},
+				"head": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [-15, 0, 0],
+						"1.25": [-15, 0, 0],
+						"1.5": [0, 0, 0]
+					}
+				},
+				"jaw": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [42.5, 0, 0],
+						"1.25": [42.5, 0, 0],
+						"1.5": [0, 0, 0]
+					}
+				}
+			}
+		},
+		"animation.torchic.ground_idle": {
+			"loop": true,
+			"bones": {
+				"wing_left": {
+					"rotation": [0, 0, 65]
+				},
+				"wing_left2": {
+					"rotation": [0, 0, 5]
+				},
+				"wing_right": {
+					"rotation": [0, 0, -65]
+				},
+				"wing_right2": {
+					"rotation": [0, 0, -5]
+				},
+				"head": {
+					"rotation": [-5, 0, 0]
+				},
+				"torso": {
+					"rotation": [5, 0, 0]
+				}
+			}
+		}
+	}
+}

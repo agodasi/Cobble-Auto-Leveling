@@ -1,0 +1,19 @@
+{
+  "species": "cobblemon:wartortle",
+  "order": 0,
+  "variations": [
+    {
+      "aspects": [],
+      "poser": "cobblemon:wartortle",
+      "model": "cobblemon:wartortle.geo",
+      "texture": "cobblemon:textures/pokemon/0008_wartortle/wartortle.png",
+      "layers": []
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "cobblemon:textures/pokemon/0008_wartortle/wartortle_shiny.png"
+    }
+  ]
+}

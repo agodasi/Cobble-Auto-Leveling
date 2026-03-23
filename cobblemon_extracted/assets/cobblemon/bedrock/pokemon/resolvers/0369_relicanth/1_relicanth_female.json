@@ -1,0 +1,12 @@
+{
+  "species": "cobblemon:relicanth",
+  "order": 1,
+  "variations": [
+    {
+      "aspects": [
+        "female"
+      ],
+      "model": "cobblemon:relicanth_female.geo"
+    }
+  ]
+}

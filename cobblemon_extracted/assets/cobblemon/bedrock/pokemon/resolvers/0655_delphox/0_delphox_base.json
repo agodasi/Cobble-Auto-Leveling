@@ -1,0 +1,35 @@
+{
+  "species": "cobblemon:delphox",
+  "order": 0,
+  "variations": [
+    {
+      "aspects": [],
+      "poser": "cobblemon:delphox",
+      "model": "cobblemon:delphox.geo",
+      "texture": "cobblemon:textures/pokemon/0655_delphox/delphox.png",
+      "layers": [
+        {
+          "name": "flame",
+          "texture": {
+            "frames": [
+              "cobblemon:textures/pokemon/0655_delphox/flame/flame1.png",
+              "cobblemon:textures/pokemon/0655_delphox/flame/flame2.png",
+              "cobblemon:textures/pokemon/0655_delphox/flame/flame3.png",
+              "cobblemon:textures/pokemon/0655_delphox/flame/flame4.png"
+            ],
+            "fps": 10,
+            "loop": true
+          },
+          "emissive": true,
+          "translucent": true
+        }
+      ]
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "cobblemon:textures/pokemon/0655_delphox/delphox_shiny.png"
+    }
+  ]
+}

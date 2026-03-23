@@ -1,0 +1,12 @@
+{
+  "species": "cobblemon:raichu",
+  "order": 1,
+  "variations": [
+    {
+      "aspects": [
+        "female"
+      ],
+      "model": "cobblemon:raichu_female.geo"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "species": "cobblemon:alakazam",
+  "order": 1,
+  "variations": [
+    {
+      "aspects": [
+        "female"
+      ],
+      "model": "cobblemon:alakazam_female.geo"
+    }
+  ]
+}

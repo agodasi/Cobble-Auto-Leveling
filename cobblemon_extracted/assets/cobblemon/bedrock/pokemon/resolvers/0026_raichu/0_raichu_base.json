@@ -1,0 +1,19 @@
+{
+  "species": "cobblemon:raichu",
+  "order": 0,
+  "variations": [
+    {
+      "aspects": [],
+      "poser": "cobblemon:raichu",
+      "model": "cobblemon:raichu_male.geo",
+      "texture": "cobblemon:textures/pokemon/0026_raichu/raichu.png",
+      "layers": []
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "cobblemon:textures/pokemon/0026_raichu/raichu_shiny.png"
+    }
+  ]
+}

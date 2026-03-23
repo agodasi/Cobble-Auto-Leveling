@@ -1,0 +1,110 @@
+{
+  "baseYield": {
+    "min": 1,
+    "max": 3
+  },
+  "preferredBiomeTags": [
+    "cobblemon:is_mountain",
+    "cobblemon:is_taiga"
+  ],
+  "growthTime": {
+    "min": 75,
+    "max": 85
+  },
+  "refreshRate": {
+    "min": 15,
+    "max": 25
+  },
+  "favoriteMulches": [
+    "coarse"
+  ],
+  "growthFactors": [
+    {
+      "variant": "cobblemon:preferred_biome",
+      "bonusYield": {
+        "min": 1,
+        "max": 1
+      }
+    }
+  ],
+  "randomizedGrowthPoints": true,
+  "spawnConditions": [],
+  "growthPoints": [
+    {
+      "position": {
+        "x": 7.75,
+        "y": 11.35,
+        "z": 5.25
+      },
+      "rotation": {
+        "x": 35.0,
+        "y": -65.0,
+        "z": -32.5
+      }
+    },
+    {
+      "position": {
+        "x": 7.25,
+        "y": 21.85,
+        "z": 10.75
+      },
+      "rotation": {
+        "x": -17.5,
+        "y": -45.0,
+        "z": 12.5
+      }
+    },
+    {
+      "position": {
+        "x": 10.75,
+        "y": 7.35,
+        "z": 10.25
+      },
+      "rotation": {
+        "x": -7.5,
+        "y": 7.5,
+        "z": 2.5
+      }
+    },
+    {
+      "position": {
+        "x": 5.25,
+        "y": 15.35,
+        "z": 9.25
+      },
+      "rotation": {
+        "x": -2.5,
+        "y": -7.5,
+        "z": -12.5
+      }
+    },
+    {
+      "position": {
+        "x": 10.25,
+        "y": 21.85,
+        "z": 6.5
+      },
+      "rotation": {
+        "x": 7.5,
+        "y": 42.5,
+        "z": 17.5
+      }
+    }
+  ],
+  "mutations": {
+    "cobblemon:grepa_berry": "cobblemon:apicot_berry",
+    "cobblemon:coba_berry": "cobblemon:rowap_berry"
+  },
+  "sproutShape": "platform-sprout",
+  "matureShape": "platform-mature",
+  "flavors": {
+    "SPICY": 10,
+    "SOUR": 40
+  },
+  "weight": 1.0,
+  "tintIndexes": [],
+  "flowerModel": "cobblemon:flower.geo",
+  "flowerTexture": "cobblemon:flower",
+  "fruitModel": "cobblemon:belue_berry.geo",
+  "fruitTexture": "cobblemon:belue"
+}

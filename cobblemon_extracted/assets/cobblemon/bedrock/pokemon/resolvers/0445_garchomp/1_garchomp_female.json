@@ -1,0 +1,12 @@
+{
+  "species": "cobblemon:garchomp",
+  "order": 1,
+  "variations": [
+    {
+      "aspects": [
+        "female"
+      ],
+      "model": "cobblemon:garchomp_female.geo"
+    }
+  ]
+}

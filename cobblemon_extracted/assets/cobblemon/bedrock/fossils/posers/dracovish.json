@@ -1,0 +1,38 @@
+{
+  "maxScale": 0.85,
+  "yTranslation": 0,
+  "yGrowthPoint": 0.75,
+
+  "animations": [
+    "bedrock(dracovish_fetus, sleep)"
+  ],
+  "quirks": [
+    {
+      "name": "quirk",
+      "animations": [
+        "bedrock(dracovish_fetus, quirk1)"
+      ],
+      "loopTimes": 1,
+      "minSeconds": 60,
+      "maxSeconds": 180
+    },
+    {
+      "name": "quirk",
+      "animations": [
+        "bedrock(dracovish_fetus, quirk2)"
+      ],
+      "loopTimes": 1,
+      "minSeconds": 60,
+      "maxSeconds": 180
+    },
+    {
+      "name": "quirk",
+      "animations": [
+        "bedrock(dracovish_fetus, quirk3)"
+      ],
+      "loopTimes": 1,
+      "minSeconds": 60,
+      "maxSeconds": 180
+    }
+  ]
+}

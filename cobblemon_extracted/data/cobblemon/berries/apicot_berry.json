@@ -1,0 +1,144 @@
+{
+  "baseYield": {
+    "min": 1,
+    "max": 3
+  },
+  "preferredBiomeTags": [
+    "cobblemon:is_mountain",
+    "cobblemon:is_taiga"
+  ],
+  "growthTime": {
+    "min": 75,
+    "max": 85
+  },
+  "refreshRate": {
+    "min": 18,
+    "max": 28
+  },
+  "favoriteMulches": [
+    "coarse"
+  ],
+  "growthFactors": [
+    {
+      "variant": "cobblemon:preferred_biome",
+      "bonusYield": {
+        "min": 1,
+        "max": 1
+      }
+    }
+  ],
+  "randomizedGrowthPoints": true,
+  "spawnConditions": [],
+  "growthPoints": [
+    {
+      "position": {
+        "x": 6.5,
+        "y": 25.0,
+        "z": 2.0
+      },
+      "rotation": {
+        "x": 32.5,
+        "y": 25.0,
+        "z": -7.5
+      }
+    },
+    {
+      "position": {
+        "x": 3.0,
+        "y": 23.25,
+        "z": 10.5
+      },
+      "rotation": {
+        "x": -5.0,
+        "y": -70.0,
+        "z": -25.0
+      }
+    },
+    {
+      "position": {
+        "x": 10.25,
+        "y": 24.25,
+        "z": 12.0
+      },
+      "rotation": {
+        "x": -145.0,
+        "y": 0.0,
+        "z": -165.0
+      }
+    },
+    {
+      "position": {
+        "x": 1.5,
+        "y": 15.75,
+        "z": 5.5
+      },
+      "rotation": {
+        "x": 15.0,
+        "y": 65.0,
+        "z": 0.0
+      }
+    },
+    {
+      "position": {
+        "x": 13.75,
+        "y": 21.75,
+        "z": 5.75
+      },
+      "rotation": {
+        "x": 120.0,
+        "y": 55.0,
+        "z": 137.5
+      }
+    },
+    {
+      "position": {
+        "x": 14.0,
+        "y": 16.0,
+        "z": 10.5
+      },
+      "rotation": {
+        "x": 40.0,
+        "y": -80.0,
+        "z": -25.0
+      }
+    },
+    {
+      "position": {
+        "x": 5.5,
+        "y": 16.25,
+        "z": 13.5
+      },
+      "rotation": {
+        "x": -25.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "position": {
+        "x": 9.0,
+        "y": 15.5,
+        "z": 2.0
+      },
+      "rotation": {
+        "x": 167.5,
+        "y": -5.0,
+        "z": -170.0
+      }
+    }
+  ],
+  "mutations": {},
+  "sproutShape": "tall-sprout",
+  "matureShape": "tall-mature",
+  "flavors": {
+    "SPICY": 10,
+    "DRY": 30,
+    "SOUR": 30
+  },
+  "weight": 1.0,
+  "tintIndexes": [],
+  "flowerModel": "cobblemon:flower.geo",
+  "flowerTexture": "cobblemon:flower",
+  "fruitModel": "cobblemon:apicot_berry.geo",
+  "fruitTexture": "cobblemon:apicot"
+}

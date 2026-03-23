@@ -1,0 +1,19 @@
+{
+  "species": "cobblemon:forretress",
+  "order": 0,
+  "variations": [
+    {
+      "aspects": ["shulker"],
+      "model": "cobblemon:forretress_shulker.geo",
+      "texture": "cobblemon:textures/pokemon/0205_forretress/forretress_shulker.png",
+      "layers": []
+    },
+    {
+      "aspects": [
+        "shulker",
+        "shiny"
+      ],
+      "texture": "cobblemon:textures/pokemon/0205_forretress/forretress_shulker_shiny.png"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "cobblemon:block/revival_herb",
+  "textures": {
+    "0": "cobblemon:block/mirror_herb_stage_1",
+    "particle": "cobblemon:block/mirror_herb_stage_1"
+  }
+}

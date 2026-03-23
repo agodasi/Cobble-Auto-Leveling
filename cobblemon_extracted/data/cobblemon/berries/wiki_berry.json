@@ -1,0 +1,120 @@
+{
+  "baseYield": {
+    "min": 2,
+    "max": 4
+  },
+  "preferredBiomeTags": [
+    "cobblemon:is_arid"
+  ],
+  "growthTime": {
+    "min": 55,
+    "max": 65
+  },
+  "refreshRate": {
+    "min": 15,
+    "max": 25
+  },
+  "favoriteMulches": [
+    "sandy"
+  ],
+  "growthFactors": [
+    {
+      "variant": "cobblemon:preferred_biome",
+      "bonusYield": {
+        "min": 1,
+        "max": 2
+      }
+    }
+  ],
+  "randomizedGrowthPoints": true,
+  "spawnConditions": [],
+  "growthPoints": [
+    {
+      "position": {
+        "x": 7.5,
+        "y": 14.0,
+        "z": 8.5
+      },
+      "rotation": {
+        "x": -15.0,
+        "y": -25.0,
+        "z": -147.5
+      }
+    },
+    {
+      "position": {
+        "x": 8.5,
+        "y": 14.0,
+        "z": 8.5
+      },
+      "rotation": {
+        "x": -15.0,
+        "y": 25.0,
+        "z": 147.5
+      }
+    },
+    {
+      "position": {
+        "x": 8.0,
+        "y": 14.0,
+        "z": 7.5
+      },
+      "rotation": {
+        "x": 152.5,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "position": {
+        "x": 8.0,
+        "y": 14.0,
+        "z": 9.5
+      },
+      "rotation": {
+        "x": -130.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "position": {
+        "x": 9.25,
+        "y": 14.0,
+        "z": 7.5
+      },
+      "rotation": {
+        "x": 25.0,
+        "y": -20.0,
+        "z": 125.0
+      }
+    },
+    {
+      "position": {
+        "x": 6.75,
+        "y": 14.0,
+        "z": 7.5
+      },
+      "rotation": {
+        "x": 25.0,
+        "y": 20.0,
+        "z": -127.5
+      }
+    }
+  ],
+  "mutations": {
+    "cobblemon:lum_berry": "cobblemon:sitrus_berry",
+    "cobblemon:bluk_berry": "cobblemon:cornn_berry"
+  },
+  "sproutShape": "short-sprout",
+  "matureShape": "short-mature",
+  "flavors": {
+    "DRY": 15
+  },
+  "weight": 1.0,
+  "tintIndexes": [],
+  "flowerModel": "cobblemon:flower.geo",
+  "flowerTexture": "cobblemon:flower",
+  "fruitModel": "cobblemon:wiki_berry.geo",
+  "fruitTexture": "cobblemon:wiki"
+}

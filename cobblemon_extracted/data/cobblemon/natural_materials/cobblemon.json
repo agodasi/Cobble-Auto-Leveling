@@ -1,0 +1,96 @@
+[
+  {
+    "content": 1,
+    "item": "cobblemon:roasted_leek"
+  },
+  {
+    "content": 4,
+    "item": "cobblemon:leek_and_potato_stew",
+    "returnItem": "minecraft:bowl"
+  },
+  {
+    "content": 2,
+    "tag": "#cobblemon:berries"
+  },
+  {
+    "content": 2,
+    "item": "cobblemon:medicinal_leek"
+  },
+  {
+    "content": 2,
+    "item": "cobblemon:big_root"
+  },
+  {
+    "content": 1,
+    "tag": "#cobblemon:mint_seeds"
+  },
+  {
+    "content": 2,
+    "tag": "#cobblemon:mint_leaf"
+  },
+  {
+    "content": 2,
+    "tag": "#cobblemon:apricorns"
+  },
+  {
+    "content": 2,
+    "item": "cobblemon:remedy"
+  },
+  {
+    "content": 4,
+    "item": "cobblemon:berry_juice",
+    "returnItem": "minecraft:bowl"
+  },
+  {
+    "content": 4,
+    "item": "cobblemon:energy_root"
+  },
+  {
+    "content": 4,
+    "item": "cobblemon:pep_up_flower"
+  },
+  {
+    "content": 4,
+    "item": "cobblemon:vivichoke_seeds"
+  },
+  {
+    "content": 2,
+    "tag": "#cobblemon:apricorn_sprouts"
+  },
+  {
+    "content": 4,
+    "item": "cobblemon:braized_vivichoke"
+  },
+  {
+    "content": 4,
+    "item": "cobblemon:fine_remedy"
+  },
+  {
+    "content": 8,
+    "tag": "#cobblemon:herbs"
+  },
+  {
+    "content": 8,
+    "item": "cobblemon:vivichoke"
+  },
+  {
+    "content": 2,
+    "tag": "#cobblemon:mints"
+  },
+  {
+    "content": 8,
+    "item": "cobblemon:superb_remedy"
+  },
+  {
+    "content": 32,
+    "item": "cobblemon:revive"
+  },
+  {
+    "content": 32,
+    "item": "cobblemon:miracle_seed"
+  },
+  {
+    "content": 64,
+    "item": "cobblemon:max_revive"
+  }
+]

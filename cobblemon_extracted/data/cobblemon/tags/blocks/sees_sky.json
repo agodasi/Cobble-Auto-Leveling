@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "#minecraft:replaceable",
+    "#minecraft:leaves",
+    "#minecraft:climbable",
+    "#minecraft:fences",
+    "minecraft:ice"
+  ]
+}

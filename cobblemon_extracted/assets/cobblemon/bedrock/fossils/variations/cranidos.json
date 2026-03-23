@@ -1,0 +1,13 @@
+{
+  "name": "cobblemon:cranidos",
+  "order": 0,
+  "variations": [
+    {
+      "aspects": [],
+      "poser": "cobblemon:cranidos",
+      "model": "cobblemon:cranidos_fetus.geo",
+      "texture": "cobblemon:textures/fossils/cranidos.png",
+      "layers": []
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "baseYield": {
+    "min": 1,
+    "max": 3
+  },
+  "preferredBiomeTags": [
+    "cobblemon:is_arid"
+  ],
+  "growthTime": {
+    "min": 75,
+    "max": 85
+  },
+  "refreshRate": {
+    "min": 15,
+    "max": 25
+  },
+  "favoriteMulches": [
+    "sandy"
+  ],
+  "growthFactors": [
+    {
+      "variant": "cobblemon:preferred_biome",
+      "bonusYield": {
+        "min": 1,
+        "max": 1
+      }
+    }
+  ],
+  "randomizedGrowthPoints": true,
+  "spawnConditions": [],
+  "growthPoints": [
+    {
+      "position": {
+        "x": 7.5,
+        "y": 4.5,
+        "z": 8.5
+      },
+      "rotation": {
+        "x": -140.0,
+        "y": -45.0,
+        "z": 0.0
+      }
+    },
+    {
+      "position": {
+        "x": 8.75,
+        "y": 4.5,
+        "z": 7.25
+      },
+      "rotation": {
+        "x": 145.0,
+        "y": -47.5,
+        "z": 0.0
+      }
+    },
+    {
+      "position": {
+        "x": 7.5,
+        "y": 4.25,
+        "z": 7.5
+      },
+      "rotation": {
+        "x": 140.0,
+        "y": 45.0,
+        "z": -2.5
+      }
+    },
+    {
+      "position": {
+        "x": 8.75,
+        "y": 4.25,
+        "z": 8.75
+      },
+      "rotation": {
+        "x": -145.0,
+        "y": 45.0,
+        "z": 0.0
+      }
+    },
+    {
+      "position": {
+        "x": 8.0,
+        "y": 5.5,
+        "z": 9.0
+      },
+      "rotation": {
+        "x": -20.0,
+        "y": -42.5,
+        "z": -165.0
+      }
+    },
+    {
+      "position": {
+        "x": 7.0,
+        "y": 6.0,
+        "z": 8.0
+      },
+      "rotation": {
+        "x": -2.5,
+        "y": 47.5,
+        "z": -167.5
+      }
+    },
+    {
+      "position": {
+        "x": 8.0,
+        "y": 5.25,
+        "z": 7.0
+      },
+      "rotation": {
+        "x": 17.5,
+        "y": -42.5,
+        "z": 170.0
+      }
+    },
+    {
+      "position": {
+        "x": 9.0,
+        "y": 5.75,
+        "z": 8.0
+      },
+      "rotation": {
+        "x": -177.5,
+        "y": -45.0,
+        "z": -15.0
+      }
+    }
+  ],
+  "mutations": {
+    "cobblemon:tamato_berry": "cobblemon:salac_berry",
+    "cobblemon:chople_berry": "cobblemon:lansat_berry"
+  },
+  "sproutShape": "blossom-sprout",
+  "matureShape": "blossom-mature",
+  "flavors": {
+    "SPICY": 30,
+    "DRY": 10
+  },
+  "weight": 1.0,
+  "tintIndexes": [],
+  "flowerModel": "cobblemon:flower.geo",
+  "flowerTexture": "cobblemon:flower",
+  "fruitModel": "cobblemon:spelon_berry.geo",
+  "fruitTexture": "cobblemon:spelon"
+}
