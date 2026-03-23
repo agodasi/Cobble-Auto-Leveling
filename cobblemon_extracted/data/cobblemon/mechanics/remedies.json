@@ -1,9 +1,0 @@
-{
-  "healingAmounts": {
-    "normal": "30",
-    "fine": "60",
-    "superb": "200",
-    "root": "120"
-  },
-  "friendshipDrop": "0"
-}

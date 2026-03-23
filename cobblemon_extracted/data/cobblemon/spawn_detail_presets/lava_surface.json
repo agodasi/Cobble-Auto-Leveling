@@ -1,6 +1,0 @@
-{
-  "context": "surface",
-  "condition": {
-    "fluid": "#minecraft:lava"
-  }
-}

@@ -315,11 +315,11 @@ public class ClientEvents {
                             MoveSet moveset = p.getMoveSet();
                             boolean lowPp = false;
                             for (Move move : moveset.getMoves()) {
-                                if (move != null && move.getCurrentPp() <= 3 && move.getCurrentPp() < move.getMaxPp()) {
+                                if (move != null && move.getCurrentPp() == 0) {
                                     lowPp = true;
                                     player.displayClientMessage(
                                             java.util.Objects.requireNonNull(Component.literal("§e[AutoCobble] 先頭の "
-                                                    + p.getDisplayName().getString() + " のPPが僅かです ("
+                                                    + p.getDisplayName().getString() + " のPPが枯渇しています ("
                                                     + move.getCurrentPp()
                                                     + ")")),
                                             false);
@@ -361,11 +361,16 @@ public class ClientEvents {
                 }
             } catch (Exception e) {
                 LOGGER.warn("[AutoCobble] Error checking party status for healing: ", e);
-                shouldHeal = true;
+                shouldHeal = false;
+                player.displayClientMessage(
+                        java.util.Objects.requireNonNull(
+                                Component.literal("§c[AutoCobble] パーティ状態の確認中にエラーが発生しました。回復判定をスキップします。")),
+                        false);
             }
 
             needHealing = shouldHeal;
-            lastBattleEndTime = mc.level != null ? mc.level.getGameTime() : 0;
+            net.minecraft.client.multiplayer.ClientLevel level = mc.level;
+            lastBattleEndTime = level != null ? level.getGameTime() : 0;
             // 戦闘終了直後に最速で次のターゲットを探すようにカウンターをリセット
             scanTickCounter = SCAN_INTERVAL;
 
@@ -376,8 +381,8 @@ public class ClientEvents {
                 LOGGER.info("[AutoCobble] Exited Battle Screen. Party is healthy.");
 
                 // 回復が不要な場合、もし夜で徹夜日数を満たしていればすぐにベッドに向かうかチェック
-                if (mc.level != null && nightsPassedWithoutSleep >= 3) {
-                    long timeOfDay = mc.level.getDayTime() % 24000;
+                if (level != null && nightsPassedWithoutSleep >= 3) {
+                    long timeOfDay = level.getDayTime() % 24000;
                     if (timeOfDay >= 12500 && timeOfDay <= 23000) {
                         needSleep = true;
                         LOGGER.info(
@@ -776,10 +781,10 @@ public class ClientEvents {
                 isCatchTarget = true;
             }
         }
-        // aspectsで検出できない場合のフォールバック: 種族名から伝説判定
+        // aspectsで検出できない場合のフォールバック: 種族名から伝説判定 + メタモン(Ditto)追加
         if (!isCatchTarget) {
             String species = oppPokemon.getSpecies().getName().toLowerCase();
-            if (isLegendaryByName(species)) {
+            if (isLegendaryByName(species) || species.equals("ditto")) {
                 isCatchTarget = true;
             }
         }

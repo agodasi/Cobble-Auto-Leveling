@@ -1,6 +1,0 @@
-{
-  "context": "submerged",
-  "condition": {
-    "fluid": "#minecraft:lava"
-  }
-}

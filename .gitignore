@@ -1,0 +1,47 @@
+# Gradle
+.gradle/
+build/
+bin/
+*.class
+
+# IDEs
+.settings/
+.vscode/
+.classpath
+.project
+*.launch
+
+# Logs and temp files
+*.log
+*.txt
+run/
+tempZip/
+cobblemon_extracted/
+mdk.zip
+build_log.txt
+build_output.txt
+compile_log.txt
+deps.txt
+deps_log.txt
+found.txt
+lint_log.txt
+run_client_debug.txt
+settings_dump.txt
+step2-1.txt
+step2.txt
+system_design.txt
+merged_jars.py
+test_jar.py
+
+# Python
+__pycache__/
+*.pyc
+
+# Others
+libs/
+runServer.launch
+runData.launch
+runClient.launch
+Patcher.class
+TestRef.class
+TestRef.java

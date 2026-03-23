@@ -1,7 +1,0 @@
-{
-	"parent": "cobblemon:block/black_apricorn",
-	"textures": {
-		"0": "cobblemon:block/pink_apricorn",
-		"particle": "cobblemon:block/pink_apricorn"
-	}
-}

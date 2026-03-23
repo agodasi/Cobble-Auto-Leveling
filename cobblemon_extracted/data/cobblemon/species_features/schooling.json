@@ -1,6 +1,0 @@
-{
-  "keys": ["schooling"],
-  "type": "flag",
-  "isAspect": true,
-  "default": false
-}

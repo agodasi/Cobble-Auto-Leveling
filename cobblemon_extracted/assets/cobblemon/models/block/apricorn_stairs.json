@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "bottom": "cobblemon:block/apricorn_planks",
-    "top": "cobblemon:block/apricorn_planks",
-    "side": "cobblemon:block/apricorn_planks"
-  }
-}

@@ -1,6 +1,0 @@
-{
-  "keys": ["hisuian"],
-  "type": "flag",
-  "isAspect": true,
-  "default": false
-}

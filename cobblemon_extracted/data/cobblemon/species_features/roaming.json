@@ -1,6 +1,0 @@
-{
-  "keys": ["roaming"],
-  "type": "flag",
-  "isAspect": true,
-  "default": false
-}

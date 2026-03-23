@@ -1,6 +1,0 @@
-{
-    "java.compile.nullAnalysis.mode": "automatic",
-    "java.configuration.updateBuildConfiguration": "disabled",
-    "terminal.integrated.accessibleViewFocusOnCommandExecution": true,
-    "git.ignoreLimitWarning": true
-}
